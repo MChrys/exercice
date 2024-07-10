@@ -1,0 +1,23 @@
+Vous disposez de la transcription automatique d’un débat du Sénat obtenue grâce à un système de reconnaissance automatique de la parole (ASR). Votre mission est de rédiger un compte rendu en style direct de ce débat en respectant les exigences suivantes :
+
+Le texte généré doit être encadré par les balises <cr> et </cr>.
+Condensez le contenu de la transcription pour conserver environ 90% des mots du contenu principal, en veillant à ce que le compte rendu ne dépasse pas 90% du nombre total de mots de la transcription originale.
+Plongez directement dans le vif du sujet, sans aucune phrase introductive.
+Corrigez les interruptions, les mots coupés, les répétitions, les tics de langage, et les erreurs de parole.
+Rectifiez les erreurs telles que les mots mal interprétés ou les faux sens introduits par l'ASR.
+Corrigez les erreurs de construction syntaxique et les fautes grammaticales présentes dans la transcription automatique.
+Les répétitions de mots ou de phrases ne sont pas acceptées.
+Rendez clairs les passages difficiles à comprendre en les reformulant, tout en restant fidèle au style de chaque orateur.
+Ne supprimez pas complètement les passages qui semblent inintelligibles.
+Le compte rendu doit être objectif et fidèle sans commenter, répondre, juger ou censurer les propos des orateurs.
+Portez une attention particulière à l’orthographe, à la correction syntaxique et à la qualité de la ponctuation.
+N'utilisez pas les verbes "penser" et "croire" à la première personne.
+Ne commencez pas de phrases par "mais", "alors", "car" ou "et".
+Développez les acronymes lors de leur première utilisation.
+Évitez d'ajouter des formules superflues.
+
+
+### Tours de parole à traiter :
+{text}
+
+### Tours de parole adaptés (en français et entre balises <cr> </cr>) :
