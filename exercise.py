@@ -16,31 +16,27 @@ from collections import defaultdict
 from similarity.jarowinkler import JaroWinkler
 from pydub import AudioSegment
 from LLM_inf import ParallelLLMInference
+from hydra import compose, initialize
+from omegaconf import DictConfig, OmegaConf
+import os
 
 
-app_dir = pathlib.Path(__file__).parent.absolute()
-data_dir = app_dir / "data"
-data_dir.mkdir(exist_ok=True)
 
-device = "cuda"
-batch_size = 16
-compute_type = "float16"
-model_name = "large-v2"
-hf_token = os.getenv('HF_TOKEN')
-senators_file_path = 'services/senateurs_name_last.txt'
-
-
-llm_model_name = 'meta-llama-3-8b-instruct'
-api_key = os.getenv('API_KEY')
-hf_model_name = 'meta-llama/Meta-Llama-3-8B-Instruct'
-
-max_tokens = 3500
-max_concurrent_requests = 10
-
-
+initialize(config_path="config")
+cfg = compose(config_name="local")
+api_key = cfg["api_key"]
+device = cfg["device"]
+batch_size = cfg["batch_size"]
+compute_type = cfg["compute_type"]
+model_name = cfg["model_name"]
+senators_file_path = cfg["senators_file_path"]
+llm_model_name = cfg["llm_model_name"]
+hf_model_name = cfg["hf_model_name"]
+max_tokens = cfg["max_tokens"]
+max_concurrent_requests = cfg["max_concurrent_requests"]
 jarowinkler = JaroWinkler()
-epi = epitran.Epitran('fra-Latn-p')
-nlp = spacy.load('fr_core_news_lg')
+epi = epitran.Epitran(cfg["epi"])
+nlp = spacy.load(cfg["nlp"])
 
 
 st.set_page_config(layout="wide")
@@ -264,7 +260,6 @@ def main():
             c_llm_inference = ParallelLLMInference(llm_model_name,
                                                    api_key, 
                                                    hf_model_name, 
-                                                   hf_token, 
                                                    max_tokens, 
                                                    max_concurrent_requests, 
                                                    "services/system_prompt.txt", 
@@ -279,7 +274,6 @@ def main():
             cri_llm_inferance = ParallelLLMInference(llm_model_name, 
                                                      api_key, 
                                                      hf_model_name, 
-                                                     hf_token, 
                                                      max_tokens, 
                                                      max_concurrent_requests, 
                                                      "services/system_prompt.txt", 
@@ -293,7 +287,6 @@ def main():
             cra_llm_inferance = ParallelLLMInference(llm_model_name, 
                                                      api_key, 
                                                      hf_model_name, 
-                                                     hf_token, 
                                                      max_tokens, 
                                                      max_concurrent_requests, 
                                                      "services/system_prompt.txt", 
@@ -307,7 +300,6 @@ def main():
             cred_llm_inferance = ParallelLLMInference(llm_model_name, 
                                                       api_key, 
                                                       hf_model_name, 
-                                                      hf_token, 
                                                       max_tokens, 
                                                       max_concurrent_requests, 
                                                       "services/system_prompt.txt", 
