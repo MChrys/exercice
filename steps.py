@@ -1,7 +1,7 @@
 
 from LLM_inf import ParallelLLMInference
 
-def llm_inference(c_transcription_list :list,
+async def  llm_inference(c_transcription_list :list,
                   llm_model_name :str, 
                   api_key :str, 
                   hf_model_name :str, 

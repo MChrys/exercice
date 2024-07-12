@@ -5,10 +5,10 @@ device : cuda
 batch_size : 16
 compute_type : float16
 model_name : large-v2
-senators_file_path : 'services/senateurs_name_last.txt'
-llm_model_name : 'meta-llama-3-8b-instruct'
+senators_file_path : services/senateurs_name_last.txt
+llm_model_name : meta-llama-3-8b-instruct
 hf_model_name : meta-llama/Meta-Llama-3-8B-Instruct
-
+langage : fr
 max_tokens : 3500
 max_concurrent_requests : 10
 
