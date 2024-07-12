@@ -8,6 +8,24 @@ from tqdm.asyncio import tqdm_asyncio
 from transformers import LlamaTokenizerFast
 from langchain.prompts import PromptTemplate
 from openai import AsyncOpenAI
+from conf import compose, initialize
+from omegaconf import DictConfig, OmegaConf
+import io
+import re
+import streamlit as st
+import pathlib
+import os
+import spacy
+import epitran
+import json
+import streamlit_authenticator as stauth
+import yaml
+import whisperx
+import torch
+import gc
+from yaml.loader import SafeLoader
+from collections import defaultdict
+from similarity.jarowinkler import JaroWinkler
 
 class ParallelLLMInference:
     def __init__(self, base_url,exaion_model_name, exaion_api_key, hf_model_name,  max_tokens, max_concurrent_requests, system_prompt_path, system_placeholder, user_prompt_path):
@@ -16,7 +34,7 @@ class ParallelLLMInference:
             api_key=exaion_api_key,
             timeout=60
         )
-        self.tokenizer = LlamaTokenizerFast.from_pretrained(hf_model_name, cache_dir='../../.cache/huggingface')
+        self.tokenizer = LlamaTokenizerFast.from_pretrained(hf_model_name)
         self.max_tokens = max_tokens
         self.semaphore = asyncio.Semaphore(max_concurrent_requests)
         self.exaion_model_name = exaion_model_name 
@@ -158,9 +176,28 @@ class ParallelLLMInference:
 
 # Example usage
 if __name__ == "__main__":
-    exaion_model_name = 'meta-llama-3-8b-instruct'
-    exaion_api_key = "sk-7Gqg14u-mGlX-egix20lgg"
-    hf_model_name = 'meta-llama/Meta-Llama-3-8B-Instruct'
+
+    cfg = compose(config_name="local")
+    api_key = cfg["llm_api"]["api_key"]
+    llm_model_name = cfg["llm_api"]["llm_model_name"]
+    base_url = cfg["llm_api"]["api_url"]
+    device = cfg["device"]
+    batch_size = cfg["batch_size"]
+    compute_type = cfg["compute_type"]
+    model_name = cfg["model_name"]
+    senators_file_path = cfg["senators_file_path"]
+
+    hf_model_name = cfg["llm_api"]["hf_model_name"]
+    max_tokens = cfg["max_tokens"]
+    max_concurrent_requests = cfg["max_concurrent_requests"]
+    language = cfg["langage"]
+    jarowinkler = JaroWinkler()
+    epi = epitran.Epitran(cfg["epi"])
+    nlp = spacy.load(cfg["nlp"])
+
+    exaion_model_name = llm_model_name
+    exaion_api_key = api_key
+    hf_model_name = cfg["hf_model_name"]
     #hf_token = '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'
     max_tokens = 1024
     max_concurrent_requests = 5
@@ -169,7 +206,7 @@ if __name__ == "__main__":
     user_prompt_path = "services/user_prompt.txt"
     system_placeholder = "rédaction de compte rendu"
 
-    inference = ParallelLLMInference(exaion_model_name, exaion_api_key, hf_model_name, max_tokens, max_concurrent_requests, system_prompt_path, system_placeholder, user_prompt_path)
+    inference = ParallelLLMInference(base_url, exaion_model_name, exaion_api_key, hf_model_name, max_tokens, max_concurrent_requests, system_prompt_path, system_placeholder, user_prompt_path)
     
     # Example segments to infer
     segments = [

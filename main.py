@@ -16,7 +16,7 @@ from collections import defaultdict
 from similarity.jarowinkler import JaroWinkler
 from pydub import AudioSegment
 from LLM_inf import ParallelLLMInference
-from hydra import compose, initialize
+from conf import compose, initialize
 from omegaconf import DictConfig, OmegaConf
 import os
 
@@ -24,13 +24,15 @@ from nlp_fonctions import transcribe, parse_whisperx_output, format_for_output, 
 
 initialize(config_path="config")
 cfg = compose(config_name="local")
-api_key = cfg["api_key"]
+api_key = cfg["llm_api"]["api_key"]
+llm_model_name = cfg["llm_api"]["llm_model_name"]
+base_url = cfg["llm_api"]["base_url"]
 device = cfg["device"]
 batch_size = cfg["batch_size"]
 compute_type = cfg["compute_type"]
 model_name = cfg["model_name"]
 senators_file_path = cfg["senators_file_path"]
-llm_model_name = cfg["llm_model_name"]
+
 hf_model_name = cfg["hf_model_name"]
 max_tokens = cfg["max_tokens"]
 max_concurrent_requests = cfg["max_concurrent_requests"]
@@ -105,7 +107,8 @@ def main():
                                                   jarowinkler, 
                                                   verbose=True)
 
-            c_llm_inference = ParallelLLMInference(llm_model_name,
+            c_llm_inference = ParallelLLMInference(base_url,
+                                                   llm_model_name,
                                                    api_key, 
                                                    hf_model_name, 
                                                    max_tokens, 
@@ -119,9 +122,10 @@ def main():
 
             st.session_state["c_verbatim"] = c_verbatim_output
 
-            cri_llm_inferance = ParallelLLMInference(llm_model_name, 
-                                                     api_key, 
-                                                     hf_model_name, 
+            cri_llm_inferance = ParallelLLMInference(base_url,
+                                                      llm_model_name, 
+                                                      api_key, 
+                                                      hf_model_name, 
                                                      max_tokens, 
                                                      max_concurrent_requests, 
                                                      "services/system_prompt.txt", 
@@ -132,9 +136,10 @@ def main():
             parsed_cri = format_for_output(apply_parse_and_reformat(cri_llm_transcription_list))
             st.session_state["c_cri"] = parsed_cri
 
-            cra_llm_inferance = ParallelLLMInference(llm_model_name, 
-                                                     api_key, 
-                                                     hf_model_name, 
+            cra_llm_inferance = ParallelLLMInference(base_url,
+                                                      llm_model_name, 
+                                                      api_key, 
+                                                      hf_model_name, 
                                                      max_tokens, 
                                                      max_concurrent_requests, 
                                                      "services/system_prompt.txt", 
@@ -145,7 +150,8 @@ def main():
             parsed_cra = format_for_output(apply_parse_and_reformat(cra_llm_transcription_list))
             st.session_state["c_cra"] = parsed_cra
 
-            cred_llm_inferance = ParallelLLMInference(llm_model_name, 
+            cred_llm_inferance = ParallelLLMInference(base_url,
+                                                      llm_model_name, 
                                                       api_key, 
                                                       hf_model_name, 
                                                       max_tokens, 

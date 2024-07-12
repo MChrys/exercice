@@ -1,2 +1,4 @@
 api_key : lm-studio
 api_url : http://localhost:1234/v1
+llm_model_name : lmstudio-community/Meta-Llama-3-8B-Instruct-GGUF
+hf_model_name : openlm-research/open_llama_3b
