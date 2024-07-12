@@ -121,7 +121,7 @@ def read_json_file(data_dir):
 
     return data
 
-def transcribe(audio_file_path, model_name, device, language, compute_type, batch_size):
+def transcribe2(audio_file_path, model_name, device, language, compute_type, batch_size):
     model = whisperx.load_model(model_name, device, language=language, compute_type=compute_type)
     audio = whisperx.load_audio(audio_file_path)
     result = model.transcribe(audio, batch_size=batch_size)
@@ -194,7 +194,7 @@ def apply_parse_and_reformat(transcription_list):
 
     return transcription_list
 
-def transcribe(audio_file_path):
+def transcribe(audio_file_path, model_name, device, language, compute_type, batch_size):
     client = docker.from_env()
     
     # Obtenir le chemin absolu du répertoire courant
