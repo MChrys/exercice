@@ -8,7 +8,7 @@ from tqdm.asyncio import tqdm_asyncio
 from transformers import LlamaTokenizerFast
 from langchain.prompts import PromptTemplate
 from openai import AsyncOpenAI
-from conf import compose, initialize
+from  import compose, initialize
 from omegaconf import DictConfig, OmegaConf
 import io
 import re
@@ -27,6 +27,35 @@ from yaml.loader import SafeLoader
 from collections import defaultdict
 from similarity.jarowinkler import JaroWinkler
 
+
+class AsyncResultDict(dict):
+    def __getitem__(self, key):
+        value = super().__getitem__(key)
+        if isinstance(value, asyncio.Task):
+            if value.done():
+                return value.result()
+            else:
+                return value
+        return value
+
+    def __str__(self):
+        return self._format_dict()
+
+    def __repr__(self):
+        return self._format_dict()
+
+    def _format_dict(self):
+        formatted = {}
+        for key, value in self.items():
+            if isinstance(value, asyncio.Task):
+                if value.done():
+                    formatted[key] = value.result()
+                else:
+                    formatted[key] = f"<Task pending>"
+            else:
+                formatted[key] = value
+        return repr(formatted)
+
 class ParallelLLMInference:
     def __init__(self, base_url,exaion_model_name, exaion_api_key, hf_model_name,  max_tokens, max_concurrent_requests, system_prompt_path, system_placeholder, user_prompt_path):
         self.client = AsyncOpenAI(
@@ -41,6 +70,67 @@ class ParallelLLMInference:
         self.system_prompt_path = system_prompt_path
         self.user_prompt_path = user_prompt_path
         self.system_placeholder = system_placeholder
+
+
+    
+    def chunk_speech2(self, text=None, tokens =[]):
+        # si tokens n'est pas vide, on utilise les tokens passé dans la récursion
+        if tokens:
+            tokens = tokens
+        else:
+            tokens = self.tokenizer.encode(text, add_special_tokens=False)
+        # si la taille des tokens est inférieur à 90% de la taille max, on retourne les tokens
+        if len(tokens) <= self.max_tokens * 0.9:
+            return [text]
+
+        end_sentence_tokens = set(self.tokenizer.encode('. ! ?', add_special_tokens=False))
+
+        chunks = []
+        current_chunk = []
+        current_chunk_length = 0
+
+        sentence = []
+
+        sentence_length = 0
+        sentences_length = []
+        break_condition = True
+        cursor = 0
+        # ici on comment la logique pour segmenter en chunk, le while est pour prendre en compte 
+        # le cas ou une phrase toutes seule dépasserais le max token auquel cas on devrait la segmenter en plusieurs chunk
+        while sentence_length  <= self.max_tokens * 0.9:
+            # on parcourt les tokens
+            for token  in tokens: 
+                # si le token est un charactere de fin de phrase  alors on sait que l'on a une phrase
+                if token in end_sentence_tokens :
+                    #    si la taille du chunk + la taille de la phrase est inférieur +1 à 90% de la taille max,
+                    #  on ajoute la phrase au chunk
+                    if sentence_length + current_chunk_length <= (self.max_tokens +1)* 0.9:
+                        sentence.append(token)
+                        current_chunk.extend(sentence)
+                        current_chunk_length += sentence_length
+                        sentence = []
+                        sentence_length = 0
+                    else:
+                        # sinon on ajoute chunk et chunks et on ajoutera la sentence dans la chunk suivante
+                        chunks.append(current_chunk)
+                        current_chunk = []
+                        current_chunk_length = 0
+                else:
+                    # si le token n'est pas une charactere de fin de phrase, on ajoute le token au chunk
+                    # et on augmente la taille du chunk
+                    sentence.append(token)
+                    sentence_length += 1 
+                cursor += 1
+            # on change la condition de sortie de la boucle while si on a itérer sur tout les tokens
+            break_condition = False
+            break
+        if break_condition: 
+            # si  c'est la boucle while qui a break alors on fait une recursion sur la fonction en passant les tokens restant
+            return chunks +  [chunk_speech_rec(tokens=tokens[cursor:])]
+        else:
+            # sinon on retourne les chunks
+            return chunks
+
 
     def chunk_speech(self, text):
         tokens = self.tokenizer.encode(text, add_special_tokens=False)
@@ -119,6 +209,7 @@ class ParallelLLMInference:
                         stream=False,
                         max_tokens=1000
                     )
+                    x = response.choices[0].message.content.strip()
                     return response.choices[0].message.content.strip()
                 except (httpx.HTTPStatusError, asyncio.TimeoutError, httpx.RemoteProtocolError) as e:
                     print(f"Error: {e}, retrying in {wait_time:.2f} seconds...")
@@ -128,7 +219,7 @@ class ParallelLLMInference:
                     await asyncio.sleep(wait_time)
             raise Exception("Max retries exceeded for API call")
 
-    async def queue_api_calls(self, index, speaker, chunks, pbar):
+    async def queue_api_calls2(self, index, speaker, chunks, pbar):
         tasks = [
             self.infer_llm(chunk, self.system_prompt_path, self.system_placeholder, self.user_prompt_path)
             for chunk in chunks
@@ -137,8 +228,46 @@ class ParallelLLMInference:
         for _ in responses:
             pbar.update(1)
         return [(index, speaker, i, response) for i, response in enumerate(responses)]
+    
 
+    
+    async def queue_api_calls(self, chunks, pbar):
+        tasks = [
+            self.infer_llm(chunk, self.system_prompt_path, self.system_placeholder, self.user_prompt_path)
+            for chunk in chunks
+        ]
+        responses = await asyncio.gather(*tasks)
+        pbar.update(len(responses))
+        r= responses
+        return " ".join(responses).strip()
+    
+    async def get_result(self, future):
+        return await future
     async def parallel_inference(self, segments):
+        tasks = []
+        processed_segments = []
+        total_chunks = sum(len(self.chunk_speech(segment["text"])) for segment in segments)
+
+        with tqdm_asyncio(total=total_chunks, desc="Processing") as pbar:
+            for segment in segments:
+                chunks = self.chunk_speech(segment["text"])
+                future = asyncio.ensure_future(self.queue_api_calls(chunks, pbar))
+                processed_segment = AsyncResultDict({
+                    "speaker": segment["speaker"],
+                    "text": future
+                })
+                processed_segments.append(processed_segment)
+                tasks.append(future)
+
+        # Attendre que toutes les tâches soient terminées
+        await asyncio.gather(*tasks)
+
+        # À ce stade, tous les futurs dans processed_segments["text"] sont résolus
+        # Pas besoin d'itération supplémentaire
+        x = processed_segments
+        return processed_segments
+
+    async def parallel_inference2(self, segments):
         tasks = []
         total_chunks = sum(len(self.chunk_speech(segment["text"])) for segment in segments)
 
@@ -197,7 +326,7 @@ if __name__ == "__main__":
 
     exaion_model_name = llm_model_name
     exaion_api_key = api_key
-    hf_model_name = cfg["hf_model_name"]
+   
     #hf_token = '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'
     max_tokens = 1024
     max_concurrent_requests = 5
@@ -215,4 +344,5 @@ if __name__ == "__main__":
     ]
     
     results = inference.LLM_inference(segments)
+    print("results : ")
     print(results)

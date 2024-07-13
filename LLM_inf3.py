@@ -8,7 +8,24 @@ from tqdm.asyncio import tqdm_asyncio
 from transformers import LlamaTokenizerFast
 from langchain.prompts import PromptTemplate
 from openai import AsyncOpenAI
-from hydra import compose, initialize
+from conf import compose, initialize
+from omegaconf import DictConfig, OmegaConf
+import io
+import re
+import streamlit as st
+import pathlib
+import os
+import spacy
+import epitran
+import json
+import streamlit_authenticator as stauth
+import yaml
+import whisperx
+import torch
+import gc
+from yaml.loader import SafeLoader
+from collections import defaultdict
+from similarity.jarowinkler import JaroWinkler
 
 class ParallelLLMInference:
     def __init__(self, base_url,exaion_model_name, exaion_api_key, hf_model_name,  max_tokens, max_concurrent_requests, system_prompt_path, system_placeholder, user_prompt_path):
@@ -26,6 +43,14 @@ class ParallelLLMInference:
         self.system_placeholder = system_placeholder
 
     def chunk_speech(self, text):
+
+
+        end_sentence_tokens = set(self.tokenizer.encode('. ! ?', add_special_tokens=False))
+
+
+
+
+    def chunk_speech_old(self, text):
         tokens = self.tokenizer.encode(text, add_special_tokens=False)
         if len(tokens) <= self.max_tokens * 0.9:
             return [text]
@@ -102,7 +127,6 @@ class ParallelLLMInference:
                         stream=False,
                         max_tokens=1000
                     )
-                    x = response.choices[0].message.content.strip()
                     return response.choices[0].message.content.strip()
                 except (httpx.HTTPStatusError, asyncio.TimeoutError, httpx.RemoteProtocolError) as e:
                     print(f"Error: {e}, retrying in {wait_time:.2f} seconds...")
@@ -160,7 +184,7 @@ class ParallelLLMInference:
 
 # Example usage
 if __name__ == "__main__":
-    initialize(config_path="config")
+
     cfg = compose(config_name="local")
     api_key = cfg["llm_api"]["api_key"]
     llm_model_name = cfg["llm_api"]["llm_model_name"]
@@ -175,30 +199,27 @@ if __name__ == "__main__":
     max_tokens = cfg["max_tokens"]
     max_concurrent_requests = cfg["max_concurrent_requests"]
     language = cfg["langage"]
-
+  
 
     exaion_model_name = llm_model_name
     exaion_api_key = api_key
    
-
-    #exaion_model_name = 'meta-llama-3-8b-instruct'
-    #exaion_api_key = "sk-7Gqg14u-mGlX-egix20lgg"
-    #hf_model_name = 'meta-llama/Meta-Llama-3-8B-Instruct'
     #hf_token = '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'
-    max_tokens = 1024
+    max_tokens = 4
     max_concurrent_requests = 5
 
     system_prompt_path = "services/system_prompt.txt"
     user_prompt_path = "services/user_prompt.txt"
     system_placeholder = "rédaction de compte rendu"
 
-    inference = ParallelLLMInference(base_url,exaion_model_name, exaion_api_key, hf_model_name, max_tokens, max_concurrent_requests, system_prompt_path, system_placeholder, user_prompt_path)
+    inference = ParallelLLMInference(base_url, exaion_model_name, exaion_api_key, hf_model_name, max_tokens, max_concurrent_requests, system_prompt_path, system_placeholder, user_prompt_path)
     
     # Example segments to infer
     segments = [
-        {"speaker": "Speaker 1", "text": "Hello, this is a test."},
+        {"speaker": "Speaker 1", "text": "Hello, this is a test. Hello, this is a test."},
         {"speaker": "Speaker 2", "text": "Hi, this is another test."}
     ]
     
-    results = inference.LLM_inference(segments)
+    results = inference.chunk_speech_rec(segments[0]["text"])
+    print("results : ")
     print(results)

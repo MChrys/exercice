@@ -2,7 +2,7 @@
 name = "exercise"
 version = "0.1.0"
 description = ""
-authors = ["MChrys <chrys.beltran@outlook.fr>"]
+authors = [""]
 readme = "README.md"
 
 [tool.poetry.dependencies]
