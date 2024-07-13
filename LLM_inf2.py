@@ -8,7 +8,7 @@ from tqdm.asyncio import tqdm_asyncio
 from transformers import LlamaTokenizerFast
 from langchain.prompts import PromptTemplate
 from openai import AsyncOpenAI
-from  import compose, initialize
+from hydra import compose, initialize
 from omegaconf import DictConfig, OmegaConf
 import io
 import re
@@ -57,7 +57,16 @@ class AsyncResultDict(dict):
         return repr(formatted)
 
 class ParallelLLMInference:
-    def __init__(self, base_url,exaion_model_name, exaion_api_key, hf_model_name,  max_tokens, max_concurrent_requests, system_prompt_path, system_placeholder, user_prompt_path):
+    def __init__(self, 
+                 base_url,exaion_model_name, 
+                 exaion_api_key, 
+                 hf_model_name,  
+                 max_tokens, 
+                 max_concurrent_requests, 
+                 system_prompt_path, 
+                 system_placeholder, 
+                 user_prompt_path,
+                 normalisation_prompt_path):
         self.client = AsyncOpenAI(
             base_url=base_url,
             api_key=exaion_api_key,
@@ -69,70 +78,39 @@ class ParallelLLMInference:
         self.exaion_model_name = exaion_model_name 
         self.system_prompt_path = system_prompt_path
         self.user_prompt_path = user_prompt_path
+        self.normalisation_prompt_path = normalisation_prompt_path
+
         self.system_placeholder = system_placeholder
 
 
-    
-    def chunk_speech2(self, text=None, tokens =[]):
-        # si tokens n'est pas vide, on utilise les tokens passé dans la récursion
-        if tokens:
-            tokens = tokens
-        else:
-            tokens = self.tokenizer.encode(text, add_special_tokens=False)
-        # si la taille des tokens est inférieur à 90% de la taille max, on retourne les tokens
+    def chunk_speech(self,text):
+
+        chunks = [[]] 
+        prev = 0
+        tokens = self.tokenizer.encode(text, add_special_tokens=False)
         if len(tokens) <= self.max_tokens * 0.9:
             return [text]
+        end_of_sentence_tokens = set([self.tokenizer.encode('test.', add_special_tokens=False)[-1],
+                                     self.tokenizer.encode('test!', add_special_tokens=False)[-1],
+                                     self.tokenizer.encode('test?', add_special_tokens=False)[-1]
+                                     ])
+        for i in range(len(tokens)):
+            cur_sentence_len = i - prev + 1
+            if tokens[i] in end_of_sentence_tokens or cur_sentence_len == self.max_tokens *0.9:
+                if len(chunks[-1]) and len(chunks[-1]) + cur_sentence_len > self.max_tokens*0.9:
+                    chunks.append([])
+                chunks[-1].extend(tokens[prev:i+1])
+                prev = i + 1
 
-        end_sentence_tokens = set(self.tokenizer.encode('. ! ?', add_special_tokens=False))
+        if prev < len(tokens):
+            if len(chunks[-1]) and len(chunks[-1]) + i - prev + 1 > self.max_tokens*0.9:
+                chunks.append([])
+            chunks[-1].extend(tokens[prev:i+1])
 
-        chunks = []
-        current_chunk = []
-        current_chunk_length = 0
-
-        sentence = []
-
-        sentence_length = 0
-        sentences_length = []
-        break_condition = True
-        cursor = 0
-        # ici on comment la logique pour segmenter en chunk, le while est pour prendre en compte 
-        # le cas ou une phrase toutes seule dépasserais le max token auquel cas on devrait la segmenter en plusieurs chunk
-        while sentence_length  <= self.max_tokens * 0.9:
-            # on parcourt les tokens
-            for token  in tokens: 
-                # si le token est un charactere de fin de phrase  alors on sait que l'on a une phrase
-                if token in end_sentence_tokens :
-                    #    si la taille du chunk + la taille de la phrase est inférieur +1 à 90% de la taille max,
-                    #  on ajoute la phrase au chunk
-                    if sentence_length + current_chunk_length <= (self.max_tokens +1)* 0.9:
-                        sentence.append(token)
-                        current_chunk.extend(sentence)
-                        current_chunk_length += sentence_length
-                        sentence = []
-                        sentence_length = 0
-                    else:
-                        # sinon on ajoute chunk et chunks et on ajoutera la sentence dans la chunk suivante
-                        chunks.append(current_chunk)
-                        current_chunk = []
-                        current_chunk_length = 0
-                else:
-                    # si le token n'est pas une charactere de fin de phrase, on ajoute le token au chunk
-                    # et on augmente la taille du chunk
-                    sentence.append(token)
-                    sentence_length += 1 
-                cursor += 1
-            # on change la condition de sortie de la boucle while si on a itérer sur tout les tokens
-            break_condition = False
-            break
-        if break_condition: 
-            # si  c'est la boucle while qui a break alors on fait une recursion sur la fonction en passant les tokens restant
-            return chunks +  [chunk_speech_rec(tokens=tokens[cursor:])]
-        else:
-            # sinon on retourne les chunks
-            return chunks
+        return [self.tokenizer.decode(chunk, add_special_tokens=False)for chunk in chunks]
 
 
-    def chunk_speech(self, text):
+    def chunk_speech2(self, text):
         tokens = self.tokenizer.encode(text, add_special_tokens=False)
         if len(tokens) <= self.max_tokens * 0.9:
             return [text]
@@ -185,13 +163,14 @@ class ParallelLLMInference:
         async with aiofiles.open(file_path, 'r', encoding='utf-8') as file:
             return await file.read()
 
-    async def infer_llm(self, text, system_prompt_path, system_placeholder, user_prompt_path):
+    async def infer_llm(self, text, system_prompt_path, system_placeholder, user_prompt_path, normalisation_path):
         async with self.semaphore:
             system_prompt_template = await self.get_prompt_from_file(system_prompt_path)
-            user_prompt_template = await self.get_prompt_from_file(user_prompt_path)
+            normalisation_template = await self.get_prompt_from_file(normalisation_path)
+            user_prompt = await self.get_prompt_from_file(user_prompt_path)
 
             system_prompt = PromptTemplate.from_template(system_prompt_template).format(system_value=system_placeholder)
-            user_prompt = PromptTemplate.from_template(user_prompt_template).format(text=text)
+            normalisation = PromptTemplate.from_template(normalisation_template).format(text=text)
 
             retries = 5
             backoff_factor = 0.5
@@ -204,10 +183,10 @@ class ParallelLLMInference:
                         messages=[
                             {"role": "system", "content": system_prompt},
                             {"role": "user", "content": user_prompt},
-                            {"role": "user", "content": text},
+                            {"role": "user", "content": normalisation},
                         ],
                         stream=False,
-                        max_tokens=1000
+                        max_tokens=self.max_tokens
                     )
                     x = response.choices[0].message.content.strip()
                     return response.choices[0].message.content.strip()
@@ -233,7 +212,7 @@ class ParallelLLMInference:
     
     async def queue_api_calls(self, chunks, pbar):
         tasks = [
-            self.infer_llm(chunk, self.system_prompt_path, self.system_placeholder, self.user_prompt_path)
+            self.infer_llm(chunk, self.system_prompt_path, self.system_placeholder, self.user_prompt_path, self.normalisation_prompt_path)
             for chunk in chunks
         ]
         responses = await asyncio.gather(*tasks)
@@ -241,29 +220,26 @@ class ParallelLLMInference:
         r= responses
         return " ".join(responses).strip()
     
-    async def get_result(self, future):
-        return await future
+
     async def parallel_inference(self, segments):
         tasks = []
         processed_segments = []
-        total_chunks = sum(len(self.chunk_speech(segment["text"])) for segment in segments)
+        chunks_process = [(len(chunks := self.chunk_speech(segment["text"])), chunks,segment["speaker"]) for segment in segments]
+        total_chunks = sum(length for length, _, _ in chunks_process)
 
         with tqdm_asyncio(total=total_chunks, desc="Processing") as pbar:
-            for segment in segments:
-                chunks = self.chunk_speech(segment["text"])
+            for _ ,chunks,speaker in chunks_process:
+                
                 future = asyncio.ensure_future(self.queue_api_calls(chunks, pbar))
                 processed_segment = AsyncResultDict({
-                    "speaker": segment["speaker"],
+                    "speaker": speaker,
                     "text": future
                 })
                 processed_segments.append(processed_segment)
                 tasks.append(future)
 
-        # Attendre que toutes les tâches soient terminées
         await asyncio.gather(*tasks)
 
-        # À ce stade, tous les futurs dans processed_segments["text"] sont résolus
-        # Pas besoin d'itération supplémentaire
         x = processed_segments
         return processed_segments
 
@@ -305,37 +281,38 @@ class ParallelLLMInference:
 
 # Example usage
 if __name__ == "__main__":
-
+    initialize(config_path="config")
     cfg = compose(config_name="local")
+
     api_key = cfg["llm_api"]["api_key"]
     llm_model_name = cfg["llm_api"]["llm_model_name"]
     base_url = cfg["llm_api"]["api_url"]
-    device = cfg["device"]
-    batch_size = cfg["batch_size"]
-    compute_type = cfg["compute_type"]
-    model_name = cfg["model_name"]
+
     senators_file_path = cfg["senators_file_path"]
 
     hf_model_name = cfg["llm_api"]["hf_model_name"]
     max_tokens = cfg["max_tokens"]
     max_concurrent_requests = cfg["max_concurrent_requests"]
-    language = cfg["langage"]
-    jarowinkler = JaroWinkler()
-    epi = epitran.Epitran(cfg["epi"])
-    nlp = spacy.load(cfg["nlp"])
 
     exaion_model_name = llm_model_name
     exaion_api_key = api_key
    
     #hf_token = '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'
-    max_tokens = 1024
-    max_concurrent_requests = 5
 
     system_prompt_path = "services/system_prompt.txt"
     user_prompt_path = "services/user_prompt.txt"
+    normalisation_prompt_path = "services/prompt_normalisation_v0.txt"
     system_placeholder = "rédaction de compte rendu"
 
-    inference = ParallelLLMInference(base_url, exaion_model_name, exaion_api_key, hf_model_name, max_tokens, max_concurrent_requests, system_prompt_path, system_placeholder, user_prompt_path)
+    inference = ParallelLLMInference(base_url, 
+                                     exaion_model_name, 
+                                     exaion_api_key, hf_model_name, 
+                                     max_tokens, max_concurrent_requests, 
+                                     system_prompt_path, 
+                                     system_placeholder, 
+                                     user_prompt_path,
+                                     normalisation_prompt_path       
+                                     )
     
     # Example segments to infer
     segments = [
