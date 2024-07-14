@@ -29,6 +29,9 @@ watchdog = "^4.0.1"
 g2pk = "^0.9.4"
 sentencepiece = "^0.2.0"
 varname = "^0.13.1"
+opentelemetry-api = "^1.25.0"
+opentelemetry-sdk = "^1.25.0"
+opentelemetry-instrumentation = "^0.46b0"
 
 
 

@@ -1,3 +1,4 @@
-device : mps
-batch_size : 16
-compute_type : float32
+device : cpu
+batch_size : 5
+compute_type : float16
+model_name : medium

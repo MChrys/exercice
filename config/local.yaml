@@ -4,13 +4,13 @@ defaults :
   - credentials : user1
   - architectures : macM1
 
-model_name : large-v2
+#model_name : tiny-v2
 senators_file_path : services/senateurs_name_last.txt
 #llm_model_name : meta-llama-3-8b-instruct
 #hf_model_name : openlm-research/open_llama_3b
 langage : fr
-max_tokens : 1024
-max_concurrent_requests : 10
+max_tokens : 1500
+max_concurrent_requests : 3
 system_prompt_path : services/system_prompt.txt
 user_prompt_path : services/user_prompt.txt
 normalisation_prompt_path : services/prompt_normalisation_v0.txt

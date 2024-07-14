@@ -209,6 +209,8 @@ def transcribe_docker(audio_file_path, model_name, device, language, compute_typ
     
     # Obtenir le chemin absolu du répertoire courant
     current_dir = os.path.abspath(os.path.dirname(__file__))
+
+    # Exécuter en mode async
     
     # Exécuter le conteneur Docker
     container = client.containers.run(
@@ -219,6 +221,7 @@ def transcribe_docker(audio_file_path, model_name, device, language, compute_typ
         stdout=True,
         stderr=True
     )
+
     
     # Récupérer et parser la sortie
     output = container.decode('utf-8')

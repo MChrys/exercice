@@ -1,12 +1,34 @@
 from __future__ import annotations
 import asyncio
 import uuid
+import functools
 
 from varname import varname
 
 from typing import MutableSequence, TypeVar
 from dataclasses import dataclass, field
 from typing import List, Dict, Any
+
+
+from opentelemetry import trace
+from opentelemetry.trace import Span 
+from opentelemetry import context  
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import ConsoleSpanExporter, BatchSpanProcessor
+from opentelemetry.sdk.resources import SERVICE_NAME, Resource
+from opentelemetry.trace.propagation.tracecontext import TraceContextTextMapPropagator
+from opentelemetry.sdk.trace.export import SpanExporter, SpanExportResult
+
+class SilentExporter(SpanExporter):
+    def export(self, spans):
+        return SpanExportResult.SUCCESS
+
+    def shutdown(self):
+        pass
+
+import logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 @dataclass
 class Parameters:
@@ -75,19 +97,43 @@ class stepList(MutableSequence):
             print('add Test  to StepList')
             self._l.append(other)
             return self
+
+def log_span(span):
+    logger.info(f"Span: {span.name}")
+    logger.info(f"  Trace ID: {span.context.trace_id}")
+    logger.info(f"  Span ID: {span.context.span_id}")
+    for key, value in span.attributes.items():
+        logger.info(f"  Attribute: {key} = {value}")
+
 class Pipeline:
     def __init__(self,inherite =False):
         #self.name = self.set_varname()
         if not inherite:
             self.name = varname()
+            self.tracer_name = f"{__name__}.{self.name}"
+            self.__init_tracer__()
         #self.input = input
-
+        self.inherite = inherite
         self.parents =[]
         self.childs: list[Step]= []
 
         self.steps = []
         self.outputs = dict()
         self.curent_id = None
+
+    def __init_tracer__(self):
+        resource = Resource(attributes={
+            SERVICE_NAME: f"Pipeline-{self.name}"
+        })
+        provider = TracerProvider(resource=resource)
+
+        exporter = ConsoleSpanExporter()
+
+        processor = BatchSpanProcessor(SilentExporter())
+        provider.add_span_processor(processor)
+
+        trace.set_tracer_provider(provider)
+        self.tracer = trace.get_tracer(f"{self.tracer_name}")
 
     def set_varname(self):
         from varname import varname
@@ -107,16 +153,30 @@ class Pipeline:
     async def start(self,input, run_id=None):
         self.outputs = dict()
         run_id = uuid.uuid4()
-        return await self.run(input, run_id)
+
+        with self.tracer.start_as_current_span(f"Pipeline :{self.name}") as span:
+            span.set_attribute("run_id", str(run_id))
+            log_span(span)
+
+            self.tracer_context = context.get_current()
+            return await self.run(input, run_id)
     
     async def run(self,input, run_id=None):
         if self.curent_id != run_id:
             self.curent_id = run_id
             self.outputs = dict()
+
+        if not self.inherite:
+            token = context.attach(self.tracer_context)
+    
         for child in self.childs:
+            if asyncio.iscoroutine(input):
+                input = await input
             result = await child.run(input, child.input_name, run_id)
 
             self.outputs = self.outputs | result
+        if not self.inherite:
+            context.detach(token)
 
         return  self.outputs
 
@@ -143,8 +203,8 @@ class Pipeline:
 
     def __add__(self, other:Step|stepList):
         '''
-        handle to add / merge many node
-        create a Steplist objet
+        Handle to add / merge many node
+        Create a Steplist objet
         '''
         if isinstance(self, stepList):
             self.append(other)
@@ -155,7 +215,27 @@ class Pipeline:
         else:
             return stepList([self,other])
 
+def sync_step_trace(tracer_name_func):
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            tracer = trace.get_tracer(tracer_name_func())
+            with tracer.start_as_current_span(func.__name__) as span:
+                span.set_attribute("function_name", func.__name__)
+                return func(*args, **kwargs)
+        return wrapper
+    return decorator
 
+def async_step_trace(tracer_name_func):
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(*args, **kwargs):
+            tracer = trace.get_tracer(tracer_name_func())
+            with tracer.start_as_current_span(func.__name__) as span:
+                span.set_attribute("function_name", func.__name__)
+                return await func(*args, **kwargs)
+        return  wrapper
+    return decorator
 
 
 class Step(Pipeline):
@@ -167,12 +247,23 @@ class Step(Pipeline):
         super().__init__(inherite=True)
 
 
-        self.f = function
+
         self.parameters = parameters or Parameters()
         self._output = None
         self.input_name = input_name
-        self.is_async = asyncio.iscoroutinefunction(self.f)
+        self.is_async = asyncio.iscoroutinefunction(function)
+
+        tracer_name_func = lambda : self.tracer_name
+
+        self.f = async_step_trace(tracer_name_func)(function) if self.is_async else sync_step_trace(tracer_name_func)(function)
         self.__future_output = asyncio.Future()
+
+    @property
+    def tracer_name(self):
+        if type(self.parents[0]) is Pipeline:
+            return self.parents[0].tracer_name
+        else:
+            return None
 
     def set_params(self, parameters: Parameters):
         self.parameters.args = parameters.args
@@ -185,28 +276,38 @@ class Step(Pipeline):
         return await self.__future_output
 
     async def run(self,input_value,input_name:str, run_id):
-        if self.input_name == "first_args":
-            args = [input_value] + self.parameters.args
-            kwargs = self.parameters.kwargs
+
+        if not hasattr(self,'tracer'):
+            self.tracer = self.parents[0].tracer
+        with self.tracer.start_as_current_span(f"Step :{self.name}") as span:
+            #span.set_attribute("function_name", self.f.__name__)
+            if isinstance (self.parents[0],Step):
+                span.set_attribute("parent", self.parents[0].name)
+            span.set_attribute("run_id", str(run_id))
+            span.set_attribute("input_name", input_name)
+            span.set_attribute("function", self.f.__name__)
+            log_span(span)
+            if self.input_name == "first_args":
+                args = [input_value] + self.parameters.args
+                kwargs = self.parameters.kwargs
+            else:
+                args = []
+                kwargs = self.parameters.kwargs | {input_name: input_value}
+
             if self.is_async:
                 self._output = await self.f(*args, **kwargs)
-            else:
-                self._output = await asyncio.to_thread(self.f, *args, **kwargs)
-        else:
-            kwargs = self.parameters.kwargs | {input_name: input_value}
-            if self.is_async:
-                self._output = await self.f(**kwargs)
-            else:
-                self._output = await asyncio.to_thread(self.f, **kwargs)
 
-        self.__future_output.set_result(self.output)
+            else:
+                self._output = self.f(*args, **kwargs)
 
-        if self.childs:
-            #result = await asyncio.gather(*[step.run(step.input,self.output,run_id) for step in self.steps])
-            result = await super().run(self.output,run_id)
-            return result
-        else : 
-            return {self.name:self.output}
+            self.__future_output.set_result(self._output)
+
+            if self.childs:
+                #result = await asyncio.gather(*[step.run(step.input,self.output,run_id) for step in self.steps])
+                result = await super().run(self.output,run_id)
+                return result
+            else : 
+                return {self.name:self.output}
         
 
     def __repr__(self):
