@@ -20,7 +20,7 @@ from conf import compose, initialize
 from omegaconf import DictConfig, OmegaConf
 import os
 
-from nlp_fonctions import transcribe, parse_whisperx_output, format_for_output, spell_correct, apply_parse_and_reformat
+from nlp_steps import transcribe, parse_whisperx_output, format_for_output, spell_correct, apply_parse_and_reformat
 
 initialize(config_path="config")
 cfg = compose(config_name="local")

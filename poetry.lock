@@ -1034,6 +1034,20 @@ requests = "*"
 setuptools = "*"
 
 [[package]]
+name = "executing"
+version = "2.0.1"
+description = "Get the currently executing AST node of a frame, and other information"
+optional = false
+python-versions = ">=3.5"
+files = [
+    {file = "executing-2.0.1-py2.py3-none-any.whl", hash = "sha256:eac49ca94516ccc753f9fb5ce82603156e590b27525a8bc32cce8ae302eb61bc"},
+    {file = "executing-2.0.1.tar.gz", hash = "sha256:35afe2ce3affba8ee97f2d69927fa823b08b472b7b994e36a52a964b93d16147"},
+]
+
+[package.extras]
+tests = ["asttokens (>=2.1.0)", "coverage", "coverage-enable-subprocess", "ipython", "littleutils", "pytest", "rich"]
+
+[[package]]
 name = "extra-streamlit-components"
 version = "0.1.71"
 description = "An all-in-one place, to find complex or just natively unavailable components on streamlit."
@@ -5884,6 +5898,23 @@ socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
 zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
+name = "varname"
+version = "0.13.1"
+description = "Dark magics about variable names in python."
+optional = false
+python-versions = "<4.0,>=3.8"
+files = [
+    {file = "varname-0.13.1-py3-none-any.whl", hash = "sha256:f70f58e2b85584daa4fe6d4f90c5fdd4bf314e5a60b0bd5865bc79da0f404729"},
+    {file = "varname-0.13.1.tar.gz", hash = "sha256:3d3ae868936c908d81e0bef19b29d2f21e9a60247097c9ed39678522cd678c0c"},
+]
+
+[package.dependencies]
+executing = ">=2.0,<3.0"
+
+[package.extras]
+all = ["asttokens (==2.*)", "pure_eval (==0.*)"]
+
+[[package]]
 name = "wasabi"
 version = "1.1.3"
 description = "A lightweight console printing and formatting toolkit"
@@ -6172,4 +6203,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "e68266094c9486bb257e524adb5e829ce0f8e1270b8d3a6357330aa833405700"
+content-hash = "e7ec6697c545722f95b9822240660a961fa6256b5a0dc65dd1d71a4a58fa6d94"

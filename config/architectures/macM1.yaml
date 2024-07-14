@@ -1,0 +1,3 @@
+device : mps
+batch_size : 16
+compute_type : float32

@@ -1,12 +1,7 @@
 
 from LLM_inf import ParallelLLMInference
 
-async def  llm_inference(c_transcription_list :list,
-                  llm_model_name :str, 
-                  api_key :str, 
-                  hf_model_name :str, 
-                  max_tokens :int,
-                  max_concurrent_requests :int, 
+async def  llm_inference(
                   system_prompt_path :str, 
                   system_placeholder: str,
                   user_prompt_path :str)->None:
@@ -19,7 +14,6 @@ async def  llm_inference(c_transcription_list :list,
                                             "la correction orthographique", 
                                             "services/prompt_normalisation_v0.txt"
                                             )
-    c_llm_enhanced_transcription_list = c_llm_inference.LLM_inference(c_transcription_list)
-    c_verbatim_output = format_for_output(apply_parse_and_reformat(c_llm_enhanced_transcription_list))
+    inflist = c_llm_inference.LLM_inference(c_transcription_list)
+    return format_for_output(apply_parse_and_reformat(inflist))
 
-    st.session_state["c_verbatim"] = c_verbatim_output

@@ -4,7 +4,7 @@ import whisperx
 import torch
 import os
 import gc
-from app import transcribe
+from main import transcribe
 
 def transcribe(audio_file_path, model_name, device, language, compute_type, batch_size):
     model = whisperx.load_model(model_name, device, language=language, compute_type=compute_type)

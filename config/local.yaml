@@ -1,17 +1,32 @@
 
 defaults : 
   - llm_api : llm_studio
-device : cuda
-batch_size : 16
-compute_type : float16
+  - credentials : user1
+  - architectures : macM1
+
 model_name : large-v2
 senators_file_path : services/senateurs_name_last.txt
 #llm_model_name : meta-llama-3-8b-instruct
 #hf_model_name : openlm-research/open_llama_3b
 langage : fr
-max_tokens : 3500
+max_tokens : 1024
 max_concurrent_requests : 10
-
+system_prompt_path : services/system_prompt.txt
+user_prompt_path : services/user_prompt.txt
+normalisation_prompt_path : services/prompt_normalisation_v0.txt
+system_placeholder : rédaction de compte rendu
 
 epi : fra-Latn-p
 nlp : fr_core_news_lg
+
+prompts : 
+  system : services/system_prompt.txt
+  user : services/user_prompt.txt
+  normalisation : services/prompt_normalisation_v0.txt
+  cri : services/cri_prompt.txt
+  cra : services/cra_prompt.txt
+  cred : services/cred_prompt.txt
+
+placeholders : 
+  redaction : rédaction de compte rendu
+  correction : "la correction orthographique" 
