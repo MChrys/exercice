@@ -2,10 +2,10 @@ from __future__ import annotations
 import asyncio
 import uuid
 import functools
-
+from datetime import datetime
 from varname import varname
 
-from typing import MutableSequence, TypeVar
+from typing import MutableSequence, TypeVar, Sequence
 from dataclasses import dataclass, field
 from typing import List, Dict, Any
 
@@ -13,12 +13,25 @@ from typing import List, Dict, Any
 from opentelemetry import trace
 from opentelemetry.trace import Span 
 from opentelemetry import context  
-from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace import TracerProvider, ReadableSpan
 from opentelemetry.sdk.trace.export import ConsoleSpanExporter, BatchSpanProcessor
 from opentelemetry.sdk.resources import SERVICE_NAME, Resource
 from opentelemetry.trace.propagation.tracecontext import TraceContextTextMapPropagator
 from opentelemetry.sdk.trace.export import SpanExporter, SpanExportResult
 
+import logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+
+def log_span(span):
+    logger.info(f"Span: {span.name}")
+    logger.info(f"  Trace ID: {span.context.trace_id}")
+    #logger.info(f"  Trace Name: {span.context.trace_name}")
+    
+    logger.info(f"  Span ID: {span.context.span_id}")
+    for key, value in span.attributes.items():
+        logger.info(f"  Attribute: {key} = {value}")
 class SilentExporter(SpanExporter):
     def export(self, spans):
         return SpanExportResult.SUCCESS
@@ -26,9 +39,46 @@ class SilentExporter(SpanExporter):
     def shutdown(self):
         pass
 
-import logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
+def format_duration(seconds):
+    hours, remainder = divmod(seconds, 3600)
+    minutes, seconds = divmod(remainder, 60)
+    if hours > 0:
+        return f"{int(hours)}h {int(minutes)}m {seconds:.3f}s"
+    elif minutes > 0:
+        return f"{int(minutes)}m {seconds:.3f}s"
+    else:
+        return f"{seconds:.3f}s"
+
+class DetailedConsoleSpanExporter(SpanExporter):
+    def export(self, spans: Sequence[ReadableSpan]) -> SpanExportResult:
+        for span in sorted(spans, key=lambda span: span.start_time):
+            start_time = datetime.fromtimestamp(span.start_time / 1e9)
+            end_time = datetime.fromtimestamp(span.end_time / 1e9)
+            duration_seconds = (span.end_time - span.start_time) / 1e9
+            
+            logger.info(f"Span: {span.name}")
+            logger.info(f"  Trace ID: {span.context.trace_id}")
+            logger.info(f"  Span ID: {span.context.span_id}")
+            logger.info(f"  Parent ID: {span.parent.span_id if span.parent else None}")
+            logger.info(f"  Start time: {start_time.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]}")
+            logger.info(f"  End time: {end_time.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]}")
+            logger.info(f"  Duration: {format_duration(duration_seconds)}")
+            logger.info("  Attributes:")
+            for key, value in span.attributes.items():
+                logger.info(f"    {key}: {value}")
+            logger.info("  Events:")
+            for event in span.events:
+                event_time = datetime.fromtimestamp(event.timestamp / 1e9)
+                event_offset = (event.timestamp - span.start_time) / 1e9
+                logger.info(f"    {event.name} at {event_time.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]} (+{format_duration(event_offset)}):")
+                for key, value in event.attributes.items():
+                    logger.info(f"      {key}: {value}")
+            logger.info("")
+        return SpanExportResult.SUCCESS
+
+    def shutdown(self):
+        pass
+
 
 @dataclass
 class Parameters:
@@ -98,12 +148,7 @@ class stepList(MutableSequence):
             self._l.append(other)
             return self
 
-def log_span(span):
-    logger.info(f"Span: {span.name}")
-    logger.info(f"  Trace ID: {span.context.trace_id}")
-    logger.info(f"  Span ID: {span.context.span_id}")
-    for key, value in span.attributes.items():
-        logger.info(f"  Attribute: {key} = {value}")
+
 
 class Pipeline:
     def __init__(self,inherite =False):
@@ -127,9 +172,7 @@ class Pipeline:
         })
         provider = TracerProvider(resource=resource)
 
-        exporter = ConsoleSpanExporter()
-
-        processor = BatchSpanProcessor(SilentExporter())
+        processor = BatchSpanProcessor(DetailedConsoleSpanExporter())
         provider.add_span_processor(processor)
 
         trace.set_tracer_provider(provider)
@@ -156,10 +199,18 @@ class Pipeline:
 
         with self.tracer.start_as_current_span(f"Pipeline :{self.name}") as span:
             span.set_attribute("run_id", str(run_id))
-            log_span(span)
+            #log_span(span)
 
             self.tracer_context = context.get_current()
-            return await self.run(input, run_id)
+            try:
+                result = await self.run(input, run_id)
+            except Exception as e:
+                span.record_exception(e)
+                raise
+            finally:
+                span.add_event(f"Pipeline : {self.name} execution completed")
+                span.add_event(f"output : {result}")
+            
     
     async def run(self,input, run_id=None):
         if self.curent_id != run_id:
@@ -169,16 +220,28 @@ class Pipeline:
         if not self.inherite:
             token = context.attach(self.tracer_context)
     
-        for child in self.childs:
-            if asyncio.iscoroutine(input):
-                input = await input
-            result = await child.run(input, child.input_name, run_id)
 
-            self.outputs = self.outputs | result
-        if not self.inherite:
-            context.detach(token)
+        try:
+            for child in self.childs:
+                if asyncio.iscoroutine(input):
+                    input = await input
+                result = await child.run(input, child.input_name, run_id)
 
-        return  self.outputs
+                if isinstance(result, dict):
+                    for key, value in result.items():
+                        if asyncio.iscoroutine(value):
+                            self.outputs[key] = await value
+                        else:
+                            self.outputs[key] = value
+                else:
+                    self.outputs[child.name] = result
+
+                input = await child.wait_for_output()
+
+            return self.outputs
+        finally:
+            if not self.inherite:
+                context.detach(token)
 
 
     def __rshift__(self, other:Step|stepList):
@@ -222,6 +285,7 @@ def sync_step_trace(tracer_name_func):
             tracer = trace.get_tracer(tracer_name_func())
             with tracer.start_as_current_span(func.__name__) as span:
                 span.set_attribute("function_name", func.__name__)
+                span.add_event(f"func called with value: { {"args": str(args), "kwargs": str(kwargs)}} ")
                 return func(*args, **kwargs)
         return wrapper
     return decorator
@@ -230,9 +294,11 @@ def async_step_trace(tracer_name_func):
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(*args, **kwargs):
+            trace_name = tracer_name_func()
             tracer = trace.get_tracer(tracer_name_func())
             with tracer.start_as_current_span(func.__name__) as span:
                 span.set_attribute("function_name", func.__name__)
+                span.add_event(f"func called with value: { {"args": str(args), "kwargs": str(kwargs)}} ")
                 return await func(*args, **kwargs)
         return  wrapper
     return decorator
@@ -244,6 +310,7 @@ class Step(Pipeline):
                   parameters:Parameters=None,
                   input_name:str="first_args"):
         self.name = varname()
+        self.__future_output = asyncio.Future()
         super().__init__(inherite=True)
 
 
@@ -256,14 +323,23 @@ class Step(Pipeline):
         tracer_name_func = lambda : self.tracer_name
 
         self.f = async_step_trace(tracer_name_func)(function) if self.is_async else sync_step_trace(tracer_name_func)(function)
-        self.__future_output = asyncio.Future()
+
+    def is_output_ready(self):
+        return self.__future_output.done()
+
+    def cancel_output(self):
+        if not self.__future_output.done():
+            self.__future_output.cancel()
 
     @property
     def tracer_name(self):
-        if type(self.parents[0]) is Pipeline:
-            return self.parents[0].tracer_name
+        if type(parent :=self.parents[0]) is Pipeline:
+            self._tracer_name = parent.tracer_name
+            return parent.tracer_name
+        elif hasattr(parent,'_tracer_name'):
+            return parent._tracer_name
         else:
-            return None
+            return parent.tracer_name
 
     def set_params(self, parameters: Parameters):
         self.parameters.args = parameters.args
@@ -274,6 +350,11 @@ class Step(Pipeline):
     @property
     async def output(self):
         return await self.__future_output
+
+
+    async def wait_for_output(self):
+        await self.__future_output
+        return self.__future_output.result()
 
     async def run(self,input_value,input_name:str, run_id):
 
@@ -286,28 +367,31 @@ class Step(Pipeline):
             span.set_attribute("run_id", str(run_id))
             span.set_attribute("input_name", input_name)
             span.set_attribute("function", self.f.__name__)
-            log_span(span)
+            #log_span(span)
             if self.input_name == "first_args":
                 args = [input_value] + self.parameters.args
                 kwargs = self.parameters.kwargs
             else:
                 args = []
                 kwargs = self.parameters.kwargs | {input_name: input_value}
+            try:    
+                if self.is_async:
+                    self._output = await self.f(*args, **kwargs)
 
-            if self.is_async:
-                self._output = await self.f(*args, **kwargs)
-
-            else:
-                self._output = self.f(*args, **kwargs)
+                else:
+                    self._output = await asyncio.to_thread(self.f, *args, **kwargs)
+            except Exception as e:
+                self.__future_output.set_exception(e)
+                raise
 
             self.__future_output.set_result(self._output)
 
             if self.childs:
                 #result = await asyncio.gather(*[step.run(step.input,self.output,run_id) for step in self.steps])
-                result = await super().run(self.output,run_id)
+                result = await super().run(self._output,run_id)
                 return result
             else : 
-                return {self.name:self.output}
+                return {self.name:self._output}
         
 
     def __repr__(self):

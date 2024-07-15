@@ -123,10 +123,10 @@ def read_json_file(data_dir):
 
 def transcribe(audio_file_path, model_name, device, language, compute_type, batch_size):
     asr_options=dict(
-        max_new_tokens=128,  # Vous pouvez ajuster cette valeur selon vos besoins
-        clip_timestamps="0",  # Ou une autre valeur appropriée
-        hallucination_silence_threshold=0.2,  # Ajustez selon vos besoins
-        hotwords=[]  # Liste de mots-clés, si nécessaire
+        max_new_tokens=128,
+        clip_timestamps="0",
+        hallucination_silence_threshold=0.2,
+        hotwords=[]
     )
     model = whisperx.load_model(model_name, 
                                 device, 
@@ -207,12 +207,8 @@ def apply_parse_and_reformat(transcription_list):
 def transcribe_docker(audio_file_path, model_name, device, language, compute_type, batch_size):
     client = docker.from_env()
     
-    # Obtenir le chemin absolu du répertoire courant
     current_dir = os.path.abspath(os.path.dirname(__file__))
 
-    # Exécuter en mode async
-    
-    # Exécuter le conteneur Docker
     container = client.containers.run(
         'whisperx-transcriber',
         command=f"/data/{os.path.basename(audio_file_path)}",
@@ -222,15 +218,13 @@ def transcribe_docker(audio_file_path, model_name, device, language, compute_typ
         stderr=True
     )
 
-    
-    # Récupérer et parser la sortie
     output = container.decode('utf-8')
     try:
         result = json.loads(output)
         return result
     except json.JSONDecodeError:
-        print("Erreur dans la sortie de WhisperX:", output)
-        raise Exception("Échec de la transcription")
+        print("Error in WhisperX output:", output)
+        raise Exception("Transcription failed")
     
 
 
