@@ -82,8 +82,6 @@ class DetailedConsoleSpanExporter(SpanExporter):
     def shutdown(self):
         pass
 
-    def shutdown(self):
-        pass
 
 
 @dataclass

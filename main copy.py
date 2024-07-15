@@ -17,7 +17,7 @@ from nlp_steps import (transcribe,
                        spell_correct, 
                        step_llm_inference)
 
-#initialize(config_path="config")
+initialize(config_path="config")
 cfg = compose(config_name="local")
 api_key = cfg["llm_api"]["api_key"]
 llm_model_name = cfg["llm_api"]["llm_model_name"]
@@ -112,13 +112,14 @@ async def main():
 
 
             llm_workflow >> transcription >> parse_transcription >> formatted_verbatim >> c_transcription_list 
-            llm_workflow | c_transcription_list >> c_verbatim_output + parsed_cri + parsed_cra + parsed_cred
+            llm_workflow | c_transcription_list >> c_verbatim_output >> parsed_cri + parsed_cra + parsed_cred
 
-            await llm_workflow.start(audio_path)
+            result = asyncio.create_task(llm_workflow.start(audio_path))
             st.session_state["verbatim"] =  await formatted_verbatim.output
             st.session_state["c_verbatim"] = await c_verbatim_output.output
             st.session_state["c_cri"] = await parsed_cri.output
             st.session_state["c_cra"] = await parsed_cra.output
+            await result
 
  
     
