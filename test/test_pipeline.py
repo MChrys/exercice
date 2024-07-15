@@ -1,4 +1,4 @@
-from pipeline import Pipeline, Step
+from workflows.pipeline import Pipeline, Step
 from asyncio import run
 def voo(val: int):
     return "voo"

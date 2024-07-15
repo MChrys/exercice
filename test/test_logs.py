@@ -1,6 +1,6 @@
 import asyncio
 import logging
-from pipeline import Pipeline, Step, Parameters
+from workflows.pipeline import Pipeline, Step
 from opentelemetry import trace
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')

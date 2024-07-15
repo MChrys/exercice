@@ -1,31 +1,13 @@
 import asyncio
 import httpx
 import random
-import re
 import time
 import aiofiles
 from tqdm.asyncio import tqdm_asyncio
 from transformers import LlamaTokenizerFast
 from langchain.prompts import PromptTemplate
 from openai import AsyncOpenAI
-from hydra import compose, initialize
-from omegaconf import DictConfig, OmegaConf
-import io
-import re
-import streamlit as st
-import pathlib
-import os
-import spacy
-import epitran
-import json
-import streamlit_authenticator as stauth
-import yaml
-import whisperx
-import torch
-import gc
-from yaml.loader import SafeLoader
-from collections import defaultdict
-from similarity.jarowinkler import JaroWinkler
+from opentelemetry import trace
 
 
 class AsyncResultDict(dict):
@@ -66,6 +48,8 @@ class ParallelLLMInference:
                  system_prompt_path, 
                  system_placeholder, 
                  user_prompt_path):
+        span = trace.get_current_span()
+        span.add_event("Initializing ParallelLLMInference")
         self.client = AsyncOpenAI(
             base_url=base_url,
             api_key=exaion_api_key,
@@ -77,17 +61,16 @@ class ParallelLLMInference:
         self.exaion_model_name = exaion_model_name 
         self.system_prompt_path = system_prompt_path
         self.user_prompt_path = user_prompt_path
-        #self.normalisation_prompt_path = normalisation_prompt_path
-
         self.system_placeholder = system_placeholder
 
-
     def chunk_speech(self,text):
-
+        span = trace.get_current_span()
+        span.add_event("Starting speech chunking")
         chunks = [[]] 
         prev = 0
         tokens = self.tokenizer.encode(text, add_special_tokens=False)
         if len(tokens) <= self.max_tokens * 0.9:
+            span.add_event(f"Text fits in one chunk => direct return {len(tokens)} tokens")
             return [text]
         end_of_sentence_tokens = set([self.tokenizer.encode('test.', add_special_tokens=False)[-1],
                                      self.tokenizer.encode('test!', add_special_tokens=False)[-1],
@@ -106,16 +89,22 @@ class ParallelLLMInference:
                 chunks.append([])
             chunks[-1].extend(tokens[prev:i+1])
 
+        span.add_event(f"Speech chunking completed. Number of chunks: {len(chunks)}")
         return [self.tokenizer.decode(chunk, add_special_tokens=False)for chunk in chunks]
     
     async def get_prompt_from_file(self, file_path):
+        span = trace.get_current_span()
+        span.add_event(f"Reading prompt from file: {file_path}")
         async with aiofiles.open(file_path, 'r', encoding='utf-8') as file:
-            return await file.read()
+            content = await file.read()
+        span.add_event("Prompt file read successfully")
+        return content
 
     async def infer_llm(self, text, system_prompt_path, system_placeholder, user_prompt_path):
+        span = trace.get_current_span()
+        span.add_event("Starting LLM inference")
         async with self.semaphore:
             system_prompt_template = await self.get_prompt_from_file(system_prompt_path)
-            #normalisation_template = await self.get_prompt_from_file(normalisation_path)
             user_prompt = await self.get_prompt_from_file(user_prompt_path)
 
             system_prompt = PromptTemplate.from_template(system_prompt_template).format(system_value=system_placeholder)
@@ -127,6 +116,7 @@ class ParallelLLMInference:
             for attempt in range(retries):
                 wait_time = backoff_factor * (2 ** attempt) + random.uniform(0, 1)
                 try:
+                    span.add_event(f"Attempt {attempt + 1} to call LLM API")
                     response = await self.client.chat.completions.create(
                         model=self.exaion_model_name,
                         messages=[
@@ -137,26 +127,34 @@ class ParallelLLMInference:
                         max_tokens=self.max_tokens
                     )
                     x = response.choices[0].message.content.strip()
+                    span.add_event("LLM API call successful")
                     return response.choices[0].message.content.strip()
                 except (httpx.HTTPStatusError, asyncio.TimeoutError, httpx.RemoteProtocolError) as e:
-                    print(f"Error: {e}, retrying in {wait_time:.2f} seconds...")
+                    span.add_event(f"Error: {e}, retrying in {wait_time:.2f} seconds...")
                     await asyncio.sleep(wait_time)
                 except Exception as e:
-                    print(f"Unexpected error: {e}, retrying in {wait_time:.2f} seconds...")
+                    span.add_event(f"Unexpected error: {e}, retrying in {wait_time:.2f} seconds...")
+
                     await asyncio.sleep(wait_time)
+            span.add_event("Max retries exceeded for API call")
             raise Exception("Max retries exceeded for API call")
     
     async def queue_api_calls(self, chunks, pbar):
+        span = trace.get_current_span()
+        span.add_event("Queueing API calls")
         tasks = [
             self.infer_llm(chunk, self.system_prompt_path, self.system_placeholder, self.user_prompt_path)
             for chunk in chunks
         ]
         responses = await asyncio.gather(*tasks)
         pbar.update(len(responses))
+        span.add_event(f"API calls completed. Number of responses: {len(responses)}")
         return " ".join(responses).strip()
     
 
     async def parallel_inference(self, segments):
+        span = trace.get_current_span()
+        span.add_event("Starting parallel inference")
         tasks = []
         processed_segments = []
         chunks_process = [(len(chunks := self.chunk_speech(segment["text"])), chunks,segment["speaker"]) for segment in segments]
@@ -174,16 +172,18 @@ class ParallelLLMInference:
                 tasks.append(future)
 
         await asyncio.gather(*tasks)
-
+        span.add_event("Parallel inference completed")
         return processed_segments
 
 
     async def LLM_inference(self, segments):
+        span = trace.get_current_span()
+        span.add_event("Starting LLM inference")
         start = time.time()
         results = await self.parallel_inference(segments)
-        # results = [{k: v.strip() if k == "text" else v for k, v in r.items()} for r in results]
         end = time.time()
-        print(f"Processing time: {end - start} seconds")
+        processing_time = end - start
+        span.add_event(f"Processing time: {processing_time} seconds")
         return results
 
 

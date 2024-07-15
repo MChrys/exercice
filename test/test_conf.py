@@ -16,12 +16,12 @@ from yaml.loader import SafeLoader
 from collections import defaultdict
 from similarity.jarowinkler import JaroWinkler
 from pydub import AudioSegment
-from LLM_inf import ParallelLLMInference
-from conf import compose, initialize
+from workflows.LLM_inf import ParallelLLMInference
+from test_conf import compose, initialize
 from omegaconf import DictConfig, OmegaConf
 import os
 
-from nlp_steps import transcribe, parse_whisperx_output, format_for_output, spell_correct, apply_parse_and_reformat
+from workflows.nlp_steps import transcribe, parse_whisperx_output, format_for_output, spell_correct, apply_parse_and_reformat
 
 initialize(config_path="config")
 cfg = compose(config_name="local")

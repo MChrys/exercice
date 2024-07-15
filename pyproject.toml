@@ -2,8 +2,10 @@
 name = "exercise"
 version = "0.1.0"
 description = ""
-authors = [""]
+authors = ["MChrys <chrys.beltran@outlook.fr>"]
 readme = "README.md"
+
+
 
 [tool.poetry.dependencies]
 python = "^3.12"
@@ -34,7 +36,8 @@ opentelemetry-sdk = "^1.25.0"
 opentelemetry-instrumentation = "^0.46b0"
 
 
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+after-build = "python -m spacy download fr_core_news_lg"
+

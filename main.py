@@ -1,45 +1,22 @@
-import io
-import re
 import streamlit as st
 import pathlib
-import os
 import spacy
 import epitran
-import json
 import streamlit_authenticator as stauth
-import yaml
-import whisperx
-import torch
-import gc
-from yaml.loader import SafeLoader
-from collections import defaultdict
-from similarity.jarowinkler import JaroWinkler
+
+
 from pydub import AudioSegment
-from LLM_inf import ParallelLLMInference
-from conf import compose, initialize
-from omegaconf import DictConfig, OmegaConf
 import os
+import asyncio
+from config import cfg
+from workflows.workflowsLLM import (llm_workflow,
+                                   formatted_verbatim,
+                                   c_verbatim_output,
+                                   parsed_cri,
+                                   parsed_cra,
+                                   parsed_cred)
 
-from nlp_steps import transcribe, parse_whisperx_output, format_for_output, spell_correct, apply_parse_and_reformat
 
-initialize(config_path="config")
-cfg = compose(config_name="local")
-api_key = cfg["llm_api"]["api_key"]
-llm_model_name = cfg["llm_api"]["llm_model_name"]
-base_url = cfg["llm_api"]["base_url"]
-device = cfg["device"]
-batch_size = cfg["batch_size"]
-compute_type = cfg["compute_type"]
-model_name = cfg["model_name"]
-senators_file_path = cfg["senators_file_path"]
-
-hf_model_name = cfg["hf_model_name"]
-max_tokens = cfg["max_tokens"]
-max_concurrent_requests = cfg["max_concurrent_requests"]
-language = cfg["language"]
-jarowinkler = JaroWinkler()
-epi = epitran.Epitran(cfg["epi"])
-nlp = spacy.load(cfg["nlp"])
 
 
 st.set_page_config(layout="wide")
@@ -51,22 +28,18 @@ st.session_state["c_cred"] = ''
 
 st.markdown("<h1 style='text-align: center; color: grey;'>Outil d'aide à la génération du CRI, CRED et CRA</h1>", unsafe_allow_html=True)
 
-# Authentification
-with open('credentials.yaml') as file:
-    config = yaml.load(file, Loader=SafeLoader)
-
 authenticator = stauth.Authenticate(
-    config['credentials'],
-    config['cookie']['name'],
-    config['cookie']['key'],
-    config['cookie']['expiry_days'],
-    config['preauthorized']
+    cfg['credentials']['credentials'],
+    cfg['credentials']['cookie']['name'],
+    cfg['credentials']['cookie']['key'],
+    cfg['credentials']['cookie']['expiry_days'],
+    cfg['credentials']['preauthorized']
 )
 
 
 
 
-def main():
+async def main():
     # File uploader
     audio_path = None
     percent_complete = 0
@@ -85,84 +58,17 @@ def main():
                 audio_path_wav = audio_path.with_suffix('.wav')
                 sound.export(audio_path_wav, format="wav", parameters=["-ar", "16000", "-ac", "1", "-ab", "32k"])
                 audio_path = audio_path_wav
-            w_result = transcribe(audio_path, 
-                                  model_name,
-                                  device,
-                                  language,
-                                  compute_type,
-                                  batch_size
-                                  )
-            transcription_list = parse_whisperx_output(w_result)
 
-            # Appliquer parse_text_between_cr_tags et reformater
-            formatted_verbatim = format_for_output(transcription_list,
-                                                   
-                                                   )
-            st.session_state["verbatim"] = formatted_verbatim
 
-            c_transcription_list = spell_correct(transcription_list,
-                                                  senators_file_path, 
-                                                  epi, 
-                                                  nlp, 
-                                                  jarowinkler, 
-                                                  verbose=True)
+            result = asyncio.create_task(llm_workflow.start(audio_path))
+            st.session_state["verbatim"] =  await formatted_verbatim.output
+            st.session_state["c_verbatim"] = await c_verbatim_output.output
+            st.session_state["c_cri"] = await parsed_cri.output
+            st.session_state["c_cra"] = await parsed_cra.output
+            st.session_state["c_cred"] = await parsed_cred.output
+            await result
 
-            c_llm_inference = ParallelLLMInference(base_url,
-                                                   llm_model_name,
-                                                   api_key, 
-                                                   hf_model_name, 
-                                                   max_tokens, 
-                                                   max_concurrent_requests, 
-                                                   "services/system_prompt.txt", 
-                                                   "la correction orthographique", 
-                                                   "services/prompt_normalisation_v0.txt"
-                                                   )
-            c_llm_enhanced_transcription_list = c_llm_inference.LLM_inference(c_transcription_list)
-            c_verbatim_output = format_for_output(apply_parse_and_reformat(c_llm_enhanced_transcription_list))
-
-            st.session_state["c_verbatim"] = c_verbatim_output
-
-            cri_llm_inferance = ParallelLLMInference(base_url,
-                                                      llm_model_name, 
-                                                      api_key, 
-                                                      hf_model_name, 
-                                                     max_tokens, 
-                                                     max_concurrent_requests, 
-                                                     "services/system_prompt.txt", 
-                                                     "la rédaction de compte rendu", 
-                                                     "services/CRI_prompt.txt"
-                                                     )
-            cri_llm_transcription_list = cri_llm_inferance.LLM_inference(c_transcription_list)
-            parsed_cri = format_for_output(apply_parse_and_reformat(cri_llm_transcription_list))
-            st.session_state["c_cri"] = parsed_cri
-
-            cra_llm_inferance = ParallelLLMInference(base_url,
-                                                      llm_model_name, 
-                                                      api_key, 
-                                                      hf_model_name, 
-                                                     max_tokens, 
-                                                     max_concurrent_requests, 
-                                                     "services/system_prompt.txt", 
-                                                     "la rédaction de compte rendu", 
-                                                     "services/CRA_prompt.txt"
-                                                     )
-            cra_llm_transcription_list = cra_llm_inferance.LLM_inference(c_transcription_list)
-            parsed_cra = format_for_output(apply_parse_and_reformat(cra_llm_transcription_list))
-            st.session_state["c_cra"] = parsed_cra
-
-            cred_llm_inferance = ParallelLLMInference(base_url,
-                                                      llm_model_name, 
-                                                      api_key, 
-                                                      hf_model_name, 
-                                                      max_tokens, 
-                                                      max_concurrent_requests, 
-                                                      "services/system_prompt.txt", 
-                                                      "la rédaction de compte rendu", 
-                                                      "services/CRED_prompt.txt"
-                                                      )
-            cred_llm_transcription_list = cred_llm_inferance.LLM_inference(c_transcription_list)
-            parsed_cred = format_for_output(apply_parse_and_reformat(cred_llm_transcription_list))
-            st.session_state["c_cred"] = parsed_cred
+ 
     
     if audio_path :
         with col2:
@@ -196,6 +102,6 @@ if __name__ == "__main__":
     if st.session_state["authentication_status"]:
         authenticator.logout()
         st.write(f'Bienvenue *{st.session_state["name"]}*')
-        main()
+        asyncio.run(main())
 
 
