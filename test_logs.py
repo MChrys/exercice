@@ -35,16 +35,16 @@ async def main():
         pipeline_future = asyncio.create_task(pipe.start(2))
         
 
-        print("step1 output: ======>", await step1.output)
-        print("step2 output: ======>", await step2.output)
-        print("step3 output: ======>", await step3.output)
+        logger.info(f"step1 output: ======> {await step1.output}")
+        logger.info(f"step2 output: ======> {await step2.output}")
+        logger.info(f"step3 output: ======> {await step3.output}")
         
 
         result = await pipeline_future
         logger.info(f"pipeline result: {result}")
-        print(result)
+        logger.info(result)
         for step_name, value in result.items():
-            print(f"{step_name} final output: ======> {value}")
+            logger.info(f"{step_name} final output: ======> {value}")
     except asyncio.CancelledError:
         logger.info("Pipeline execution was cancelled")
     except Exception as e:

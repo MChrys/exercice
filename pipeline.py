@@ -17,7 +17,7 @@ from opentelemetry.sdk.trace import TracerProvider, ReadableSpan
 from opentelemetry.sdk.trace.export import ConsoleSpanExporter, BatchSpanProcessor
 from opentelemetry.sdk.resources import SERVICE_NAME, Resource
 from opentelemetry.trace.propagation.tracecontext import TraceContextTextMapPropagator
-from opentelemetry.sdk.trace.export import SpanExporter, SpanExportResult
+from opentelemetry.sdk.trace.export import SpanExporter, SpanExportResult, SimpleSpanProcessor
 
 import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -51,30 +51,36 @@ def format_duration(seconds):
 
 class DetailedConsoleSpanExporter(SpanExporter):
     def export(self, spans: Sequence[ReadableSpan]) -> SpanExportResult:
-        for span in sorted(spans, key=lambda span: span.start_time):
-            start_time = datetime.fromtimestamp(span.start_time / 1e9)
-            end_time = datetime.fromtimestamp(span.end_time / 1e9)
-            duration_seconds = (span.end_time - span.start_time) / 1e9
-            
-            logger.info(f"Span: {span.name}")
-            logger.info(f"  Trace ID: {span.context.trace_id}")
-            logger.info(f"  Span ID: {span.context.span_id}")
-            logger.info(f"  Parent ID: {span.parent.span_id if span.parent else None}")
-            logger.info(f"  Start time: {start_time.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]}")
-            logger.info(f"  End time: {end_time.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]}")
-            logger.info(f"  Duration: {format_duration(duration_seconds)}")
-            logger.info("  Attributes:")
-            for key, value in span.attributes.items():
-                logger.info(f"    {key}: {value}")
-            logger.info("  Events:")
-            for event in span.events:
-                event_time = datetime.fromtimestamp(event.timestamp / 1e9)
-                event_offset = (event.timestamp - span.start_time) / 1e9
-                logger.info(f"    {event.name} at {event_time.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]} (+{format_duration(event_offset)}):")
-                for key, value in event.attributes.items():
-                    logger.info(f"      {key}: {value}")
-            logger.info("")
+        for span in spans:
+            self._export_span(span)
         return SpanExportResult.SUCCESS
+
+    def _export_span(self, span: ReadableSpan):
+        start_time = datetime.fromtimestamp(span.start_time / 1e9)
+        end_time = datetime.fromtimestamp(span.end_time / 1e9)
+        duration_seconds = (span.end_time - span.start_time) / 1e9
+        
+        logger.info(f"Span: {span.name}")
+        logger.info(f"  Trace ID: {span.context.trace_id}")
+        logger.info(f"  Span ID: {span.context.span_id}")
+        logger.info(f"  Parent ID: {span.parent.span_id if span.parent else None}")
+        logger.info(f"  Start time: {start_time.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]}")
+        logger.info(f"  End time: {end_time.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]}")
+        logger.info(f"  Duration: {format_duration(duration_seconds)}")
+        logger.info("  Attributes:")
+        for key, value in span.attributes.items():
+            logger.info(f"    {key}: {value}")
+        logger.info("  Events:")
+        for event in span.events:
+            event_time = datetime.fromtimestamp(event.timestamp / 1e9)
+            event_offset = (event.timestamp - span.start_time) / 1e9
+            logger.info(f"    {event.name} at {event_time.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]} (+{format_duration(event_offset)}):")
+            for key, value in event.attributes.items():
+                logger.info(f"      {key}: {value}")
+        logger.info("")
+
+    def shutdown(self):
+        pass
 
     def shutdown(self):
         pass
@@ -172,7 +178,7 @@ class Pipeline:
         })
         provider = TracerProvider(resource=resource)
 
-        processor = BatchSpanProcessor(DetailedConsoleSpanExporter())
+        processor = SimpleSpanProcessor(DetailedConsoleSpanExporter())
         provider.add_span_processor(processor)
 
         trace.set_tracer_provider(provider)
@@ -204,6 +210,7 @@ class Pipeline:
             self.tracer_context = context.get_current()
             try:
                 result = await self.run(input, run_id)
+                return result 
             except Exception as e:
                 span.record_exception(e)
                 raise
