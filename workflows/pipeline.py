@@ -189,8 +189,8 @@ class AsyncDict(dict):
                 self[key] = await value
 
 class AsyncTaskIterator:
-    def __init__(self, tasks):
-        self.tasks = tasks
+    def __init__(self, children,tasks):
+        self.task_to_child = {task: child for task, child in zip(tasks, children)}
         self.iter = iter(asyncio.as_completed(tasks))
 
     def __aiter__(self):
@@ -198,11 +198,19 @@ class AsyncTaskIterator:
 
     async def __anext__(self):
         try:
-            task = next(self.iter)
+            task = await next(self.iter)
+
+
+            if isinstance(task, dict):
+                if set(task.keys()) == {"child", "result"}:
+                    return task["child"], task["result"]
+                else :
+                    return None ,task
             result = await task
-            if isinstance(result, dict):
-                return result
-            return task
+            child = self.task_to_child[task]
+            
+            result = await child.wait_for_output()
+            return child, result
         except StopIteration:
             raise StopAsyncIteration
 
@@ -304,12 +312,13 @@ class Pipeline:
                 task = asyncio.create_task(child.run(child_input, child.input_name, run_id))
                 tasks.append(task)
 
-            async for result in AsyncTaskIterator(tasks):
+
+            async for child, result in AsyncTaskIterator(self.childs,tasks):
                 span.add_event("Awaiting task")
 
                 
 
-                span.add_event(f"Awaiting coroutine for result: {result}")
+                #span.add_event(f"Awaiting coroutine for result: {result}")
                 if isinstance(result, dict):
                     for key, value in result.items():
                         if asyncio.iscoroutine(value):
@@ -318,10 +327,10 @@ class Pipeline:
                         else:
                             self.outputs[key] = value
                 else:
-                    result = await result
+                    #result = await result
                     self.outputs[child.name] = result
 
-                child_input = await child.wait_for_output()
+                #child_input = await child.wait_for_output()
 
             return self.outputs
         finally:
@@ -339,7 +348,7 @@ class Pipeline:
                 self.origin.steps.append(step)
 
                 step.depth = self.depth + 1
-                step.place = i
+                step.place = i + len(self.childs)
 
                 self.childs.append(step)
                 step.parents.append(self)
@@ -450,6 +459,7 @@ def async_step_trace(tracer_name_func):
                 span.set_attribute("function_name", func.__name__)
                 funcname = func.__name__
                 #span.add_event(f"func called with value: { {"args": str(args), "kwargs": str(kwargs)}} ")
+
                 result = await func(*args, **kwargs)
  
                 file_name =f"{depth}_{place}_{step_name}__{func.__name__}"
@@ -551,7 +561,7 @@ class Step(Pipeline):
                 result = await super().run(self._output,run_id)
                 return result
             else : 
-                return {self.name:self._output}
+                return {"child":self,"result":{self.name:self._output}}
         
 
     def __repr__(self):

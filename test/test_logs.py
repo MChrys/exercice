@@ -29,9 +29,9 @@ async def main():
     step1 = Step(func)
     step2 = Step(async_func)
     step3 = Step(func)
-    step4 = Step(transcribe_empty)
+    #step4 = Step(transcribe_empty)
 
-    pipe >> step1 >> step2 >> step3 >> step4
+    pipe >> step1 >> step2 >> step3 #>> step4
     
     try:
 
@@ -44,8 +44,7 @@ async def main():
         
 
         result = await pipeline_future
-        logger.info(f"pipeline result: {result}")
-        logger.info(result)
+
         for step_name, value in result.items():
             logger.info(f"{step_name} final output: ======> {value}")
     except asyncio.CancelledError:
