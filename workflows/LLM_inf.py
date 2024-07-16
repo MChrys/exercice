@@ -126,7 +126,7 @@ class ParallelLLMInference:
                         stream=False,
                         max_tokens=self.max_tokens
                     )
-                    x = response.choices[0].message.content.strip()
+
                     span.add_event("LLM API call successful")
                     return response.choices[0].message.content.strip()
                 except (httpx.HTTPStatusError, asyncio.TimeoutError, httpx.RemoteProtocolError) as e:
@@ -160,8 +160,8 @@ class ParallelLLMInference:
         #chunks_process = [(len(chunks := self.chunk_speech(segment["text"])), chunks,segment["speaker"]) for segment in segments]
         chunks_process = []
         for segment in segments:
-            text = segment.get("text")
-            speaker = segment.get("speaker")
+            text = segment["text"]
+            speaker = segment["speaker"]
             
             if not isinstance(text, str):
                 raise TypeError(f"Expected 'text' to be a string, but got {type(text).__name__}")

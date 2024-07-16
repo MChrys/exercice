@@ -1,0 +1,841 @@
+2024-07-16 15:03:40,369 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: serialize_output
+2024-07-16 15:03:40,371 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:03:40,372 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 18277495538874162680
+2024-07-16 15:03:40,372 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 8269798880643950107
+2024-07-16 15:03:40,372 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:03:33.974
+2024-07-16 15:03:40,373 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:03:40.365
+2024-07-16 15:03:40,374 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 6.390s
+2024-07-16 15:03:40,374 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:03:40,375 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:03:40,375 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting output serialization at 2024-07-16 15:03:33.974 (+0.000s):
+2024-07-16 15:03:40,375 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Serialized JSON output at 2024-07-16 15:03:40.360 (+6.386s):
+2024-07-16 15:03:40,376 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_path: results/2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d/1_0_transcribe__transcribe_empty.json
+2024-07-16 15:03:40,376 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_name: 1_0_transcribe__transcribe_empty.json
+2024-07-16 15:03:40,376 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_id: 6650962976
+2024-07-16 15:03:40,376 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished output serialization at 2024-07-16 15:03:40.362 (+6.388s):
+2024-07-16 15:03:40,376 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:03:40,377 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: transcribe_empty
+2024-07-16 15:03:40,377 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:03:40,377 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 8269798880643950107
+2024-07-16 15:03:40,377 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 6981934930120198920
+2024-07-16 15:03:40,377 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:03:33.854
+2024-07-16 15:03:40,378 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:03:40.377
+2024-07-16 15:03:40,378 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 6.523s
+2024-07-16 15:03:40,378 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:03:40,378 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     function_name: transcribe_empty
+2024-07-16 15:03:40,378 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:03:40,378 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting empty transcription at 2024-07-16 15:03:33.854 (+0.000s):
+2024-07-16 15:03:40,379 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading transcription file at 2024-07-16 15:03:33.854 (+0.000s):
+2024-07-16 15:03:40,379 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Sampling transcription list at 2024-07-16 15:03:33.972 (+0.118s):
+2024-07-16 15:03:40,379 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Empty transcription completed at 2024-07-16 15:03:33.972 (+0.118s):
+2024-07-16 15:03:40,379 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:03:41,759 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: serialize_output
+2024-07-16 15:03:41,760 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:03:41,760 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 7551799723122855396
+2024-07-16 15:03:41,760 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 5189423236019124076
+2024-07-16 15:03:41,760 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:03:41.749
+2024-07-16 15:03:41,760 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:03:41.759
+2024-07-16 15:03:41,760 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 0.010s
+2024-07-16 15:03:41,761 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:03:41,761 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:03:41,761 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting output serialization at 2024-07-16 15:03:41.749 (+0.000s):
+2024-07-16 15:03:41,761 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Serialized JSON output at 2024-07-16 15:03:41.759 (+0.010s):
+2024-07-16 15:03:41,761 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_path: results/2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d/2_0_parse_transcription__parse_whisperx_output.json
+2024-07-16 15:03:41,761 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_name: 2_0_parse_transcription__parse_whisperx_output.json
+2024-07-16 15:03:41,761 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_id: 6650955360
+2024-07-16 15:03:41,762 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished output serialization at 2024-07-16 15:03:41.759 (+0.010s):
+2024-07-16 15:03:41,762 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:03:41,762 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: parse_whisperx_output
+2024-07-16 15:03:41,762 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:03:41,762 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 5189423236019124076
+2024-07-16 15:03:41,762 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 208508284942135254
+2024-07-16 15:03:41,763 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:03:41.747
+2024-07-16 15:03:41,763 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:03:41.762
+2024-07-16 15:03:41,763 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 0.015s
+2024-07-16 15:03:41,763 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:03:41,763 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     function_name: parse_whisperx_output
+2024-07-16 15:03:41,763 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:03:41,763 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting to parse WhisperX output at 2024-07-16 15:03:41.747 (+0.000s):
+2024-07-16 15:03:41,764 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Key not found: 'speaker' at 2024-07-16 15:03:41.748 (+0.001s):
+2024-07-16 15:03:41,764 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished parsing WhisperX output at 2024-07-16 15:03:41.749 (+0.002s):
+2024-07-16 15:03:41,764 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:03:47,610 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: serialize_output
+2024-07-16 15:03:47,611 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:03:47,611 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 5364654933910142393
+2024-07-16 15:03:47,611 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 1722338836603777297
+2024-07-16 15:03:47,611 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:03:47.609
+2024-07-16 15:03:47,611 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:03:47.610
+2024-07-16 15:03:47,612 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 0.001s
+2024-07-16 15:03:47,612 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:03:47,612 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:03:47,613 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting output serialization at 2024-07-16 15:03:47.609 (+0.000s):
+2024-07-16 15:03:47,613 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Serialized string output at 2024-07-16 15:03:47.610 (+0.001s):
+2024-07-16 15:03:47,613 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_path: results/2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d/3_0_formatted_verbatim__format_for_output.txt
+2024-07-16 15:03:47,613 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_name: 3_0_formatted_verbatim__format_for_output.txt
+2024-07-16 15:03:47,613 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_id: 6650964544
+2024-07-16 15:03:47,613 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished output serialization at 2024-07-16 15:03:47.610 (+0.001s):
+2024-07-16 15:03:47,614 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:03:47,614 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: format_for_output
+2024-07-16 15:03:47,614 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:03:47,614 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 1722338836603777297
+2024-07-16 15:03:47,614 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 4934633530001874119
+2024-07-16 15:03:47,614 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:03:47.608
+2024-07-16 15:03:47,614 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:03:47.614
+2024-07-16 15:03:47,615 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 0.006s
+2024-07-16 15:03:47,616 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:03:47,616 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     function_name: format_for_output
+2024-07-16 15:03:47,616 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:03:47,617 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting to format output at 2024-07-16 15:03:47.608 (+0.000s):
+2024-07-16 15:03:47,617 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished formatting output at 2024-07-16 15:03:47.609 (+0.000s):
+2024-07-16 15:03:47,617 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:04:05,825 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: serialize_output
+2024-07-16 15:04:05,826 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:04:05,826 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 1531714538055036718
+2024-07-16 15:04:05,827 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 15115277880631639767
+2024-07-16 15:04:05,827 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:04:05.821
+2024-07-16 15:04:05,827 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:04:05.824
+2024-07-16 15:04:05,828 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 0.003s
+2024-07-16 15:04:05,828 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:04:05,828 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:04:05,828 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting output serialization at 2024-07-16 15:04:05.822 (+0.000s):
+2024-07-16 15:04:05,829 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Serialized string output at 2024-07-16 15:04:05.824 (+0.002s):
+2024-07-16 15:04:05,829 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_path: results/2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d/4_0_c_transcription_list__spell_correct.txt
+2024-07-16 15:04:05,829 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_name: 4_0_c_transcription_list__spell_correct.txt
+2024-07-16 15:04:05,829 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_id: 6763389536
+2024-07-16 15:04:05,830 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished output serialization at 2024-07-16 15:04:05.824 (+0.002s):
+2024-07-16 15:04:05,830 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:04:05,830 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: spell_correct
+2024-07-16 15:04:05,830 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:04:05,830 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 15115277880631639767
+2024-07-16 15:04:05,831 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 1908414924777901030
+2024-07-16 15:04:05,831 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:04:01.952
+2024-07-16 15:04:05,831 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:04:05.830
+2024-07-16 15:04:05,831 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 3.878s
+2024-07-16 15:04:05,831 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:04:05,831 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     function_name: spell_correct
+2024-07-16 15:04:05,832 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:04:05,832 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,832 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,832 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,833 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,833 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,833 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,833 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,834 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,834 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,834 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,834 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,837 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,837 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,837 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,837 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,838 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,838 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,838 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,839 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,839 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,839 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.815 (+3.863s):
+2024-07-16 15:04:05,839 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.815 (+3.864s):
+2024-07-16 15:04:05,840 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.815 (+3.864s):
+2024-07-16 15:04:05,840 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.815 (+3.864s):
+2024-07-16 15:04:05,840 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.815 (+3.864s):
+2024-07-16 15:04:05,840 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.816 (+3.864s):
+2024-07-16 15:04:05,841 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.816 (+3.864s):
+2024-07-16 15:04:05,841 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.816 (+3.864s):
+2024-07-16 15:04:05,841 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.816 (+3.864s):
+2024-07-16 15:04:05,841 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.816 (+3.864s):
+2024-07-16 15:04:05,842 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.816 (+3.864s):
+2024-07-16 15:04:05,842 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.816 (+3.864s):
+2024-07-16 15:04:05,842 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.816 (+3.864s):
+2024-07-16 15:04:05,842 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.816 (+3.864s):
+2024-07-16 15:04:05,843 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.816 (+3.864s):
+2024-07-16 15:04:05,843 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.816 (+3.864s):
+2024-07-16 15:04:05,843 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.816 (+3.864s):
+2024-07-16 15:04:05,843 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.816 (+3.864s):
+2024-07-16 15:04:05,844 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.816 (+3.864s):
+2024-07-16 15:04:05,844 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.816 (+3.864s):
+2024-07-16 15:04:05,844 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.816 (+3.864s):
+2024-07-16 15:04:05,844 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.816 (+3.865s):
+2024-07-16 15:04:05,845 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.816 (+3.865s):
+2024-07-16 15:04:05,845 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.816 (+3.865s):
+2024-07-16 15:04:05,845 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,845 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,845 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,846 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,846 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,846 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,847 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,847 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,847 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,848 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,848 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,848 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,848 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,849 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,849 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,849 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,849 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,849 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,850 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.817 (+3.865s):
+2024-07-16 15:04:05,850 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.817 (+3.866s):
+2024-07-16 15:04:05,850 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.817 (+3.866s):
+2024-07-16 15:04:05,850 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.817 (+3.866s):
+2024-07-16 15:04:05,851 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.817 (+3.866s):
+2024-07-16 15:04:05,851 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.817 (+3.866s):
+2024-07-16 15:04:05,852 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.817 (+3.866s):
+2024-07-16 15:04:05,852 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.817 (+3.866s):
+2024-07-16 15:04:05,852 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.817 (+3.866s):
+2024-07-16 15:04:05,852 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.817 (+3.866s):
+2024-07-16 15:04:05,852 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.817 (+3.866s):
+2024-07-16 15:04:05,853 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.817 (+3.866s):
+2024-07-16 15:04:05,853 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.817 (+3.866s):
+2024-07-16 15:04:05,853 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.817 (+3.866s):
+2024-07-16 15:04:05,853 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.817 (+3.866s):
+2024-07-16 15:04:05,853 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.817 (+3.866s):
+2024-07-16 15:04:05,854 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.817 (+3.866s):
+2024-07-16 15:04:05,854 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.818 (+3.866s):
+2024-07-16 15:04:05,854 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.818 (+3.866s):
+2024-07-16 15:04:05,854 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.818 (+3.866s):
+2024-07-16 15:04:05,854 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.818 (+3.866s):
+2024-07-16 15:04:05,855 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.818 (+3.866s):
+2024-07-16 15:04:05,855 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.818 (+3.866s):
+2024-07-16 15:04:05,855 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.818 (+3.866s):
+2024-07-16 15:04:05,855 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.818 (+3.866s):
+2024-07-16 15:04:05,855 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.818 (+3.866s):
+2024-07-16 15:04:05,855 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.818 (+3.866s):
+2024-07-16 15:04:05,856 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.818 (+3.866s):
+2024-07-16 15:04:05,856 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.818 (+3.866s):
+2024-07-16 15:04:05,856 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.818 (+3.866s):
+2024-07-16 15:04:05,856 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.818 (+3.866s):
+2024-07-16 15:04:05,856 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.818 (+3.866s):
+2024-07-16 15:04:05,857 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.818 (+3.866s):
+2024-07-16 15:04:05,857 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.818 (+3.866s):
+2024-07-16 15:04:05,857 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.818 (+3.866s):
+2024-07-16 15:04:05,857 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.818 (+3.867s):
+2024-07-16 15:04:05,857 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.818 (+3.867s):
+2024-07-16 15:04:05,862 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.818 (+3.867s):
+2024-07-16 15:04:05,862 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.818 (+3.867s):
+2024-07-16 15:04:05,862 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.818 (+3.867s):
+2024-07-16 15:04:05,862 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.818 (+3.867s):
+2024-07-16 15:04:05,863 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.818 (+3.867s):
+2024-07-16 15:04:05,863 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.818 (+3.867s):
+2024-07-16 15:04:05,863 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.818 (+3.867s):
+2024-07-16 15:04:05,863 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.818 (+3.867s):
+2024-07-16 15:04:05,863 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.818 (+3.867s):
+2024-07-16 15:04:05,864 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.818 (+3.867s):
+2024-07-16 15:04:05,864 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.818 (+3.867s):
+2024-07-16 15:04:05,864 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.818 (+3.867s):
+2024-07-16 15:04:05,864 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.818 (+3.867s):
+2024-07-16 15:04:05,864 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.819 (+3.867s):
+2024-07-16 15:04:05,864 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.819 (+3.867s):
+2024-07-16 15:04:05,865 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.819 (+3.867s):
+2024-07-16 15:04:05,865 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.819 (+3.867s):
+2024-07-16 15:04:05,865 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.819 (+3.867s):
+2024-07-16 15:04:05,865 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.819 (+3.867s):
+2024-07-16 15:04:05,865 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.819 (+3.867s):
+2024-07-16 15:04:05,865 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.819 (+3.867s):
+2024-07-16 15:04:05,866 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.819 (+3.867s):
+2024-07-16 15:04:05,866 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Correcting named entity at 2024-07-16 15:04:05.819 (+3.867s):
+2024-07-16 15:04:05,866 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished correcting named entity at 2024-07-16 15:04:05.819 (+3.867s):
+2024-07-16 15:04:05,866 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Cleaning person's name at 2024-07-16 15:04:05.819 (+3.867s):
+2024-07-16 15:04:05,866 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished cleaning person's name at 2024-07-16 15:04:05.819 (+3.867s):
+2024-07-16 15:04:05,867 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Printing corrections if verbose at 2024-07-16 15:04:05.819 (+3.867s):
+2024-07-16 15:04:05,867 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Applying corrections to transcription list at 2024-07-16 15:04:05.819 (+3.867s):
+2024-07-16 15:04:05,867 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Spell correction completed at 2024-07-16 15:04:05.819 (+3.867s):
+2024-07-16 15:04:05,867 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:04:05,870 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: Step 4-0 :c_transcription_list
+2024-07-16 15:04:05,870 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:04:05,870 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 1908414924777901030
+2024-07-16 15:04:05,871 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 4934633530001874119
+2024-07-16 15:04:05,871 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:04:01.949
+2024-07-16 15:04:05,871 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:04:05.869
+2024-07-16 15:04:05,871 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 3.921s
+2024-07-16 15:04:05,872 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:04:05,872 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     parent: formatted_verbatim
+2024-07-16 15:04:05,872 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     depth: 4
+2024-07-16 15:04:05,872 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     place: 0
+2024-07-16 15:04:05,872 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     step_name: c_transcription_list
+2024-07-16 15:04:05,873 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     run_id: 2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d
+2024-07-16 15:04:05,873 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     input_name: first_args
+2024-07-16 15:04:05,873 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     function: spell_correct
+2024-07-16 15:04:05,873 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:04:05,874 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:04:35,363 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: Step 3-0 :formatted_verbatim
+2024-07-16 15:04:35,364 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:04:35,364 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 4934633530001874119
+2024-07-16 15:04:35,364 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 208508284942135254
+2024-07-16 15:04:35,364 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:03:44.010
+2024-07-16 15:04:35,364 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:04:35.361
+2024-07-16 15:04:35,365 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 51.351s
+2024-07-16 15:04:35,365 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:04:35,366 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     parent: parse_transcription
+2024-07-16 15:04:35,366 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     depth: 3
+2024-07-16 15:04:35,367 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     place: 0
+2024-07-16 15:04:35,367 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     step_name: formatted_verbatim
+2024-07-16 15:04:35,367 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     run_id: 2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d
+2024-07-16 15:04:35,367 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     input_name: first_args
+2024-07-16 15:04:35,368 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     function: format_for_output
+2024-07-16 15:04:35,368 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:04:35,368 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:13:34,930 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: serialize_output
+2024-07-16 15:13:34,933 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:13:34,934 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 10909696598028190280
+2024-07-16 15:13:34,934 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 4648899825434290341
+2024-07-16 15:13:34,935 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:13:34.921
+2024-07-16 15:13:34,935 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:13:34.927
+2024-07-16 15:13:34,936 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 0.006s
+2024-07-16 15:13:34,937 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:13:34,937 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:13:34,938 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting output serialization at 2024-07-16 15:13:34.922 (+0.001s):
+2024-07-16 15:13:34,939 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Serialized string output at 2024-07-16 15:13:34.926 (+0.005s):
+2024-07-16 15:13:34,940 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_path: results/2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d/3_2_parsed_cred__step_llm_inference.txt
+2024-07-16 15:13:34,940 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_name: 3_2_parsed_cred__step_llm_inference.txt
+2024-07-16 15:13:34,941 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_id: 6763962304
+2024-07-16 15:13:34,942 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished output serialization at 2024-07-16 15:13:34.927 (+0.006s):
+2024-07-16 15:13:34,942 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:13:52,600 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: step_llm_inference
+2024-07-16 15:13:52,602 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:13:52,603 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 4648899825434290341
+2024-07-16 15:13:52,603 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 512791488629879134
+2024-07-16 15:13:52,604 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:03:52.339
+2024-07-16 15:13:52,604 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:13:52.599
+2024-07-16 15:13:52,604 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 10m 0.260s
+2024-07-16 15:13:52,605 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:13:52,605 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     function_name: step_llm_inference
+2024-07-16 15:13:52,605 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:13:52,606 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:10:04.334 (+6m 11.995s):
+2024-07-16 15:13:52,606 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:10:04.358 (+6m 12.019s):
+2024-07-16 15:13:52,606 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:10:04.362 (+6m 12.023s):
+2024-07-16 15:13:52,607 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:10:04.365 (+6m 12.025s):
+2024-07-16 15:13:52,607 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:04.367 (+6m 12.027s):
+2024-07-16 15:13:52,607 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cred_prompt.txt at 2024-07-16 15:10:04.367 (+6m 12.027s):
+2024-07-16 15:13:52,608 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:04.371 (+6m 12.032s):
+2024-07-16 15:13:52,608 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cred_prompt.txt at 2024-07-16 15:10:04.371 (+6m 12.032s):
+2024-07-16 15:13:52,608 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:04.374 (+6m 12.035s):
+2024-07-16 15:13:52,608 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:10:04.378 (+6m 12.039s):
+2024-07-16 15:13:52,609 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:04.456 (+6m 12.117s):
+2024-07-16 15:13:52,609 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:10:04.457 (+6m 12.117s):
+2024-07-16 15:13:52,609 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:10:08.708 (+6m 16.369s):
+2024-07-16 15:13:52,609 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:10:08.709 (+6m 16.369s):
+2024-07-16 15:13:52,610 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:10:08.711 (+6m 16.371s):
+2024-07-16 15:13:52,610 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:08.714 (+6m 16.374s):
+2024-07-16 15:13:52,610 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cred_prompt.txt at 2024-07-16 15:10:08.714 (+6m 16.374s):
+2024-07-16 15:13:52,614 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:08.716 (+6m 16.376s):
+2024-07-16 15:13:52,615 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:10:08.718 (+6m 16.379s):
+2024-07-16 15:13:52,615 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:11:04.570 (+7m 12.230s):
+2024-07-16 15:13:52,615 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:11:04.582 (+7m 12.243s):
+2024-07-16 15:13:52,617 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:11:04.585 (+7m 12.245s):
+2024-07-16 15:13:52,617 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:11:04.590 (+7m 12.251s):
+2024-07-16 15:13:52,618 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:11:04.591 (+7m 12.251s):
+2024-07-16 15:13:52,619 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:11:04.598 (+7m 12.259s):
+2024-07-16 15:13:52,619 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cred_prompt.txt at 2024-07-16 15:11:04.598 (+7m 12.259s):
+2024-07-16 15:13:52,619 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:11:04.599 (+7m 12.259s):
+2024-07-16 15:13:52,620 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cred_prompt.txt at 2024-07-16 15:11:04.599 (+7m 12.259s):
+2024-07-16 15:13:52,620 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:11:04.738 (+7m 12.398s):
+2024-07-16 15:13:52,620 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:11:04.738 (+7m 12.399s):
+2024-07-16 15:13:52,621 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:11:04.759 (+7m 12.419s):
+2024-07-16 15:13:52,622 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:11:04.759 (+7m 12.420s):
+2024-07-16 15:13:52,622 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:12:04.857 (+8m 12.517s):
+2024-07-16 15:13:52,622 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:12:04.857 (+8m 12.518s):
+2024-07-16 15:13:52,623 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:12:04.860 (+8m 12.521s):
+2024-07-16 15:13:52,623 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:12:04.864 (+8m 12.525s):
+2024-07-16 15:13:52,623 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cred_prompt.txt at 2024-07-16 15:12:04.864 (+8m 12.525s):
+2024-07-16 15:13:52,623 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:12:04.868 (+8m 12.528s):
+2024-07-16 15:13:52,624 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:12:04.870 (+8m 12.531s):
+2024-07-16 15:13:52,624 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:12:15.951 (+8m 23.611s):
+2024-07-16 15:13:52,624 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:12:15.952 (+8m 23.612s):
+2024-07-16 15:13:52,625 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:12:15.955 (+8m 23.616s):
+2024-07-16 15:13:52,625 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cred_prompt.txt at 2024-07-16 15:12:15.956 (+8m 23.616s):
+2024-07-16 15:13:52,626 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:12:15.958 (+8m 23.619s):
+2024-07-16 15:13:52,626 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:12:15.960 (+8m 23.620s):
+2024-07-16 15:13:52,626 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:13:05.848 (+9m 13.508s):
+2024-07-16 15:13:52,627 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:13:05.850 (+9m 13.511s):
+2024-07-16 15:13:52,627 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:13:05.853 (+9m 13.513s):
+2024-07-16 15:13:52,628 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:13:05.859 (+9m 13.520s):
+2024-07-16 15:13:52,628 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 4 at 2024-07-16 15:13:05.865 (+9m 13.526s):
+2024-07-16 15:13:52,629 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:13:05.865 (+9m 13.526s):
+2024-07-16 15:13:52,629 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:13:05.871 (+9m 13.532s):
+2024-07-16 15:13:52,629 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cred_prompt.txt at 2024-07-16 15:13:05.871 (+9m 13.532s):
+2024-07-16 15:13:52,630 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:13:05.874 (+9m 13.534s):
+2024-07-16 15:13:52,630 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:13:05.877 (+9m 13.538s):
+2024-07-16 15:13:52,630 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:13:15.819 (+9m 23.480s):
+2024-07-16 15:13:52,631 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:13:15.820 (+9m 23.481s):
+2024-07-16 15:13:52,631 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Parallel inference completed at 2024-07-16 15:13:15.824 (+9m 23.485s):
+2024-07-16 15:13:52,632 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing time: 559.0226349830627 seconds at 2024-07-16 15:13:15.835 (+9m 23.495s):
+2024-07-16 15:13:52,632 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM inference completed at 2024-07-16 15:13:15.835 (+9m 23.496s):
+2024-07-16 15:13:52,633 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting apply_parse_and_reformat function at 2024-07-16 15:13:15.836 (+9m 23.497s):
+2024-07-16 15:13:52,633 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:13:15.836 (+9m 23.497s):
+2024-07-16 15:13:52,633 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:13:15.838 (+9m 23.499s):
+2024-07-16 15:13:52,634 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:13:15.844 (+9m 23.504s):
+2024-07-16 15:13:52,634 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Parsed texts found, joining and stripping at 2024-07-16 15:13:15.844 (+9m 23.505s):
+2024-07-16 15:13:52,634 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:13:15.844 (+9m 23.505s):
+2024-07-16 15:13:52,635 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:13:15.844 (+9m 23.505s):
+2024-07-16 15:13:52,636 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:13:15.844 (+9m 23.505s):
+2024-07-16 15:13:52,636 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:13:15.844 (+9m 23.505s):
+2024-07-16 15:13:52,636 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:13:15.844 (+9m 23.505s):
+2024-07-16 15:13:52,637 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:13:15.844 (+9m 23.505s):
+2024-07-16 15:13:52,637 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:13:15.844 (+9m 23.505s):
+2024-07-16 15:13:52,638 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:13:15.844 (+9m 23.505s):
+2024-07-16 15:13:52,638 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:13:15.844 (+9m 23.505s):
+2024-07-16 15:13:52,640 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:13:15.844 (+9m 23.505s):
+2024-07-16 15:13:52,641 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:13:15.844 (+9m 23.505s):
+2024-07-16 15:13:52,641 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:13:15.845 (+9m 23.505s):
+2024-07-16 15:13:52,642 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:13:15.845 (+9m 23.505s):
+2024-07-16 15:13:52,642 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:13:15.845 (+9m 23.505s):
+2024-07-16 15:13:52,642 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:13:15.845 (+9m 23.505s):
+2024-07-16 15:13:52,642 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:13:15.845 (+9m 23.505s):
+2024-07-16 15:13:52,643 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:13:15.845 (+9m 23.505s):
+2024-07-16 15:13:52,643 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:13:15.845 (+9m 23.505s):
+2024-07-16 15:13:52,643 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:13:15.845 (+9m 23.505s):
+2024-07-16 15:13:52,644 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Parsed texts found, joining and stripping at 2024-07-16 15:13:15.845 (+9m 23.505s):
+2024-07-16 15:13:52,644 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:13:15.845 (+9m 23.506s):
+2024-07-16 15:13:52,644 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:13:15.845 (+9m 23.506s):
+2024-07-16 15:13:52,645 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:13:15.845 (+9m 23.506s):
+2024-07-16 15:13:52,645 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:13:15.845 (+9m 23.506s):
+2024-07-16 15:13:52,645 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:13:15.845 (+9m 23.506s):
+2024-07-16 15:13:52,646 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:13:15.846 (+9m 23.506s):
+2024-07-16 15:13:52,646 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:13:15.846 (+9m 23.506s):
+2024-07-16 15:13:52,646 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:13:15.846 (+9m 23.506s):
+2024-07-16 15:13:52,647 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:13:15.846 (+9m 23.507s):
+2024-07-16 15:13:52,647 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:13:15.846 (+9m 23.507s):
+2024-07-16 15:13:52,647 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:13:15.846 (+9m 23.507s):
+2024-07-16 15:13:52,648 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:13:15.846 (+9m 23.507s):
+2024-07-16 15:13:52,648 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:13:15.846 (+9m 23.507s):
+2024-07-16 15:13:52,649 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:13:15.846 (+9m 23.507s):
+2024-07-16 15:13:52,649 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:13:15.846 (+9m 23.507s):
+2024-07-16 15:13:52,649 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:13:15.846 (+9m 23.507s):
+2024-07-16 15:13:52,650 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:13:15.846 (+9m 23.507s):
+2024-07-16 15:13:52,650 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:13:15.846 (+9m 23.507s):
+2024-07-16 15:13:52,650 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:13:15.846 (+9m 23.507s):
+2024-07-16 15:13:52,650 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:13:15.846 (+9m 23.507s):
+2024-07-16 15:13:52,651 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:13:15.846 (+9m 23.507s):
+2024-07-16 15:13:52,651 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:13:15.846 (+9m 23.507s):
+2024-07-16 15:13:52,651 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:13:15.846 (+9m 23.507s):
+2024-07-16 15:13:52,651 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:13:15.846 (+9m 23.507s):
+2024-07-16 15:13:52,652 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:13:15.847 (+9m 23.508s):
+2024-07-16 15:13:52,652 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:13:15.847 (+9m 23.508s):
+2024-07-16 15:13:52,652 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:13:15.847 (+9m 23.508s):
+2024-07-16 15:13:52,652 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:13:15.847 (+9m 23.508s):
+2024-07-16 15:13:52,653 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:13:15.847 (+9m 23.508s):
+2024-07-16 15:13:52,653 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:13:15.847 (+9m 23.508s):
+2024-07-16 15:13:52,653 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:13:15.847 (+9m 23.508s):
+2024-07-16 15:13:52,654 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Parsed texts found, joining and stripping at 2024-07-16 15:13:15.847 (+9m 23.508s):
+2024-07-16 15:13:52,655 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:13:15.847 (+9m 23.508s):
+2024-07-16 15:13:52,655 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:13:15.848 (+9m 23.508s):
+2024-07-16 15:13:52,656 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:13:15.848 (+9m 23.508s):
+2024-07-16 15:13:52,656 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:13:15.848 (+9m 23.508s):
+2024-07-16 15:13:52,657 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:13:15.848 (+9m 23.508s):
+2024-07-16 15:13:52,657 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:13:15.848 (+9m 23.508s):
+2024-07-16 15:13:52,657 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:13:15.848 (+9m 23.508s):
+2024-07-16 15:13:52,657 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Parsed texts found, joining and stripping at 2024-07-16 15:13:15.848 (+9m 23.508s):
+2024-07-16 15:13:52,657 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished apply_parse_and_reformat function at 2024-07-16 15:13:15.848 (+9m 23.508s):
+2024-07-16 15:13:52,658 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting to format output at 2024-07-16 15:13:15.848 (+9m 23.508s):
+2024-07-16 15:13:52,658 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished formatting output at 2024-07-16 15:13:15.848 (+9m 23.509s):
+2024-07-16 15:13:52,658 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:14:02,697 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: Step 3-2 :parsed_cred
+2024-07-16 15:14:02,698 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:14:02,698 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 512791488629879134
+2024-07-16 15:14:02,698 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 208508284942135254
+2024-07-16 15:14:02,699 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:03:52.339
+2024-07-16 15:14:02,699 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:14:02.697
+2024-07-16 15:14:02,699 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 10m 10.358s
+2024-07-16 15:14:02,699 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:14:02,700 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     parent: parse_transcription
+2024-07-16 15:14:02,700 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     depth: 3
+2024-07-16 15:14:02,700 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     place: 2
+2024-07-16 15:14:02,700 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     step_name: parsed_cred
+2024-07-16 15:14:02,700 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     run_id: 2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d
+2024-07-16 15:14:02,701 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     input_name: first_args
+2024-07-16 15:14:02,701 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     function: step_llm_inference
+2024-07-16 15:14:02,701 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:14:02,701 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:16:14,649 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: serialize_output
+2024-07-16 15:16:14,651 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:16:14,651 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 9682736120261248348
+2024-07-16 15:16:14,652 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 13832182069231064873
+2024-07-16 15:16:14,652 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:16:14.639
+2024-07-16 15:16:14,653 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:16:14.647
+2024-07-16 15:16:14,654 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 0.008s
+2024-07-16 15:16:14,654 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:16:14,654 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:16:14,655 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting output serialization at 2024-07-16 15:16:14.639 (+0.001s):
+2024-07-16 15:16:14,655 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Serialized string output at 2024-07-16 15:16:14.647 (+0.008s):
+2024-07-16 15:16:14,656 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_path: results/2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d/3_0_parsed_cri__step_llm_inference.txt
+2024-07-16 15:16:14,656 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_name: 3_0_parsed_cri__step_llm_inference.txt
+2024-07-16 15:16:14,656 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_id: 6764701376
+2024-07-16 15:16:14,656 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished output serialization at 2024-07-16 15:16:14.647 (+0.008s):
+2024-07-16 15:16:14,657 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:16:17,413 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: step_llm_inference
+2024-07-16 15:16:17,413 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:16:17,414 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 13832182069231064873
+2024-07-16 15:16:17,414 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 2320101656607099496
+2024-07-16 15:16:17,414 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:03:44.013
+2024-07-16 15:16:17,414 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:16:17.412
+2024-07-16 15:16:17,415 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 12m 33.399s
+2024-07-16 15:16:17,415 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:16:17,415 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     function_name: step_llm_inference
+2024-07-16 15:16:17,415 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:16:17,416 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:09:59.973 (+6m 15.961s):
+2024-07-16 15:16:17,416 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:09:59.978 (+6m 15.966s):
+2024-07-16 15:16:17,416 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cri_prompt.txt at 2024-07-16 15:09:59.978 (+6m 15.966s):
+2024-07-16 15:16:17,416 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:09:59.981 (+6m 15.968s):
+2024-07-16 15:16:17,417 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:09:59.984 (+6m 15.972s):
+2024-07-16 15:16:17,417 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:10:04.338 (+6m 20.325s):
+2024-07-16 15:16:17,417 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:10:04.340 (+6m 20.327s):
+2024-07-16 15:16:17,418 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:10:04.343 (+6m 20.331s):
+2024-07-16 15:16:17,418 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:10:04.344 (+6m 20.331s):
+2024-07-16 15:16:17,418 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 2 at 2024-07-16 15:10:04.354 (+6m 20.341s):
+2024-07-16 15:16:17,418 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:10:04.354 (+6m 20.341s):
+2024-07-16 15:16:17,419 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:10:04.361 (+6m 20.349s):
+2024-07-16 15:16:17,419 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:10:04.364 (+6m 20.352s):
+2024-07-16 15:16:17,419 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:10:04.365 (+6m 20.353s):
+2024-07-16 15:16:17,419 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:04.370 (+6m 20.357s):
+2024-07-16 15:16:17,419 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cri_prompt.txt at 2024-07-16 15:10:04.370 (+6m 20.357s):
+2024-07-16 15:16:17,420 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:04.373 (+6m 20.361s):
+2024-07-16 15:16:17,420 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cri_prompt.txt at 2024-07-16 15:10:04.373 (+6m 20.361s):
+2024-07-16 15:16:17,420 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:04.411 (+6m 20.399s):
+2024-07-16 15:16:17,420 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cri_prompt.txt at 2024-07-16 15:10:04.412 (+6m 20.399s):
+2024-07-16 15:16:17,421 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:04.412 (+6m 20.400s):
+2024-07-16 15:16:17,421 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:10:04.413 (+6m 20.400s):
+2024-07-16 15:16:17,421 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:04.480 (+6m 20.467s):
+2024-07-16 15:16:17,421 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:10:04.480 (+6m 20.468s):
+2024-07-16 15:16:17,421 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:04.526 (+6m 20.513s):
+2024-07-16 15:16:17,422 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:10:04.527 (+6m 20.514s):
+2024-07-16 15:16:17,422 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:10:24.779 (+6m 40.767s):
+2024-07-16 15:16:17,422 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:10:24.780 (+6m 40.768s):
+2024-07-16 15:16:17,422 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:24.785 (+6m 40.773s):
+2024-07-16 15:16:17,423 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cri_prompt.txt at 2024-07-16 15:10:24.785 (+6m 40.773s):
+2024-07-16 15:16:17,423 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:24.787 (+6m 40.775s):
+2024-07-16 15:16:17,423 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:10:24.789 (+6m 40.777s):
+2024-07-16 15:16:17,423 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:11:04.542 (+7m 20.530s):
+2024-07-16 15:16:17,423 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:11:04.544 (+7m 20.531s):
+2024-07-16 15:16:17,424 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:11:04.553 (+7m 20.541s):
+2024-07-16 15:16:17,424 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:11:04.559 (+7m 20.546s):
+2024-07-16 15:16:17,424 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:11:04.566 (+7m 20.553s):
+2024-07-16 15:16:17,424 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:11:04.587 (+7m 20.575s):
+2024-07-16 15:16:17,425 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:11:04.591 (+7m 20.578s):
+2024-07-16 15:16:17,425 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:11:04.595 (+7m 20.582s):
+2024-07-16 15:16:17,425 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cri_prompt.txt at 2024-07-16 15:11:04.595 (+7m 20.582s):
+2024-07-16 15:16:17,425 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:11:04.597 (+7m 20.584s):
+2024-07-16 15:16:17,426 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cri_prompt.txt at 2024-07-16 15:11:04.597 (+7m 20.585s):
+2024-07-16 15:16:17,426 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:11:04.598 (+7m 20.585s):
+2024-07-16 15:16:17,426 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cri_prompt.txt at 2024-07-16 15:11:04.598 (+7m 20.586s):
+2024-07-16 15:16:17,427 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:11:04.600 (+7m 20.587s):
+2024-07-16 15:16:17,427 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:11:04.601 (+7m 20.589s):
+2024-07-16 15:16:17,427 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:11:04.678 (+7m 20.665s):
+2024-07-16 15:16:17,428 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:11:04.678 (+7m 20.666s):
+2024-07-16 15:16:17,428 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:11:04.718 (+7m 20.706s):
+2024-07-16 15:16:17,428 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:11:04.719 (+7m 20.706s):
+2024-07-16 15:16:17,428 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:11:16.525 (+7m 32.513s):
+2024-07-16 15:16:17,429 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 4 at 2024-07-16 15:11:16.527 (+7m 32.514s):
+2024-07-16 15:16:17,429 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:13:05.836 (+9m 21.824s):
+2024-07-16 15:16:17,429 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:13:05.846 (+9m 21.833s):
+2024-07-16 15:16:17,429 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:16:09.924 (+12m 25.912s):
+2024-07-16 15:16:17,429 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:16:09.928 (+12m 25.916s):
+2024-07-16 15:16:17,430 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Parallel inference completed at 2024-07-16 15:16:09.930 (+12m 25.917s):
+2024-07-16 15:16:17,430 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing time: 740.5909798145294 seconds at 2024-07-16 15:16:09.933 (+12m 25.920s):
+2024-07-16 15:16:17,430 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM inference completed at 2024-07-16 15:16:09.933 (+12m 25.921s):
+2024-07-16 15:16:17,430 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting apply_parse_and_reformat function at 2024-07-16 15:16:09.933 (+12m 25.921s):
+2024-07-16 15:16:17,431 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:16:09.933 (+12m 25.921s):
+2024-07-16 15:16:17,431 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:16:09.934 (+12m 25.921s):
+2024-07-16 15:16:17,431 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:16:09.934 (+12m 25.921s):
+2024-07-16 15:16:17,431 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:16:09.934 (+12m 25.922s):
+2024-07-16 15:16:17,432 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:16:09.934 (+12m 25.922s):
+2024-07-16 15:16:17,432 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:16:09.934 (+12m 25.922s):
+2024-07-16 15:16:17,432 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:16:09.934 (+12m 25.922s):
+2024-07-16 15:16:17,432 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:16:09.934 (+12m 25.922s):
+2024-07-16 15:16:17,432 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:16:09.934 (+12m 25.922s):
+2024-07-16 15:16:17,433 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:16:09.935 (+12m 25.922s):
+2024-07-16 15:16:17,433 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:16:09.935 (+12m 25.922s):
+2024-07-16 15:16:17,433 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Parsed texts found, joining and stripping at 2024-07-16 15:16:09.935 (+12m 25.922s):
+2024-07-16 15:16:17,433 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:16:09.935 (+12m 25.922s):
+2024-07-16 15:16:17,434 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:16:09.935 (+12m 25.922s):
+2024-07-16 15:16:17,434 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:16:09.935 (+12m 25.922s):
+2024-07-16 15:16:17,434 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:16:09.935 (+12m 25.922s):
+2024-07-16 15:16:17,434 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:16:09.935 (+12m 25.922s):
+2024-07-16 15:16:17,435 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:16:09.935 (+12m 25.922s):
+2024-07-16 15:16:17,435 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:16:09.935 (+12m 25.923s):
+2024-07-16 15:16:17,435 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:16:09.935 (+12m 25.923s):
+2024-07-16 15:16:17,435 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:16:09.935 (+12m 25.923s):
+2024-07-16 15:16:17,436 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:16:09.935 (+12m 25.923s):
+2024-07-16 15:16:17,436 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:16:09.935 (+12m 25.923s):
+2024-07-16 15:16:17,436 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:16:09.935 (+12m 25.923s):
+2024-07-16 15:16:17,436 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:16:09.935 (+12m 25.923s):
+2024-07-16 15:16:17,437 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:16:09.935 (+12m 25.923s):
+2024-07-16 15:16:17,437 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:16:09.935 (+12m 25.923s):
+2024-07-16 15:16:17,437 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:16:09.935 (+12m 25.923s):
+2024-07-16 15:16:17,438 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:16:09.935 (+12m 25.923s):
+2024-07-16 15:16:17,438 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:16:09.936 (+12m 25.923s):
+2024-07-16 15:16:17,438 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:16:09.936 (+12m 25.923s):
+2024-07-16 15:16:17,439 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:16:09.936 (+12m 25.923s):
+2024-07-16 15:16:17,439 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:16:09.936 (+12m 25.923s):
+2024-07-16 15:16:17,439 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:16:09.936 (+12m 25.923s):
+2024-07-16 15:16:17,440 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:16:09.936 (+12m 25.923s):
+2024-07-16 15:16:17,440 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:16:09.936 (+12m 25.923s):
+2024-07-16 15:16:17,441 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:16:09.936 (+12m 25.924s):
+2024-07-16 15:16:17,441 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:16:09.936 (+12m 25.924s):
+2024-07-16 15:16:17,441 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:16:09.936 (+12m 25.924s):
+2024-07-16 15:16:17,442 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:16:09.936 (+12m 25.924s):
+2024-07-16 15:16:17,442 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:16:09.936 (+12m 25.924s):
+2024-07-16 15:16:17,442 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:16:09.936 (+12m 25.924s):
+2024-07-16 15:16:17,442 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:16:09.936 (+12m 25.924s):
+2024-07-16 15:16:17,442 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Parsed texts found, joining and stripping at 2024-07-16 15:16:09.936 (+12m 25.924s):
+2024-07-16 15:16:17,443 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:16:09.936 (+12m 25.924s):
+2024-07-16 15:16:17,443 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:16:09.936 (+12m 25.924s):
+2024-07-16 15:16:17,443 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:16:09.937 (+12m 25.924s):
+2024-07-16 15:16:17,443 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:16:09.937 (+12m 25.924s):
+2024-07-16 15:16:17,444 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:16:09.937 (+12m 25.924s):
+2024-07-16 15:16:17,444 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:16:09.937 (+12m 25.924s):
+2024-07-16 15:16:17,444 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:16:09.937 (+12m 25.924s):
+2024-07-16 15:16:17,444 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:16:09.937 (+12m 25.924s):
+2024-07-16 15:16:17,445 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:16:09.937 (+12m 25.924s):
+2024-07-16 15:16:17,445 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:16:09.937 (+12m 25.924s):
+2024-07-16 15:16:17,445 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:16:09.937 (+12m 25.924s):
+2024-07-16 15:16:17,445 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:16:09.937 (+12m 25.924s):
+2024-07-16 15:16:17,446 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:16:09.937 (+12m 25.924s):
+2024-07-16 15:16:17,446 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:16:09.937 (+12m 25.924s):
+2024-07-16 15:16:17,446 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:16:09.937 (+12m 25.925s):
+2024-07-16 15:16:17,446 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:16:09.937 (+12m 25.925s):
+2024-07-16 15:16:17,446 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:16:09.937 (+12m 25.925s):
+2024-07-16 15:16:17,447 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:16:09.937 (+12m 25.925s):
+2024-07-16 15:16:17,447 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:16:09.938 (+12m 25.925s):
+2024-07-16 15:16:17,447 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:16:09.938 (+12m 25.925s):
+2024-07-16 15:16:17,448 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished apply_parse_and_reformat function at 2024-07-16 15:16:09.938 (+12m 25.925s):
+2024-07-16 15:16:17,448 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting to format output at 2024-07-16 15:16:09.938 (+12m 25.926s):
+2024-07-16 15:16:17,448 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished formatting output at 2024-07-16 15:16:09.939 (+12m 25.926s):
+2024-07-16 15:16:17,448 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:16:40,349 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: Step 3-0 :parsed_cri
+2024-07-16 15:16:40,350 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:16:40,350 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 2320101656607099496
+2024-07-16 15:16:40,350 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 208508284942135254
+2024-07-16 15:16:40,350 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:03:44.011
+2024-07-16 15:16:40,351 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:16:40.347
+2024-07-16 15:16:40,351 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 12m 56.336s
+2024-07-16 15:16:40,351 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:16:40,352 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     parent: parse_transcription
+2024-07-16 15:16:40,352 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     depth: 3
+2024-07-16 15:16:40,352 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     place: 0
+2024-07-16 15:16:40,353 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     step_name: parsed_cri
+2024-07-16 15:16:40,353 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     run_id: 2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d
+2024-07-16 15:16:40,353 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     input_name: first_args
+2024-07-16 15:16:40,353 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     function: step_llm_inference
+2024-07-16 15:16:40,353 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:16:40,354 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:17:47,808 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: serialize_output
+2024-07-16 15:17:47,809 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:17:47,809 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 1205850112573052353
+2024-07-16 15:17:47,809 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 15104567841031490863
+2024-07-16 15:17:47,810 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:17:47.805
+2024-07-16 15:17:47,810 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:17:47.807
+2024-07-16 15:17:47,811 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 0.002s
+2024-07-16 15:17:47,811 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:17:47,811 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:17:47,812 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting output serialization at 2024-07-16 15:17:47.805 (+0.000s):
+2024-07-16 15:17:47,812 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Serialized string output at 2024-07-16 15:17:47.806 (+0.002s):
+2024-07-16 15:17:47,812 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_path: results/2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d/3_1_parsed_cra__step_llm_inference.txt
+2024-07-16 15:17:47,812 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_name: 3_1_parsed_cra__step_llm_inference.txt
+2024-07-16 15:17:47,812 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -       file_id: 6763153664
+2024-07-16 15:17:47,813 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished output serialization at 2024-07-16 15:17:47.807 (+0.002s):
+2024-07-16 15:17:47,813 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:17:51,582 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: step_llm_inference
+2024-07-16 15:17:51,583 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:17:51,583 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 15104567841031490863
+2024-07-16 15:17:51,583 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 17677838218370808226
+2024-07-16 15:17:51,584 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:03:49.782
+2024-07-16 15:17:51,584 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:17:51.581
+2024-07-16 15:17:51,584 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 14m 1.800s
+2024-07-16 15:17:51,584 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:17:51,585 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     function_name: step_llm_inference
+2024-07-16 15:17:51,585 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:17:51,585 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:10:04.346 (+6m 14.565s):
+2024-07-16 15:17:51,586 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 2 at 2024-07-16 15:10:04.354 (+6m 14.572s):
+2024-07-16 15:17:51,586 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:10:04.354 (+6m 14.572s):
+2024-07-16 15:17:51,586 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:10:04.362 (+6m 14.580s):
+2024-07-16 15:17:51,586 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:04.369 (+6m 14.588s):
+2024-07-16 15:17:51,587 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cra_prompt.txt at 2024-07-16 15:10:04.369 (+6m 14.588s):
+2024-07-16 15:17:51,587 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:04.412 (+6m 14.630s):
+2024-07-16 15:17:51,587 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cra_prompt.txt at 2024-07-16 15:10:04.412 (+6m 14.630s):
+2024-07-16 15:17:51,587 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:04.437 (+6m 14.655s):
+2024-07-16 15:17:51,587 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:10:04.438 (+6m 14.656s):
+2024-07-16 15:17:51,588 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:04.505 (+6m 14.724s):
+2024-07-16 15:17:51,588 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:10:04.506 (+6m 14.724s):
+2024-07-16 15:17:51,588 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:10:57.529 (+7m 7.747s):
+2024-07-16 15:17:51,589 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:10:57.530 (+7m 7.748s):
+2024-07-16 15:17:51,589 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:10:57.532 (+7m 7.750s):
+2024-07-16 15:17:51,589 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:57.534 (+7m 7.753s):
+2024-07-16 15:17:51,589 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cra_prompt.txt at 2024-07-16 15:10:57.535 (+7m 7.753s):
+2024-07-16 15:17:51,589 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:10:57.536 (+7m 7.754s):
+2024-07-16 15:17:51,590 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:10:57.539 (+7m 7.758s):
+2024-07-16 15:17:51,590 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:11:04.556 (+7m 14.775s):
+2024-07-16 15:17:51,590 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:11:04.565 (+7m 14.783s):
+2024-07-16 15:17:51,590 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:11:04.568 (+7m 14.786s):
+2024-07-16 15:17:51,591 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:11:04.580 (+7m 14.799s):
+2024-07-16 15:17:51,591 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:11:04.580 (+7m 14.799s):
+2024-07-16 15:17:51,591 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:11:04.590 (+7m 14.808s):
+2024-07-16 15:17:51,591 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:11:04.590 (+7m 14.808s):
+2024-07-16 15:17:51,591 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:11:04.591 (+7m 14.810s):
+2024-07-16 15:17:51,592 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:11:04.595 (+7m 14.813s):
+2024-07-16 15:17:51,592 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cra_prompt.txt at 2024-07-16 15:11:04.595 (+7m 14.813s):
+2024-07-16 15:17:51,592 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:11:04.597 (+7m 14.816s):
+2024-07-16 15:17:51,592 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cra_prompt.txt at 2024-07-16 15:11:04.597 (+7m 14.816s):
+2024-07-16 15:17:51,592 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:11:04.599 (+7m 14.818s):
+2024-07-16 15:17:51,593 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cra_prompt.txt at 2024-07-16 15:11:04.599 (+7m 14.818s):
+2024-07-16 15:17:51,593 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:11:04.627 (+7m 14.846s):
+2024-07-16 15:17:51,593 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:11:04.628 (+7m 14.846s):
+2024-07-16 15:17:51,593 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:11:04.648 (+7m 14.867s):
+2024-07-16 15:17:51,594 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:11:04.649 (+7m 14.867s):
+2024-07-16 15:17:51,594 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:11:04.699 (+7m 14.917s):
+2024-07-16 15:17:51,594 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:11:04.700 (+7m 14.918s):
+2024-07-16 15:17:51,594 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:12:42.636 (+8m 52.854s):
+2024-07-16 15:17:51,594 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:12:42.637 (+8m 52.855s):
+2024-07-16 15:17:51,595 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:12:42.642 (+8m 52.861s):
+2024-07-16 15:17:51,595 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cra_prompt.txt at 2024-07-16 15:12:42.642 (+8m 52.861s):
+2024-07-16 15:17:51,595 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:12:42.647 (+8m 52.866s):
+2024-07-16 15:17:51,595 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:12:42.663 (+8m 52.882s):
+2024-07-16 15:17:51,596 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:12:56.231 (+9m 6.450s):
+2024-07-16 15:17:51,597 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 15:12:56.233 (+9m 6.451s):
+2024-07-16 15:17:51,597 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:12:56.237 (+9m 6.456s):
+2024-07-16 15:17:51,597 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Reading prompt from file: services/cra_prompt.txt at 2024-07-16 15:12:56.237 (+9m 6.456s):
+2024-07-16 15:17:51,597 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Prompt file read successfully at 2024-07-16 15:12:56.239 (+9m 6.458s):
+2024-07-16 15:17:51,598 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Attempt 1 to call LLM API at 2024-07-16 15:12:56.242 (+9m 6.460s):
+2024-07-16 15:17:51,598 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:13:05.863 (+9m 16.081s):
+2024-07-16 15:17:51,598 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:13:05.865 (+9m 16.083s):
+2024-07-16 15:17:51,598 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:13:05.866 (+9m 16.084s):
+2024-07-16 15:17:51,598 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 15:13:05.866 (+9m 16.085s):
+2024-07-16 15:17:51,599 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM API call successful at 2024-07-16 15:16:09.928 (+12m 20.146s):
+2024-07-16 15:17:51,599 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     API calls completed. Number of responses: 4 at 2024-07-16 15:16:09.929 (+12m 20.147s):
+2024-07-16 15:17:51,599 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Parallel inference completed at 2024-07-16 15:17:26.628 (+13m 36.847s):
+2024-07-16 15:17:51,599 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing time: 819.1264450550079 seconds at 2024-07-16 15:17:33.067 (+13m 43.286s):
+2024-07-16 15:17:51,600 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     LLM inference completed at 2024-07-16 15:17:37.512 (+13m 47.731s):
+2024-07-16 15:17:51,600 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting apply_parse_and_reformat function at 2024-07-16 15:17:41.788 (+13m 52.006s):
+2024-07-16 15:17:51,600 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:17:41.788 (+13m 52.006s):
+2024-07-16 15:17:51,600 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:17:41.788 (+13m 52.007s):
+2024-07-16 15:17:51,601 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:17:41.789 (+13m 52.007s):
+2024-07-16 15:17:51,601 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:17:41.789 (+13m 52.007s):
+2024-07-16 15:17:51,601 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:17:41.789 (+13m 52.007s):
+2024-07-16 15:17:51,601 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:17:41.789 (+13m 52.008s):
+2024-07-16 15:17:51,601 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:17:41.789 (+13m 52.008s):
+2024-07-16 15:17:51,602 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:17:41.789 (+13m 52.008s):
+2024-07-16 15:17:51,602 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:17:41.790 (+13m 52.008s):
+2024-07-16 15:17:51,602 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:17:41.790 (+13m 52.008s):
+2024-07-16 15:17:51,602 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:17:41.790 (+13m 52.008s):
+2024-07-16 15:17:51,603 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:17:41.790 (+13m 52.008s):
+2024-07-16 15:17:51,603 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:17:41.790 (+13m 52.009s):
+2024-07-16 15:17:51,603 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:17:41.790 (+13m 52.009s):
+2024-07-16 15:17:51,603 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:17:41.790 (+13m 52.009s):
+2024-07-16 15:17:51,604 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:17:41.790 (+13m 52.009s):
+2024-07-16 15:17:51,604 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:17:41.790 (+13m 52.009s):
+2024-07-16 15:17:51,604 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:17:41.790 (+13m 52.009s):
+2024-07-16 15:17:51,604 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:17:41.790 (+13m 52.009s):
+2024-07-16 15:17:51,604 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:17:41.791 (+13m 52.009s):
+2024-07-16 15:17:51,605 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:17:41.791 (+13m 52.009s):
+2024-07-16 15:17:51,605 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:17:41.791 (+13m 52.010s):
+2024-07-16 15:17:51,605 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:17:41.791 (+13m 52.010s):
+2024-07-16 15:17:51,605 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:17:41.791 (+13m 52.010s):
+2024-07-16 15:17:51,606 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:17:41.791 (+13m 52.010s):
+2024-07-16 15:17:51,606 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:17:41.791 (+13m 52.010s):
+2024-07-16 15:17:51,606 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:17:41.792 (+13m 52.010s):
+2024-07-16 15:17:51,606 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:17:41.792 (+13m 52.010s):
+2024-07-16 15:17:51,606 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:17:41.792 (+13m 52.010s):
+2024-07-16 15:17:51,607 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:17:41.792 (+13m 52.011s):
+2024-07-16 15:17:51,607 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:17:41.792 (+13m 52.011s):
+2024-07-16 15:17:51,607 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:17:41.792 (+13m 52.011s):
+2024-07-16 15:17:51,607 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:17:41.792 (+13m 52.011s):
+2024-07-16 15:17:51,607 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:17:41.792 (+13m 52.011s):
+2024-07-16 15:17:51,608 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:17:41.792 (+13m 52.011s):
+2024-07-16 15:17:51,608 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:17:41.793 (+13m 52.011s):
+2024-07-16 15:17:51,608 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:17:41.793 (+13m 52.011s):
+2024-07-16 15:17:51,608 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:17:41.793 (+13m 52.011s):
+2024-07-16 15:17:51,609 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:17:41.793 (+13m 52.011s):
+2024-07-16 15:17:51,609 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:17:41.793 (+13m 52.011s):
+2024-07-16 15:17:51,609 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:17:41.793 (+13m 52.011s):
+2024-07-16 15:17:51,609 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:17:41.793 (+13m 52.011s):
+2024-07-16 15:17:51,609 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:17:41.793 (+13m 52.011s):
+2024-07-16 15:17:51,610 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:17:41.793 (+13m 52.011s):
+2024-07-16 15:17:51,610 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:17:41.793 (+13m 52.011s):
+2024-07-16 15:17:51,610 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:17:41.793 (+13m 52.012s):
+2024-07-16 15:17:51,610 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:17:41.793 (+13m 52.012s):
+2024-07-16 15:17:51,611 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Parsed texts found, joining and stripping at 2024-07-16 15:17:41.793 (+13m 52.012s):
+2024-07-16 15:17:51,611 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:17:41.793 (+13m 52.012s):
+2024-07-16 15:17:51,611 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:17:41.793 (+13m 52.012s):
+2024-07-16 15:17:51,611 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:17:41.793 (+13m 52.012s):
+2024-07-16 15:17:51,611 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:17:41.793 (+13m 52.012s):
+2024-07-16 15:17:51,612 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:17:41.794 (+13m 52.012s):
+2024-07-16 15:17:51,612 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:17:41.794 (+13m 52.012s):
+2024-07-16 15:17:51,612 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:17:41.794 (+13m 52.012s):
+2024-07-16 15:17:51,612 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:17:41.794 (+13m 52.012s):
+2024-07-16 15:17:51,612 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:17:41.794 (+13m 52.012s):
+2024-07-16 15:17:51,613 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:17:41.794 (+13m 52.012s):
+2024-07-16 15:17:51,613 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:17:41.794 (+13m 52.012s):
+2024-07-16 15:17:51,613 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:17:41.794 (+13m 52.012s):
+2024-07-16 15:17:51,613 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Processing individual transcription at 2024-07-16 15:17:41.794 (+13m 52.012s):
+2024-07-16 15:17:51,614 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting text normalization and parsing at 2024-07-16 15:17:41.794 (+13m 52.012s):
+2024-07-16 15:17:51,614 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished text normalization and parsing at 2024-07-16 15:17:41.794 (+13m 52.013s):
+2024-07-16 15:17:51,614 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     No parsed texts found, setting empty string at 2024-07-16 15:17:41.794 (+13m 52.013s):
+2024-07-16 15:17:51,614 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished apply_parse_and_reformat function at 2024-07-16 15:17:41.794 (+13m 52.013s):
+2024-07-16 15:17:51,615 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Starting to format output at 2024-07-16 15:17:41.795 (+13m 52.013s):
+2024-07-16 15:17:51,615 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Finished formatting output at 2024-07-16 15:17:41.796 (+13m 52.014s):
+2024-07-16 15:17:51,615 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:18:24,150 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: Step 3-1 :parsed_cra
+2024-07-16 15:18:24,151 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:18:24,152 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 17677838218370808226
+2024-07-16 15:18:24,152 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 208508284942135254
+2024-07-16 15:18:24,152 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:03:49.781
+2024-07-16 15:18:24,152 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:18:24.149
+2024-07-16 15:18:24,153 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 14m 34.368s
+2024-07-16 15:18:24,153 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:18:24,153 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     parent: parse_transcription
+2024-07-16 15:18:24,153 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     depth: 3
+2024-07-16 15:18:24,153 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     place: 1
+2024-07-16 15:18:24,154 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     step_name: parsed_cra
+2024-07-16 15:18:24,154 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     run_id: 2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d
+2024-07-16 15:18:24,154 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     input_name: first_args
+2024-07-16 15:18:24,154 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     function: step_llm_inference
+2024-07-16 15:18:24,154 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:18:24,155 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:19:56,047 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: Step 2-0 :parse_transcription
+2024-07-16 15:19:56,056 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:19:56,058 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 208508284942135254
+2024-07-16 15:19:56,058 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 6981934930120198920
+2024-07-16 15:19:56,059 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:03:41.745
+2024-07-16 15:19:56,059 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:19:56.031
+2024-07-16 15:19:56,076 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 16m 14.286s
+2024-07-16 15:19:56,076 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:19:56,078 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     parent: transcribe
+2024-07-16 15:19:56,078 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     depth: 2
+2024-07-16 15:19:56,078 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     place: 0
+2024-07-16 15:19:56,079 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     step_name: parse_transcription
+2024-07-16 15:19:56,079 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     run_id: 2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d
+2024-07-16 15:19:56,079 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     input_name: first_args
+2024-07-16 15:19:56,079 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     function: parse_whisperx_output
+2024-07-16 15:19:56,080 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:19:56,082 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:21:02,856 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: Step 1-0 :transcribe
+2024-07-16 15:21:02,859 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:21:02,859 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 6981934930120198920
+2024-07-16 15:21:02,859 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: 8146066825339461042
+2024-07-16 15:21:02,861 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:03:33.849
+2024-07-16 15:21:02,861 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:21:02.852
+2024-07-16 15:21:02,862 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 17m 29.003s
+2024-07-16 15:21:02,863 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:21:02,864 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     depth: 1
+2024-07-16 15:21:02,864 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     place: 0
+2024-07-16 15:21:02,864 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     step_name: transcribe
+2024-07-16 15:21:02,864 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     run_id: 2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d
+2024-07-16 15:21:02,864 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     input_name: first_args
+2024-07-16 15:21:02,865 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     function: transcribe_empty
+2024-07-16 15:21:02,865 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:21:02,865 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 
+2024-07-16 15:22:31,200 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - Span: Pipeline :pipe
+2024-07-16 15:22:31,203 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Trace ID: 223924800963755063912477050285078166716
+2024-07-16 15:22:31,203 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Span ID: 8146066825339461042
+2024-07-16 15:22:31,203 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Parent ID: None
+2024-07-16 15:22:31,204 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Start time: 2024-07-16 15:03:18.448
+2024-07-16 15:22:31,204 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   End time: 2024-07-16 15:22:31.194
+2024-07-16 15:22:31,205 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Duration: 19m 12.745s
+2024-07-16 15:22:31,205 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Attributes:
+2024-07-16 15:22:31,205 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     run_id: 2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d
+2024-07-16 15:22:31,206 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -   Events:
+2024-07-16 15:22:31,206 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     Pipeline : pipe execution completed at 2024-07-16 15:22:14.460 (+18m 56.012s):
+2024-07-16 15:22:31,206 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO -     output : <class 'dict'> at 2024-07-16 15:22:17.900 (+18m 59.452s):
+2024-07-16 15:22:31,206 - run_2cb9b8b2-8072-47ce-b8a7-85f4a7984d8d - INFO - 

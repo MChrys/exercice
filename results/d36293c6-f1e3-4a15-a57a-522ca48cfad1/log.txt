@@ -1,0 +1,503 @@
+2024-07-16 14:29:04,786 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - Span: serialize_output
+2024-07-16 14:29:04,788 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Trace ID: 33592084997881068147910328125508727481
+2024-07-16 14:29:04,788 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Span ID: 13845808827114306913
+2024-07-16 14:29:04,788 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Parent ID: 10530392381179070268
+2024-07-16 14:29:04,788 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Start time: 2024-07-16 14:28:58.529
+2024-07-16 14:29:04,788 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   End time: 2024-07-16 14:29:04.783
+2024-07-16 14:29:04,789 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Duration: 6.254s
+2024-07-16 14:29:04,789 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Attributes:
+2024-07-16 14:29:04,789 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Events:
+2024-07-16 14:29:04,790 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Starting output serialization at 2024-07-16 14:28:58.529 (+0.000s):
+2024-07-16 14:29:04,790 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Serialized JSON output at 2024-07-16 14:29:04.781 (+6.252s):
+2024-07-16 14:29:04,790 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       file_path: results/d36293c6-f1e3-4a15-a57a-522ca48cfad1/1_0_transcribe__transcribe_empty.json
+2024-07-16 14:29:04,790 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       file_name: 1_0_transcribe__transcribe_empty.json
+2024-07-16 14:29:04,790 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       file_id: 6498485632
+2024-07-16 14:29:04,791 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished output serialization at 2024-07-16 14:29:04.782 (+6.253s):
+2024-07-16 14:29:04,791 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - 
+2024-07-16 14:29:04,791 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - Span: transcribe_empty
+2024-07-16 14:29:04,791 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Trace ID: 33592084997881068147910328125508727481
+2024-07-16 14:29:04,791 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Span ID: 10530392381179070268
+2024-07-16 14:29:04,791 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Parent ID: 1976242760282343090
+2024-07-16 14:29:04,792 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Start time: 2024-07-16 14:28:58.222
+2024-07-16 14:29:04,792 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   End time: 2024-07-16 14:29:04.791
+2024-07-16 14:29:04,792 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Duration: 6.569s
+2024-07-16 14:29:04,792 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Attributes:
+2024-07-16 14:29:04,792 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     function_name: transcribe_empty
+2024-07-16 14:29:04,792 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Events:
+2024-07-16 14:29:04,793 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Starting empty transcription at 2024-07-16 14:28:58.223 (+0.000s):
+2024-07-16 14:29:04,793 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Reading transcription file at 2024-07-16 14:28:58.223 (+0.000s):
+2024-07-16 14:29:04,793 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Sampling transcription list at 2024-07-16 14:28:58.529 (+0.306s):
+2024-07-16 14:29:04,793 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Empty transcription completed at 2024-07-16 14:28:58.529 (+0.306s):
+2024-07-16 14:29:04,793 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - 
+2024-07-16 14:29:04,805 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - Span: serialize_output
+2024-07-16 14:29:04,805 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Trace ID: 33592084997881068147910328125508727481
+2024-07-16 14:29:04,805 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Span ID: 10091926432656090026
+2024-07-16 14:29:04,805 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Parent ID: 7328367907819108284
+2024-07-16 14:29:04,806 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Start time: 2024-07-16 14:29:04.801
+2024-07-16 14:29:04,806 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   End time: 2024-07-16 14:29:04.805
+2024-07-16 14:29:04,806 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Duration: 0.004s
+2024-07-16 14:29:04,806 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Attributes:
+2024-07-16 14:29:04,806 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Events:
+2024-07-16 14:29:04,807 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Starting output serialization at 2024-07-16 14:29:04.801 (+0.000s):
+2024-07-16 14:29:04,807 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Serialized JSON output at 2024-07-16 14:29:04.805 (+0.004s):
+2024-07-16 14:29:04,807 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       file_path: results/d36293c6-f1e3-4a15-a57a-522ca48cfad1/2_0_parse_transcription__parse_whisperx_output.json
+2024-07-16 14:29:04,807 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       file_name: 2_0_parse_transcription__parse_whisperx_output.json
+2024-07-16 14:29:04,807 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       file_id: 6498485632
+2024-07-16 14:29:04,808 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished output serialization at 2024-07-16 14:29:04.805 (+0.004s):
+2024-07-16 14:29:04,808 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - 
+2024-07-16 14:29:04,808 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - Span: parse_whisperx_output
+2024-07-16 14:29:04,808 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Trace ID: 33592084997881068147910328125508727481
+2024-07-16 14:29:04,808 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Span ID: 7328367907819108284
+2024-07-16 14:29:04,808 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Parent ID: 16603513256615525704
+2024-07-16 14:29:04,809 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Start time: 2024-07-16 14:29:04.798
+2024-07-16 14:29:04,809 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   End time: 2024-07-16 14:29:04.808
+2024-07-16 14:29:04,809 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Duration: 0.009s
+2024-07-16 14:29:04,809 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Attributes:
+2024-07-16 14:29:04,809 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     function_name: parse_whisperx_output
+2024-07-16 14:29:04,810 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Events:
+2024-07-16 14:29:04,810 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Starting to parse WhisperX output at 2024-07-16 14:29:04.799 (+0.000s):
+2024-07-16 14:29:04,810 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Key not found: 'speaker' at 2024-07-16 14:29:04.799 (+0.001s):
+2024-07-16 14:29:04,810 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished parsing WhisperX output at 2024-07-16 14:29:04.801 (+0.002s):
+2024-07-16 14:29:04,810 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - 
+2024-07-16 14:29:07,708 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - Span: serialize_output
+2024-07-16 14:29:07,708 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Trace ID: 33592084997881068147910328125508727481
+2024-07-16 14:29:07,708 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Span ID: 15063284912902720177
+2024-07-16 14:29:07,709 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Parent ID: 5472938389228387597
+2024-07-16 14:29:07,709 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Start time: 2024-07-16 14:29:07.695
+2024-07-16 14:29:07,709 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   End time: 2024-07-16 14:29:07.707
+2024-07-16 14:29:07,709 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Duration: 0.012s
+2024-07-16 14:29:07,709 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Attributes:
+2024-07-16 14:29:07,709 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Events:
+2024-07-16 14:29:07,710 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Starting output serialization at 2024-07-16 14:29:07.695 (+0.000s):
+2024-07-16 14:29:07,710 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Serialized string output at 2024-07-16 14:29:07.707 (+0.012s):
+2024-07-16 14:29:07,710 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       file_path: results/d36293c6-f1e3-4a15-a57a-522ca48cfad1/3_0_formatted_verbatim__format_for_output.txt
+2024-07-16 14:29:07,710 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       file_name: 3_0_formatted_verbatim__format_for_output.txt
+2024-07-16 14:29:07,710 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       file_id: 6691987616
+2024-07-16 14:29:07,710 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished output serialization at 2024-07-16 14:29:07.707 (+0.012s):
+2024-07-16 14:29:07,711 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - 
+2024-07-16 14:29:07,711 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - Span: format_for_output
+2024-07-16 14:29:07,711 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Trace ID: 33592084997881068147910328125508727481
+2024-07-16 14:29:07,711 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Span ID: 5472938389228387597
+2024-07-16 14:29:07,711 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Parent ID: 6992094120640380836
+2024-07-16 14:29:07,712 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Start time: 2024-07-16 14:29:07.695
+2024-07-16 14:29:07,712 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   End time: 2024-07-16 14:29:07.711
+2024-07-16 14:29:07,712 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Duration: 0.016s
+2024-07-16 14:29:07,712 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Attributes:
+2024-07-16 14:29:07,712 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     function_name: format_for_output
+2024-07-16 14:29:07,712 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Events:
+2024-07-16 14:29:07,713 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Starting to format output at 2024-07-16 14:29:07.695 (+0.000s):
+2024-07-16 14:29:07,713 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished formatting output at 2024-07-16 14:29:07.695 (+0.001s):
+2024-07-16 14:29:07,713 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - 
+2024-07-16 14:29:19,167 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - Span: serialize_output
+2024-07-16 14:29:19,168 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Trace ID: 33592084997881068147910328125508727481
+2024-07-16 14:29:19,168 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Span ID: 11230144766677406591
+2024-07-16 14:29:19,168 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Parent ID: 10650048422786112460
+2024-07-16 14:29:19,168 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Start time: 2024-07-16 14:29:19.165
+2024-07-16 14:29:19,169 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   End time: 2024-07-16 14:29:19.167
+2024-07-16 14:29:19,169 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Duration: 0.001s
+2024-07-16 14:29:19,169 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Attributes:
+2024-07-16 14:29:19,169 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Events:
+2024-07-16 14:29:19,169 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Starting output serialization at 2024-07-16 14:29:19.166 (+0.000s):
+2024-07-16 14:29:19,170 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Serialized string output at 2024-07-16 14:29:19.166 (+0.001s):
+2024-07-16 14:29:19,170 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       file_path: results/d36293c6-f1e3-4a15-a57a-522ca48cfad1/4_0_c_transcription_list__spell_correct.txt
+2024-07-16 14:29:19,170 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       file_name: 4_0_c_transcription_list__spell_correct.txt
+2024-07-16 14:29:19,170 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       file_id: 6699393408
+2024-07-16 14:29:19,170 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished output serialization at 2024-07-16 14:29:19.166 (+0.001s):
+2024-07-16 14:29:19,170 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - 
+2024-07-16 14:29:19,171 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - Span: spell_correct
+2024-07-16 14:29:19,171 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Trace ID: 33592084997881068147910328125508727481
+2024-07-16 14:29:19,171 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Span ID: 10650048422786112460
+2024-07-16 14:29:19,171 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Parent ID: 8086869198595720792
+2024-07-16 14:29:19,172 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Start time: 2024-07-16 14:29:15.966
+2024-07-16 14:29:19,172 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   End time: 2024-07-16 14:29:19.171
+2024-07-16 14:29:19,172 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Duration: 3.205s
+2024-07-16 14:29:19,172 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Attributes:
+2024-07-16 14:29:19,172 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     function_name: spell_correct
+2024-07-16 14:29:19,173 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Events:
+2024-07-16 14:29:19,173 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.160 (+3.194s):
+2024-07-16 14:29:19,173 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.160 (+3.194s):
+2024-07-16 14:29:19,173 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.160 (+3.194s):
+2024-07-16 14:29:19,173 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.160 (+3.194s):
+2024-07-16 14:29:19,174 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.160 (+3.194s):
+2024-07-16 14:29:19,174 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.160 (+3.194s):
+2024-07-16 14:29:19,174 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.160 (+3.194s):
+2024-07-16 14:29:19,174 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.160 (+3.194s):
+2024-07-16 14:29:19,174 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.160 (+3.194s):
+2024-07-16 14:29:19,175 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.160 (+3.194s):
+2024-07-16 14:29:19,175 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.160 (+3.194s):
+2024-07-16 14:29:19,175 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.160 (+3.194s):
+2024-07-16 14:29:19,175 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.160 (+3.194s):
+2024-07-16 14:29:19,175 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.160 (+3.194s):
+2024-07-16 14:29:19,175 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.160 (+3.194s):
+2024-07-16 14:29:19,176 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.160 (+3.194s):
+2024-07-16 14:29:19,176 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.160 (+3.195s):
+2024-07-16 14:29:19,176 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.160 (+3.195s):
+2024-07-16 14:29:19,176 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.160 (+3.195s):
+2024-07-16 14:29:19,176 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.160 (+3.195s):
+2024-07-16 14:29:19,177 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.160 (+3.195s):
+2024-07-16 14:29:19,177 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.160 (+3.195s):
+2024-07-16 14:29:19,177 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.160 (+3.195s):
+2024-07-16 14:29:19,177 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.160 (+3.195s):
+2024-07-16 14:29:19,177 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.160 (+3.195s):
+2024-07-16 14:29:19,177 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.161 (+3.195s):
+2024-07-16 14:29:19,178 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.161 (+3.195s):
+2024-07-16 14:29:19,178 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.161 (+3.195s):
+2024-07-16 14:29:19,179 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.161 (+3.195s):
+2024-07-16 14:29:19,179 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.161 (+3.195s):
+2024-07-16 14:29:19,179 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.161 (+3.195s):
+2024-07-16 14:29:19,179 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.161 (+3.195s):
+2024-07-16 14:29:19,179 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.161 (+3.195s):
+2024-07-16 14:29:19,180 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.161 (+3.195s):
+2024-07-16 14:29:19,180 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.161 (+3.195s):
+2024-07-16 14:29:19,180 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.161 (+3.195s):
+2024-07-16 14:29:19,180 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.161 (+3.195s):
+2024-07-16 14:29:19,180 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.161 (+3.195s):
+2024-07-16 14:29:19,181 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.161 (+3.195s):
+2024-07-16 14:29:19,181 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.161 (+3.195s):
+2024-07-16 14:29:19,181 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.161 (+3.195s):
+2024-07-16 14:29:19,181 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.161 (+3.196s):
+2024-07-16 14:29:19,181 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.161 (+3.196s):
+2024-07-16 14:29:19,182 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.161 (+3.196s):
+2024-07-16 14:29:19,182 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.161 (+3.196s):
+2024-07-16 14:29:19,182 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.161 (+3.196s):
+2024-07-16 14:29:19,182 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.161 (+3.196s):
+2024-07-16 14:29:19,182 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.161 (+3.196s):
+2024-07-16 14:29:19,182 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.161 (+3.196s):
+2024-07-16 14:29:19,183 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,183 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,184 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,185 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,185 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,185 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,185 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,186 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,187 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,187 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,187 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,187 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,188 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,188 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,189 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,189 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,189 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,189 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,190 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,190 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.162 (+3.196s):
+2024-07-16 14:29:19,190 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,190 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,190 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,190 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,191 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,191 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,191 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,191 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,191 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,192 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,192 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,192 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,192 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,192 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,192 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,193 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,193 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,193 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,193 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.162 (+3.197s):
+2024-07-16 14:29:19,193 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.163 (+3.197s):
+2024-07-16 14:29:19,194 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.163 (+3.197s):
+2024-07-16 14:29:19,194 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.163 (+3.197s):
+2024-07-16 14:29:19,199 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.163 (+3.197s):
+2024-07-16 14:29:19,199 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.163 (+3.197s):
+2024-07-16 14:29:19,199 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.163 (+3.197s):
+2024-07-16 14:29:19,199 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.163 (+3.197s):
+2024-07-16 14:29:19,200 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.163 (+3.197s):
+2024-07-16 14:29:19,200 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.163 (+3.197s):
+2024-07-16 14:29:19,200 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.163 (+3.197s):
+2024-07-16 14:29:19,200 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.163 (+3.197s):
+2024-07-16 14:29:19,200 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.163 (+3.197s):
+2024-07-16 14:29:19,201 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.163 (+3.197s):
+2024-07-16 14:29:19,201 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.163 (+3.197s):
+2024-07-16 14:29:19,201 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.163 (+3.197s):
+2024-07-16 14:29:19,201 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.163 (+3.197s):
+2024-07-16 14:29:19,201 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.163 (+3.197s):
+2024-07-16 14:29:19,202 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,202 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,202 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,202 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,203 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,203 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,203 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,203 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,203 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,204 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,204 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,204 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,204 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,204 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,205 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,205 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,205 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Correcting named entity at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,205 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished correcting named entity at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,205 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Cleaning person's name at 2024-07-16 14:29:19.163 (+3.198s):
+2024-07-16 14:29:19,205 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Finished cleaning person's name at 2024-07-16 14:29:19.164 (+3.198s):
+2024-07-16 14:29:19,206 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Printing corrections if verbose at 2024-07-16 14:29:19.164 (+3.198s):
+2024-07-16 14:29:19,206 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Applying corrections to transcription list at 2024-07-16 14:29:19.164 (+3.198s):
+2024-07-16 14:29:19,206 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     Spell correction completed at 2024-07-16 14:29:19.164 (+3.198s):
+2024-07-16 14:29:19,206 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - 
+2024-07-16 14:29:19,208 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - Span: Step 4-0 :c_transcription_list
+2024-07-16 14:29:19,209 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Trace ID: 33592084997881068147910328125508727481
+2024-07-16 14:29:19,209 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Span ID: 8086869198595720792
+2024-07-16 14:29:19,209 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Parent ID: 6992094120640380836
+2024-07-16 14:29:19,209 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Start time: 2024-07-16 14:29:15.964
+2024-07-16 14:29:19,210 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   End time: 2024-07-16 14:29:19.208
+2024-07-16 14:29:19,210 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Duration: 3.244s
+2024-07-16 14:29:19,210 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Attributes:
+2024-07-16 14:29:19,210 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     parent: formatted_verbatim
+2024-07-16 14:29:19,210 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     depth: 4
+2024-07-16 14:29:19,211 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     place: 0
+2024-07-16 14:29:19,211 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     step_name: c_transcription_list
+2024-07-16 14:29:19,211 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     run_id: d36293c6-f1e3-4a15-a57a-522ca48cfad1
+2024-07-16 14:29:19,211 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     input_name: first_args
+2024-07-16 14:29:19,211 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     function: spell_correct
+2024-07-16 14:29:19,212 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Events:
+2024-07-16 14:29:19,212 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - 
+2024-07-16 14:29:19,221 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - Span: Step 3-0 :formatted_verbatim
+2024-07-16 14:29:19,222 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Trace ID: 33592084997881068147910328125508727481
+2024-07-16 14:29:19,222 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Span ID: 6992094120640380836
+2024-07-16 14:29:19,222 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Parent ID: 16603513256615525704
+2024-07-16 14:29:19,222 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Start time: 2024-07-16 14:29:04.812
+2024-07-16 14:29:19,222 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   End time: 2024-07-16 14:29:19.221
+2024-07-16 14:29:19,223 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Duration: 14.410s
+2024-07-16 14:29:19,223 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Attributes:
+2024-07-16 14:29:19,223 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     parent: parse_transcription
+2024-07-16 14:29:19,223 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     depth: 3
+2024-07-16 14:29:19,224 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     place: 0
+2024-07-16 14:29:19,224 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     step_name: formatted_verbatim
+2024-07-16 14:29:19,224 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     run_id: d36293c6-f1e3-4a15-a57a-522ca48cfad1
+2024-07-16 14:29:19,224 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     input_name: first_args
+2024-07-16 14:29:19,224 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     function: format_for_output
+2024-07-16 14:29:19,224 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Events:
+2024-07-16 14:29:19,225 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     exception at 2024-07-16 14:29:19.221 (+14.410s):
+2024-07-16 14:29:19,225 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.type: TypeError
+2024-07-16 14:29:19,225 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.message: object dict can't be used in 'await' expression
+2024-07-16 14:29:19,225 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.stacktrace: Traceback (most recent call last):
+  File "/Users/chrysostomebeltran/Downloads/exercise/.venv/lib/python3.12/site-packages/opentelemetry/trace/__init__.py", line 570, in use_span
+    yield span
+  File "/Users/chrysostomebeltran/Downloads/exercise/.venv/lib/python3.12/site-packages/opentelemetry/sdk/trace/__init__.py", line 1091, in start_as_current_span
+    yield span
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 533, in run
+    result = await super().run(self._output,run_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 295, in run
+    result = await task
+             ^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+
+2024-07-16 14:29:19,225 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.escaped: False
+2024-07-16 14:29:19,225 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - 
+2024-07-16 14:29:19,230 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - Span: Step 2-0 :parse_transcription
+2024-07-16 14:29:19,230 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Trace ID: 33592084997881068147910328125508727481
+2024-07-16 14:29:19,230 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Span ID: 16603513256615525704
+2024-07-16 14:29:19,231 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Parent ID: 1976242760282343090
+2024-07-16 14:29:19,231 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Start time: 2024-07-16 14:29:04.797
+2024-07-16 14:29:19,231 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   End time: 2024-07-16 14:29:19.230
+2024-07-16 14:29:19,231 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Duration: 14.432s
+2024-07-16 14:29:19,231 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Attributes:
+2024-07-16 14:29:19,231 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     parent: transcribe
+2024-07-16 14:29:19,232 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     depth: 2
+2024-07-16 14:29:19,232 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     place: 0
+2024-07-16 14:29:19,232 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     step_name: parse_transcription
+2024-07-16 14:29:19,233 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     run_id: d36293c6-f1e3-4a15-a57a-522ca48cfad1
+2024-07-16 14:29:19,233 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     input_name: first_args
+2024-07-16 14:29:19,233 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     function: parse_whisperx_output
+2024-07-16 14:29:19,233 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Events:
+2024-07-16 14:29:19,233 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     exception at 2024-07-16 14:29:19.229 (+14.432s):
+2024-07-16 14:29:19,234 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.type: TypeError
+2024-07-16 14:29:19,234 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.message: object dict can't be used in 'await' expression
+2024-07-16 14:29:19,234 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.stacktrace: Traceback (most recent call last):
+  File "/Users/chrysostomebeltran/Downloads/exercise/.venv/lib/python3.12/site-packages/opentelemetry/trace/__init__.py", line 570, in use_span
+    yield span
+  File "/Users/chrysostomebeltran/Downloads/exercise/.venv/lib/python3.12/site-packages/opentelemetry/sdk/trace/__init__.py", line 1091, in start_as_current_span
+    yield span
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 533, in run
+    result = await super().run(self._output,run_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 294, in run
+    async for task in AsyncTaskIterator(tasks):
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 38, in __anext__
+    return await task
+           ^^^^^^^^^^
+  File "/Users/chrysostomebeltran/anaconda3/envs/gitverse/lib/python3.12/asyncio/tasks.py", line 621, in _wait_for_one
+    return f.result()  # May raise f.exception().
+           ^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 533, in run
+    result = await super().run(self._output,run_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 295, in run
+    result = await task
+             ^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+
+2024-07-16 14:29:19,234 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.escaped: False
+2024-07-16 14:29:19,235 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - 
+2024-07-16 14:29:19,238 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - Span: Step 1-0 :transcribe
+2024-07-16 14:29:19,238 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Trace ID: 33592084997881068147910328125508727481
+2024-07-16 14:29:19,239 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Span ID: 1976242760282343090
+2024-07-16 14:29:19,240 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Parent ID: 5647610330262541293
+2024-07-16 14:29:19,241 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Start time: 2024-07-16 14:28:58.206
+2024-07-16 14:29:19,241 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   End time: 2024-07-16 14:29:19.238
+2024-07-16 14:29:19,241 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Duration: 21.033s
+2024-07-16 14:29:19,241 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Attributes:
+2024-07-16 14:29:19,241 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     depth: 1
+2024-07-16 14:29:19,241 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     place: 0
+2024-07-16 14:29:19,241 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     step_name: transcribe
+2024-07-16 14:29:19,242 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     run_id: d36293c6-f1e3-4a15-a57a-522ca48cfad1
+2024-07-16 14:29:19,242 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     input_name: first_args
+2024-07-16 14:29:19,242 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     function: transcribe_empty
+2024-07-16 14:29:19,242 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Events:
+2024-07-16 14:29:19,243 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     exception at 2024-07-16 14:29:19.238 (+21.033s):
+2024-07-16 14:29:19,244 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.type: TypeError
+2024-07-16 14:29:19,244 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.message: object dict can't be used in 'await' expression
+2024-07-16 14:29:19,244 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.stacktrace: Traceback (most recent call last):
+  File "/Users/chrysostomebeltran/Downloads/exercise/.venv/lib/python3.12/site-packages/opentelemetry/trace/__init__.py", line 570, in use_span
+    yield span
+  File "/Users/chrysostomebeltran/Downloads/exercise/.venv/lib/python3.12/site-packages/opentelemetry/sdk/trace/__init__.py", line 1091, in start_as_current_span
+    yield span
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 533, in run
+    result = await super().run(self._output,run_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 294, in run
+    async for task in AsyncTaskIterator(tasks):
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 38, in __anext__
+    return await task
+           ^^^^^^^^^^
+  File "/Users/chrysostomebeltran/anaconda3/envs/gitverse/lib/python3.12/asyncio/tasks.py", line 621, in _wait_for_one
+    return f.result()  # May raise f.exception().
+           ^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 533, in run
+    result = await super().run(self._output,run_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 294, in run
+    async for task in AsyncTaskIterator(tasks):
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 38, in __anext__
+    return await task
+           ^^^^^^^^^^
+  File "/Users/chrysostomebeltran/anaconda3/envs/gitverse/lib/python3.12/asyncio/tasks.py", line 621, in _wait_for_one
+    return f.result()  # May raise f.exception().
+           ^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 533, in run
+    result = await super().run(self._output,run_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 295, in run
+    result = await task
+             ^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+
+2024-07-16 14:29:19,245 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.escaped: False
+2024-07-16 14:29:19,245 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - 
+2024-07-16 14:29:19,257 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - Span: Pipeline :pipe
+2024-07-16 14:29:19,257 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Trace ID: 33592084997881068147910328125508727481
+2024-07-16 14:29:19,257 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Span ID: 5647610330262541293
+2024-07-16 14:29:19,257 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Parent ID: None
+2024-07-16 14:29:19,258 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Start time: 2024-07-16 14:28:58.202
+2024-07-16 14:29:19,258 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   End time: 2024-07-16 14:29:19.256
+2024-07-16 14:29:19,258 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Duration: 21.054s
+2024-07-16 14:29:19,258 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Attributes:
+2024-07-16 14:29:19,258 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     run_id: d36293c6-f1e3-4a15-a57a-522ca48cfad1
+2024-07-16 14:29:19,259 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -   Events:
+2024-07-16 14:29:19,259 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     exception at 2024-07-16 14:29:19.252 (+21.050s):
+2024-07-16 14:29:19,259 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.type: TypeError
+2024-07-16 14:29:19,259 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.message: object dict can't be used in 'await' expression
+2024-07-16 14:29:19,259 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.stacktrace: Traceback (most recent call last):
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 263, in start
+    result = await self.run(input, run_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 294, in run
+    async for task in AsyncTaskIterator(tasks):
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 38, in __anext__
+    return await task
+           ^^^^^^^^^^
+  File "/Users/chrysostomebeltran/anaconda3/envs/gitverse/lib/python3.12/asyncio/tasks.py", line 621, in _wait_for_one
+    return f.result()  # May raise f.exception().
+           ^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 533, in run
+    result = await super().run(self._output,run_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 294, in run
+    async for task in AsyncTaskIterator(tasks):
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 38, in __anext__
+    return await task
+           ^^^^^^^^^^
+  File "/Users/chrysostomebeltran/anaconda3/envs/gitverse/lib/python3.12/asyncio/tasks.py", line 621, in _wait_for_one
+    return f.result()  # May raise f.exception().
+           ^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 533, in run
+    result = await super().run(self._output,run_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 294, in run
+    async for task in AsyncTaskIterator(tasks):
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 38, in __anext__
+    return await task
+           ^^^^^^^^^^
+  File "/Users/chrysostomebeltran/anaconda3/envs/gitverse/lib/python3.12/asyncio/tasks.py", line 621, in _wait_for_one
+    return f.result()  # May raise f.exception().
+           ^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 533, in run
+    result = await super().run(self._output,run_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 295, in run
+    result = await task
+             ^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+
+2024-07-16 14:29:19,260 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.escaped: False
+2024-07-16 14:29:19,260 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -     exception at 2024-07-16 14:29:19.256 (+21.054s):
+2024-07-16 14:29:19,260 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.type: TypeError
+2024-07-16 14:29:19,260 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.message: object dict can't be used in 'await' expression
+2024-07-16 14:29:19,260 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.stacktrace: Traceback (most recent call last):
+  File "/Users/chrysostomebeltran/Downloads/exercise/.venv/lib/python3.12/site-packages/opentelemetry/trace/__init__.py", line 570, in use_span
+    yield span
+  File "/Users/chrysostomebeltran/Downloads/exercise/.venv/lib/python3.12/site-packages/opentelemetry/sdk/trace/__init__.py", line 1091, in start_as_current_span
+    yield span
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 263, in start
+    result = await self.run(input, run_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 294, in run
+    async for task in AsyncTaskIterator(tasks):
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 38, in __anext__
+    return await task
+           ^^^^^^^^^^
+  File "/Users/chrysostomebeltran/anaconda3/envs/gitverse/lib/python3.12/asyncio/tasks.py", line 621, in _wait_for_one
+    return f.result()  # May raise f.exception().
+           ^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 533, in run
+    result = await super().run(self._output,run_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 294, in run
+    async for task in AsyncTaskIterator(tasks):
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 38, in __anext__
+    return await task
+           ^^^^^^^^^^
+  File "/Users/chrysostomebeltran/anaconda3/envs/gitverse/lib/python3.12/asyncio/tasks.py", line 621, in _wait_for_one
+    return f.result()  # May raise f.exception().
+           ^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 533, in run
+    result = await super().run(self._output,run_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 294, in run
+    async for task in AsyncTaskIterator(tasks):
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 38, in __anext__
+    return await task
+           ^^^^^^^^^^
+  File "/Users/chrysostomebeltran/anaconda3/envs/gitverse/lib/python3.12/asyncio/tasks.py", line 621, in _wait_for_one
+    return f.result()  # May raise f.exception().
+           ^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 533, in run
+    result = await super().run(self._output,run_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chrysostomebeltran/Downloads/exercise/workflows/pipeline.py", line 295, in run
+    result = await task
+             ^^^^^^^^^^
+TypeError: object dict can't be used in 'await' expression
+
+2024-07-16 14:29:19,261 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO -       exception.escaped: False
+2024-07-16 14:29:19,261 - run_d36293c6-f1e3-4a15-a57a-522ca48cfad1 - INFO - 

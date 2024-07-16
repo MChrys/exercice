@@ -1,0 +1,262 @@
+2024-07-16 14:50:00,133 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO - Span: serialize_output
+2024-07-16 14:50:00,134 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Trace ID: 221057282444207221988480600102111357232
+2024-07-16 14:50:00,134 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Span ID: 10392166999276321189
+2024-07-16 14:50:00,134 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Parent ID: 350692218351578359
+2024-07-16 14:50:00,134 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Start time: 2024-07-16 14:49:54.230
+2024-07-16 14:50:00,134 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   End time: 2024-07-16 14:50:00.130
+2024-07-16 14:50:00,135 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Duration: 5.900s
+2024-07-16 14:50:00,135 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Attributes:
+2024-07-16 14:50:00,135 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Events:
+2024-07-16 14:50:00,136 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Starting output serialization at 2024-07-16 14:49:54.230 (+0.000s):
+2024-07-16 14:50:00,136 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Serialized JSON output at 2024-07-16 14:50:00.125 (+5.895s):
+2024-07-16 14:50:00,136 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -       file_path: results/195b4929-7e63-4c72-ae7c-89674452ab4c/1_0_transcribe__transcribe_empty.json
+2024-07-16 14:50:00,136 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -       file_name: 1_0_transcribe__transcribe_empty.json
+2024-07-16 14:50:00,136 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -       file_id: 6677601792
+2024-07-16 14:50:00,136 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished output serialization at 2024-07-16 14:50:00.129 (+5.899s):
+2024-07-16 14:50:00,137 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO - 
+2024-07-16 14:50:00,137 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO - Span: transcribe_empty
+2024-07-16 14:50:00,137 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Trace ID: 221057282444207221988480600102111357232
+2024-07-16 14:50:00,137 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Span ID: 350692218351578359
+2024-07-16 14:50:00,137 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Parent ID: 7675013613853667918
+2024-07-16 14:50:00,137 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Start time: 2024-07-16 14:49:54.187
+2024-07-16 14:50:00,138 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   End time: 2024-07-16 14:50:00.137
+2024-07-16 14:50:00,138 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Duration: 5.950s
+2024-07-16 14:50:00,138 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Attributes:
+2024-07-16 14:50:00,138 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     function_name: transcribe_empty
+2024-07-16 14:50:00,138 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Events:
+2024-07-16 14:50:00,138 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Starting empty transcription at 2024-07-16 14:49:54.187 (+0.000s):
+2024-07-16 14:50:00,138 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Reading transcription file at 2024-07-16 14:49:54.187 (+0.000s):
+2024-07-16 14:50:00,139 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Sampling transcription list at 2024-07-16 14:49:54.229 (+0.042s):
+2024-07-16 14:50:00,139 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Empty transcription completed at 2024-07-16 14:49:54.229 (+0.042s):
+2024-07-16 14:50:00,139 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO - 
+2024-07-16 14:50:08,899 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO - Span: serialize_output
+2024-07-16 14:50:08,899 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Trace ID: 221057282444207221988480600102111357232
+2024-07-16 14:50:08,900 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Span ID: 7773359152456965312
+2024-07-16 14:50:08,900 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Parent ID: 9778095552610646806
+2024-07-16 14:50:08,900 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Start time: 2024-07-16 14:50:08.893
+2024-07-16 14:50:08,900 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   End time: 2024-07-16 14:50:08.898
+2024-07-16 14:50:08,901 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Duration: 0.005s
+2024-07-16 14:50:08,901 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Attributes:
+2024-07-16 14:50:08,901 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Events:
+2024-07-16 14:50:08,901 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Starting output serialization at 2024-07-16 14:50:08.893 (+0.000s):
+2024-07-16 14:50:08,901 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Serialized JSON output at 2024-07-16 14:50:08.898 (+0.005s):
+2024-07-16 14:50:08,902 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -       file_path: results/195b4929-7e63-4c72-ae7c-89674452ab4c/2_0_parse_transcription__parse_whisperx_output.json
+2024-07-16 14:50:08,902 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -       file_name: 2_0_parse_transcription__parse_whisperx_output.json
+2024-07-16 14:50:08,902 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -       file_id: 6677602912
+2024-07-16 14:50:08,902 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished output serialization at 2024-07-16 14:50:08.898 (+0.005s):
+2024-07-16 14:50:08,902 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO - 
+2024-07-16 14:50:08,902 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO - Span: parse_whisperx_output
+2024-07-16 14:50:08,903 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Trace ID: 221057282444207221988480600102111357232
+2024-07-16 14:50:08,903 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Span ID: 9778095552610646806
+2024-07-16 14:50:08,903 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Parent ID: 14937330979770035207
+2024-07-16 14:50:08,903 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Start time: 2024-07-16 14:50:08.890
+2024-07-16 14:50:08,903 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   End time: 2024-07-16 14:50:08.902
+2024-07-16 14:50:08,904 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Duration: 0.013s
+2024-07-16 14:50:08,904 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Attributes:
+2024-07-16 14:50:08,904 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     function_name: parse_whisperx_output
+2024-07-16 14:50:08,904 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Events:
+2024-07-16 14:50:08,904 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Starting to parse WhisperX output at 2024-07-16 14:50:08.890 (+0.000s):
+2024-07-16 14:50:08,905 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Key not found: 'speaker' at 2024-07-16 14:50:08.891 (+0.002s):
+2024-07-16 14:50:08,905 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished parsing WhisperX output at 2024-07-16 14:50:08.893 (+0.003s):
+2024-07-16 14:50:08,905 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO - 
+2024-07-16 14:50:20,694 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO - Span: serialize_output
+2024-07-16 14:50:20,698 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Trace ID: 221057282444207221988480600102111357232
+2024-07-16 14:50:20,699 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Span ID: 2460392518469928593
+2024-07-16 14:50:20,699 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Parent ID: 3238072282506024013
+2024-07-16 14:50:20,699 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Start time: 2024-07-16 14:50:20.679
+2024-07-16 14:50:20,700 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   End time: 2024-07-16 14:50:20.692
+2024-07-16 14:50:20,702 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Duration: 0.013s
+2024-07-16 14:50:20,702 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Attributes:
+2024-07-16 14:50:20,702 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Events:
+2024-07-16 14:50:20,704 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Starting output serialization at 2024-07-16 14:50:20.679 (+0.000s):
+2024-07-16 14:50:20,704 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Serialized string output at 2024-07-16 14:50:20.692 (+0.013s):
+2024-07-16 14:50:20,704 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -       file_path: results/195b4929-7e63-4c72-ae7c-89674452ab4c/3_0_formatted_verbatim__format_for_output.txt
+2024-07-16 14:50:20,704 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -       file_name: 3_0_formatted_verbatim__format_for_output.txt
+2024-07-16 14:50:20,705 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -       file_id: 6677608512
+2024-07-16 14:50:20,705 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished output serialization at 2024-07-16 14:50:20.692 (+0.013s):
+2024-07-16 14:50:20,705 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO - 
+2024-07-16 14:50:20,705 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO - Span: format_for_output
+2024-07-16 14:50:20,705 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Trace ID: 221057282444207221988480600102111357232
+2024-07-16 14:50:20,705 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Span ID: 3238072282506024013
+2024-07-16 14:50:20,706 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Parent ID: 14730310215782600091
+2024-07-16 14:50:20,706 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Start time: 2024-07-16 14:50:20.676
+2024-07-16 14:50:20,706 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   End time: 2024-07-16 14:50:20.705
+2024-07-16 14:50:20,706 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Duration: 0.030s
+2024-07-16 14:50:20,706 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Attributes:
+2024-07-16 14:50:20,706 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     function_name: format_for_output
+2024-07-16 14:50:20,706 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Events:
+2024-07-16 14:50:20,707 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Starting to format output at 2024-07-16 14:50:20.677 (+0.001s):
+2024-07-16 14:50:20,707 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished formatting output at 2024-07-16 14:50:20.679 (+0.003s):
+2024-07-16 14:50:20,707 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO - 
+2024-07-16 14:50:39,988 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO - Span: serialize_output
+2024-07-16 14:50:39,989 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Trace ID: 221057282444207221988480600102111357232
+2024-07-16 14:50:39,989 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Span ID: 5193104035485341190
+2024-07-16 14:50:39,989 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Parent ID: 13745257691235691422
+2024-07-16 14:50:39,990 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Start time: 2024-07-16 14:50:39.985
+2024-07-16 14:50:39,990 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   End time: 2024-07-16 14:50:39.987
+2024-07-16 14:50:39,990 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Duration: 0.002s
+2024-07-16 14:50:39,990 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Attributes:
+2024-07-16 14:50:39,991 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Events:
+2024-07-16 14:50:39,991 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Starting output serialization at 2024-07-16 14:50:39.986 (+0.000s):
+2024-07-16 14:50:39,991 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Serialized string output at 2024-07-16 14:50:39.987 (+0.002s):
+2024-07-16 14:50:39,991 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -       file_path: results/195b4929-7e63-4c72-ae7c-89674452ab4c/4_0_c_transcription_list__spell_correct.txt
+2024-07-16 14:50:39,992 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -       file_name: 4_0_c_transcription_list__spell_correct.txt
+2024-07-16 14:50:39,992 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -       file_id: 6671600320
+2024-07-16 14:50:39,992 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished output serialization at 2024-07-16 14:50:39.987 (+0.002s):
+2024-07-16 14:50:39,992 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO - 
+2024-07-16 14:50:39,992 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO - Span: spell_correct
+2024-07-16 14:50:39,993 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Trace ID: 221057282444207221988480600102111357232
+2024-07-16 14:50:39,993 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Span ID: 13745257691235691422
+2024-07-16 14:50:39,993 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Parent ID: 13243829629643844691
+2024-07-16 14:50:39,993 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Start time: 2024-07-16 14:50:36.420
+2024-07-16 14:50:39,993 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   End time: 2024-07-16 14:50:39.992
+2024-07-16 14:50:39,993 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Duration: 3.572s
+2024-07-16 14:50:39,994 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Attributes:
+2024-07-16 14:50:39,994 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     function_name: spell_correct
+2024-07-16 14:50:39,994 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Events:
+2024-07-16 14:50:39,994 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.979 (+3.559s):
+2024-07-16 14:50:39,994 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.979 (+3.559s):
+2024-07-16 14:50:39,995 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.979 (+3.559s):
+2024-07-16 14:50:39,995 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.979 (+3.560s):
+2024-07-16 14:50:39,995 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.979 (+3.560s):
+2024-07-16 14:50:39,995 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.979 (+3.560s):
+2024-07-16 14:50:39,996 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.979 (+3.560s):
+2024-07-16 14:50:39,996 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.979 (+3.560s):
+2024-07-16 14:50:39,996 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.979 (+3.560s):
+2024-07-16 14:50:39,996 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.980 (+3.560s):
+2024-07-16 14:50:39,996 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.980 (+3.560s):
+2024-07-16 14:50:39,997 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.980 (+3.560s):
+2024-07-16 14:50:39,997 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.980 (+3.560s):
+2024-07-16 14:50:39,997 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.980 (+3.560s):
+2024-07-16 14:50:39,997 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.980 (+3.560s):
+2024-07-16 14:50:39,998 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.980 (+3.560s):
+2024-07-16 14:50:39,998 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.980 (+3.560s):
+2024-07-16 14:50:39,998 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.980 (+3.560s):
+2024-07-16 14:50:39,998 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.980 (+3.560s):
+2024-07-16 14:50:39,998 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.980 (+3.560s):
+2024-07-16 14:50:39,999 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.980 (+3.560s):
+2024-07-16 14:50:39,999 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.980 (+3.560s):
+2024-07-16 14:50:39,999 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.980 (+3.560s):
+2024-07-16 14:50:39,999 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.980 (+3.560s):
+2024-07-16 14:50:39,999 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.980 (+3.560s):
+2024-07-16 14:50:40,000 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.980 (+3.560s):
+2024-07-16 14:50:40,000 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.980 (+3.560s):
+2024-07-16 14:50:40,000 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.980 (+3.561s):
+2024-07-16 14:50:40,000 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.980 (+3.561s):
+2024-07-16 14:50:40,001 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.980 (+3.561s):
+2024-07-16 14:50:40,001 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.980 (+3.561s):
+2024-07-16 14:50:40,001 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.980 (+3.561s):
+2024-07-16 14:50:40,001 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.980 (+3.561s):
+2024-07-16 14:50:40,002 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,002 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,002 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,002 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,002 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,003 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,003 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,003 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,003 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,003 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,003 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,004 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,004 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,004 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,004 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,004 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,005 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,005 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,005 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,005 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.981 (+3.561s):
+2024-07-16 14:50:40,005 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.981 (+3.562s):
+2024-07-16 14:50:40,006 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.981 (+3.562s):
+2024-07-16 14:50:40,006 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.981 (+3.562s):
+2024-07-16 14:50:40,006 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.981 (+3.562s):
+2024-07-16 14:50:40,006 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.981 (+3.562s):
+2024-07-16 14:50:40,006 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.981 (+3.562s):
+2024-07-16 14:50:40,007 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,007 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,007 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,007 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,007 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,007 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,008 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,008 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,008 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,008 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,008 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,009 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,009 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,009 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,010 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,010 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,010 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,010 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,010 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,011 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,011 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,011 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,011 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,011 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,012 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,012 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,012 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,012 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,012 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,013 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,013 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.982 (+3.562s):
+2024-07-16 14:50:40,014 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.982 (+3.563s):
+2024-07-16 14:50:40,014 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.982 (+3.563s):
+2024-07-16 14:50:40,014 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.982 (+3.563s):
+2024-07-16 14:50:40,014 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.982 (+3.563s):
+2024-07-16 14:50:40,014 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.982 (+3.563s):
+2024-07-16 14:50:40,015 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.982 (+3.563s):
+2024-07-16 14:50:40,015 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,015 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,016 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,016 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,016 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,016 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,016 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,017 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,017 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,017 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,018 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,018 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,019 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,019 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,019 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,019 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,020 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,021 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,021 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,021 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,022 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,022 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,022 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,022 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,023 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,023 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Correcting named entity at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,023 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished correcting named entity at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,023 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Cleaning person's name at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,023 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Finished cleaning person's name at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,024 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Printing corrections if verbose at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,024 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Applying corrections to transcription list at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,024 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     Spell correction completed at 2024-07-16 14:50:39.983 (+3.563s):
+2024-07-16 14:50:40,025 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO - 
+2024-07-16 14:50:40,029 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO - Span: Step 4-0 :c_transcription_list
+2024-07-16 14:50:40,030 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Trace ID: 221057282444207221988480600102111357232
+2024-07-16 14:50:40,030 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Span ID: 13243829629643844691
+2024-07-16 14:50:40,030 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Parent ID: 14730310215782600091
+2024-07-16 14:50:40,031 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Start time: 2024-07-16 14:50:36.418
+2024-07-16 14:50:40,031 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   End time: 2024-07-16 14:50:40.029
+2024-07-16 14:50:40,031 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Duration: 3.611s
+2024-07-16 14:50:40,032 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Attributes:
+2024-07-16 14:50:40,032 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     parent: formatted_verbatim
+2024-07-16 14:50:40,033 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     depth: 4
+2024-07-16 14:50:40,033 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     place: 0
+2024-07-16 14:50:40,033 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     step_name: c_transcription_list
+2024-07-16 14:50:40,033 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     run_id: 195b4929-7e63-4c72-ae7c-89674452ab4c
+2024-07-16 14:50:40,033 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     input_name: first_args
+2024-07-16 14:50:40,034 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -     function: spell_correct
+2024-07-16 14:50:40,034 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO -   Events:
+2024-07-16 14:50:40,034 - run_195b4929-7e63-4c72-ae7c-89674452ab4c - INFO - 

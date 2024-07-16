@@ -75,15 +75,17 @@ async def main():
                                             cfg]))
 
     pipe >>  transcribe >> parse_transcription >> formatted_verbatim >> c_transcription_list 
-    pipe | transcribe >> c_verbatim_output >> parsed_cri + parsed_cra + parsed_cred
+    pipe | parse_transcription >> parsed_cri + parsed_cra + parsed_cred
     try:
 
         pipeline_future = asyncio.create_task(pipe.start("data/transcribe_encoded.json"))
         
 
-        logger.info(f"step1 output: ======> {await step1.output}")
-        logger.info(f"step2 output: ======> {await step2.output}")
-        logger.info(f"step3 output: ======> {await step3.output}")
+        logger.info(f"step1 output: ======> {len(await transcribe.output)}")
+        logger.info(f"step2 output: ======> {len(await parse_transcription.output)}")
+        logger.info(f"step3 output: ======> {len(await formatted_verbatim.output)}")
+        logger.info(f"step4 output: ======> {len(await c_transcription_list.output)}")
+        
         
 
         result = await pipeline_future
@@ -94,8 +96,7 @@ async def main():
         logger.error(f"An error occurred: {e}")
     finally:
  
-        for step in [step1, step2, step3]:
-            step.cancel_output()
+        pipeline_future.cancel()
     print()
 if __name__ == "__main__":
     asyncio.run(main())

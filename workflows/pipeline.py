@@ -182,7 +182,29 @@ class stepList(MutableSequence):
             self._l.append(other)
             return self
 
+class AsyncDict(dict):
+    async def resolve(self):
+        for key, value in self.items():
+            if asyncio.iscoroutine(value):
+                self[key] = await value
 
+class AsyncTaskIterator:
+    def __init__(self, tasks):
+        self.tasks = tasks
+        self.iter = iter(asyncio.as_completed(tasks))
+
+    def __aiter__(self):
+        return self
+
+    async def __anext__(self):
+        try:
+            task = next(self.iter)
+            result = await task
+            if isinstance(result, dict):
+                return result
+            return task
+        except StopIteration:
+            raise StopAsyncIteration
 
 class Pipeline:
     def __init__(self,inherite =False):
@@ -190,6 +212,13 @@ class Pipeline:
         if not inherite:
             self.name = varname()
             self.tracer_name = f"{__name__}.{self.name}"
+            self.origin = self
+            self.depth = 0
+            self.place = 0
+        else : 
+            self.depth = None
+            self.place = None
+
 
         #self.input = input
         self.inherite = inherite
@@ -199,6 +228,9 @@ class Pipeline:
         self.steps = []
         self.outputs = dict()
         self.curent_id = None
+
+
+        
 
     def __init_tracer__(self, logger):
         resource = Resource(attributes={
@@ -238,16 +270,17 @@ class Pipeline:
             result = None
             try:
                 result = await self.run(input, run_id)
-                return result 
-            except Exception as e:
-                span.record_exception(e)
-                raise
-            finally:
                 span.add_event(f"Pipeline : {self.name} execution completed")
                 if result is not None:
                     span.add_event(f"output : {type(result)}")
                 else:
                     span.add_event("No output due to exception")
+                return result 
+            except Exception as e:
+                span.record_exception(e)
+                raise
+    
+
             
     
     async def run(self,input, run_id=None):
@@ -258,36 +291,64 @@ class Pipeline:
         if not self.inherite:
             token = context.attach(self.tracer_context)
     
-
+        span = trace.get_current_span()
         try:
+            tasks = []
             for child in self.childs:
-                if asyncio.iscoroutine(input):
-                    input = await input
-                result = await child.run(input, child.input_name, run_id)
+                child_input = input  
+                if asyncio.iscoroutine(child_input):
+                    child_input = await child_input
+                span.add_event(f"Creating task for child: {child.name}")
+                task = asyncio.create_task(child.run(child_input, child.input_name, run_id))
+                tasks.append(task)
 
+            async for result in AsyncTaskIterator(tasks):
+                span.add_event("Awaiting task")
+
+                
+
+                span.add_event(f"Awaiting coroutine for result: {result}")
                 if isinstance(result, dict):
                     for key, value in result.items():
                         if asyncio.iscoroutine(value):
+                            span.add_event(f"Awaiting coroutine for key: {key}")
                             self.outputs[key] = await value
                         else:
                             self.outputs[key] = value
                 else:
+                    result = await result
                     self.outputs[child.name] = result
 
-                input = await child.wait_for_output()
+                child_input = await child.wait_for_output()
 
             return self.outputs
         finally:
             if not self.inherite:
                 context.detach(token)
-
+    def cancel_steps(self):
+        for step in self.steps:
+            step.cancel_output()
 
     def __rshift__(self, other:Step|stepList):
         if isinstance(other, stepList):
-            for step in other:
+            for i,step in enumerate(other):
+
+                step.origin = self.origin
+                self.origin.steps.append(step)
+
+                step.depth = self.depth + 1
+                step.place = i
+
                 self.childs.append(step)
                 step.parents.append(self)
         elif isinstance(other, Step):
+
+            other.origin = self.origin
+            other.origin.steps.append(other)
+
+            other.depth = self.depth + 1
+            other.place = len(self.childs)
+
             self.childs.append(other)
             other.parents.append(self)
         else:
@@ -357,14 +418,18 @@ def sync_step_trace(tracer_name_func):
         def wrapper(*args, **kwargs):
             span = trace.get_current_span()
             run_id = span.attributes["run_id"]  
+            step_name = span.attributes["step_name"] 
             tracer = trace.get_tracer(tracer_name_func())
+            depth = span.attributes["depth"]
+            place = span.attributes["place"]
             with tracer.start_as_current_span(func.__name__) as span:
                 span.set_attribute("function_name", func.__name__)
+                funcname = func.__name__
                 #span.add_event(f"func called with value: { {"args": str(args), "kwargs": str(kwargs)}} ")
                 result = func(*args, **kwargs)
 
-                step_name = func.__name__
-                serialize_output(result, run_id, step_name)
+                file_name =f"{depth}_{place}_{step_name}__{func.__name__}"
+                serialize_output(result, run_id, file_name)
                 return result
         return wrapper
     return decorator
@@ -375,14 +440,18 @@ def async_step_trace(tracer_name_func):
         async def wrapper(*args, **kwargs):
             span = trace.get_current_span()
             run_id = span.attributes["run_id"] 
+            step_name = span.attributes["step_name"] 
             tracer = trace.get_tracer(tracer_name_func())
+            depth = span.attributes["depth"]
+            place = span.attributes["place"]
             with tracer.start_as_current_span(func.__name__) as span:
                 span.set_attribute("function_name", func.__name__)
+                funcname = func.__name__
                 #span.add_event(f"func called with value: { {"args": str(args), "kwargs": str(kwargs)}} ")
                 result = await func(*args, **kwargs)
  
-                step_name = func.__name__
-                serialize_output(result, run_id, step_name)
+                file_name =f"{depth}_{place}_{step_name}__{func.__name__}"
+                serialize_output(result, run_id, file_name)
                 return result
         return  wrapper
     return decorator
@@ -392,7 +461,8 @@ class Step(Pipeline):
     def __init__(self,
                   function:callable, 
                   parameters:Parameters=None,
-                  input_name:str="first_args"):
+                  input_name:str="first_args",
+                  origin : Pipeline = None):
         self.name = varname()
         self.__future_output = asyncio.Future()
         super().__init__(inherite=True)
@@ -403,6 +473,7 @@ class Step(Pipeline):
         self._output = None
         self.input_name = input_name
         self.is_async = asyncio.iscoroutinefunction(function)
+        self.origin = origin
 
         tracer_name_func = lambda : self.tracer_name
 
@@ -444,10 +515,13 @@ class Step(Pipeline):
 
         if not hasattr(self,'tracer'):
             self.tracer = self.parents[0].tracer
-        with self.tracer.start_as_current_span(f"Step :{self.name}") as span:
+        with self.tracer.start_as_current_span(f"Step {self.depth}-{self.place} :{self.name}") as span:
             #span.set_attribute("function_name", self.f.__name__)
             if isinstance (self.parents[0],Step):
                 span.set_attribute("parent", self.parents[0].name)
+            span.set_attribute("depth", self.depth)
+            span.set_attribute("place", self.place)
+            span.set_attribute("step_name", self.name)
             span.set_attribute("run_id", str(run_id))
             span.set_attribute("input_name", input_name)
             span.set_attribute("function", self.f.__name__)
