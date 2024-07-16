@@ -1,7 +1,7 @@
 from hydra import  initialize, compose
 
 
-initialize(config_path="config")
+initialize(config_path="config", version_base="1.1")
 cfg = compose(config_name="local")
 api_key = cfg["llm_api"]["api_key"]
 llm_model_name = cfg["llm_api"]["llm_model_name"]

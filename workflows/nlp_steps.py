@@ -64,7 +64,7 @@ def correct_named_entity(ne_span, text):
     span = trace.get_current_span()
     span.add_event("Correcting named entity")
     
-    if text[ne_span.end_char] == '-':
+    if ne_span.end_char < len(text) and text[ne_span.end_char] == '-':
         result = ne_span.text + text[ne_span.end_char:].split(' ', 1)[0]
     else:
         result = ne_span.text
@@ -95,20 +95,20 @@ def spell_correct(transcription_list,
     span.add_event("Starting spell correction")
     
     span.add_event("Getting reference dictionaries")
-    senateurs, senateurs_ph = get_ref_dicts(ref_file_path)
+    senateurs, senateurs_ph = get_ref_dicts(ref_file_path,epitran)
     spello = {}
     text = ''
-    for transcription in transcription_list:
-        text += transcription["text"] + '\n'
+    #for transcription in transcription_list:
+    #    text += transcription + '\n'
     corrected_list = transcription_list
     
     span.add_event("Processing text with NLP model")
-    doc = nlp(text)
+    doc = nlp(corrected_list)
     
     span.add_event("Correcting named entities")
     for w in doc.ents:
         full_name = get_clean_name(correct_named_entity(w, text))
-        if w.label_ == 'PER' and len(full_name.split(' ')) > 1:
+        if (w.label_ == 'PER' and len(full_name.split(' ')) > 1) :
             first_name, last_name = full_name.lower().split(' ', 1)
             first_name_ph = epitran.transliterate(first_name)
             if first_name in senateurs:
@@ -120,6 +120,7 @@ def spell_correct(transcription_list,
                 # TODO: optimize thresholds for both JW scores wrt Precision
                 if min(score[0][1]) > 0.7 and max(score[0][1]) > 0.8 and full_name.lower() != score[0][0].lower():
                     spello[last_name] = re.sub(first_name, '', score[0][0], flags=re.I)
+
     
     span.add_event("Printing corrections if verbose")
     if verbose:
@@ -207,6 +208,7 @@ def parse_whisperx_output(w_result):
     span.add_event("Starting to parse WhisperX output")
     result = []
     for seg in w_result['segments']:
+
         try:
             if result and seg['speaker'] == result[-1]['speaker']:
                 updated_seg = result[-1]
@@ -219,7 +221,7 @@ def parse_whisperx_output(w_result):
                 result.append(new_seg)
         except KeyError as e:
             span.add_event(f"Key not found: {e}")
-            print('key not found ', e)
+
     span.add_event("Finished parsing WhisperX output")
     return result
 
@@ -305,9 +307,10 @@ async def step_llm_inference(
     span = trace.get_current_span()
     span.add_event("Starting LLM inference")
 
-    c_llm_inference = ParallelLLMInference(config.llm_model_name,
-                                            config.api_key, 
-                                            config.hf_model_name, 
+    c_llm_inference =  ParallelLLMInference( config.llm_api.api_url,
+                                            config.llm_api.llm_model_name,
+                                            config.llm_api.api_key, 
+                                            config.llm_api.hf_model_name, 
                                             config.max_tokens, 
                                             config.max_concurrent_requests, 
                                             config.prompts.system, 
@@ -320,29 +323,38 @@ async def step_llm_inference(
     return format_for_output(apply_parse_and_reformat(inflist))
 
 
-async def transcribe_empty(file_path, percent_value=100):
+def transcribe_empty(file_path, percent_value=100,sub_path=None ):
     span = trace.get_current_span()
     span.add_event("Starting empty transcription")
 
-    relative_path = Path('data') / file_path
+    
+    
+    #current_dir = Path.cwd()
+    #if current_dir.name == 'test':
+    #    relative_path = current_dir.parent / 'data' / file_path
+    #else : 
+    #    relative_path = Path('data') / file_path
+    relative_path= file_path
     
     try:
         span.add_event("Reading transcription file")
         with open(relative_path, 'r') as file:
             transcription_list = json.load(file)
-    except FileNotFoundError:
+    except FileNotFoundError as e:
         span.add_event(f"File not found: {relative_path}")
-        print(f" {relative_path} is not exist")
+        span.record_exception(e)
         transcription_list = []
-    except json.JSONDecodeError:
+        raise
+    except json.JSONDecodeError as e:
         span.add_event(f"JSON decoding error: {relative_path}")
-        print(f"Erreur JSON {relative_path}.")
+        span.record_exception(e)
         transcription_list = []
-    
-    nb_elements = math.ceil(len(transcription_list) * percent_value / 100)
+        raise
+    #segments = transcription_list['segments']
+    #nb_elements = math.ceil(len(segments) * percent_value / 100)
     
     span.add_event("Sampling transcription list")
-    sample = transcription_list[:nb_elements]
+    #transcription_list['segments']=segments[:nb_elements]
     
     span.add_event("Empty transcription completed")
-    return sample
+    return transcription_list

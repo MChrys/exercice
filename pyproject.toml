@@ -39,5 +39,5 @@ opentelemetry-instrumentation = "^0.46b0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-after-build = "python -m spacy download fr_core_news_lg"
+after-build  = "python -m spacy download fr_core_news_lg"
 

@@ -1,0 +1,466 @@
+2024-07-16 06:49:06,777 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - Span: serialize_output
+2024-07-16 06:49:06,778 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Trace ID: 143161295578045621992558530772470580619
+2024-07-16 06:49:06,778 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Span ID: 6399250645227122598
+2024-07-16 06:49:06,778 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Parent ID: 17618699349217289168
+2024-07-16 06:49:06,778 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Start time: 2024-07-16 06:49:06.620
+2024-07-16 06:49:06,778 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   End time: 2024-07-16 06:49:06.775
+2024-07-16 06:49:06,778 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Duration: 0.155s
+2024-07-16 06:49:06,778 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Attributes:
+2024-07-16 06:49:06,778 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Events:
+2024-07-16 06:49:06,778 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting output serialization at 2024-07-16 06:49:06.620 (+0.000s):
+2024-07-16 06:49:06,781 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Serialized JSON output at 2024-07-16 06:49:06.774 (+0.155s):
+2024-07-16 06:49:06,781 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -       file_path: results/None/transcribe_empty.json
+2024-07-16 06:49:06,781 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -       file_name: transcribe_empty.json
+2024-07-16 06:49:06,781 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -       file_id: 6587509312
+2024-07-16 06:49:06,781 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished output serialization at 2024-07-16 06:49:06.774 (+0.155s):
+2024-07-16 06:49:06,781 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - 
+2024-07-16 06:49:06,782 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - Span: transcribe_empty
+2024-07-16 06:49:06,782 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Trace ID: 143161295578045621992558530772470580619
+2024-07-16 06:49:06,786 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Span ID: 17618699349217289168
+2024-07-16 06:49:06,786 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Parent ID: 15310260792158593639
+2024-07-16 06:49:06,786 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Start time: 2024-07-16 06:49:06.562
+2024-07-16 06:49:06,786 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   End time: 2024-07-16 06:49:06.781
+2024-07-16 06:49:06,786 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Duration: 0.219s
+2024-07-16 06:49:06,786 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Attributes:
+2024-07-16 06:49:06,786 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     function_name: transcribe_empty
+2024-07-16 06:49:06,786 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Events:
+2024-07-16 06:49:06,786 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting empty transcription at 2024-07-16 06:49:06.562 (+0.000s):
+2024-07-16 06:49:06,786 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading transcription file at 2024-07-16 06:49:06.562 (+0.000s):
+2024-07-16 06:49:06,786 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Sampling transcription list at 2024-07-16 06:49:06.619 (+0.057s):
+2024-07-16 06:49:06,787 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Empty transcription completed at 2024-07-16 06:49:06.619 (+0.057s):
+2024-07-16 06:49:06,787 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - 
+2024-07-16 06:49:06,790 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - Span: serialize_output
+2024-07-16 06:49:06,790 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Trace ID: 143161295578045621992558530772470580619
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Span ID: 1600959716307025670
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Parent ID: 9986459868434085436
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Start time: 2024-07-16 06:49:06.789
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   End time: 2024-07-16 06:49:06.790
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Duration: 0.002s
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Attributes:
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Events:
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting output serialization at 2024-07-16 06:49:06.789 (+0.000s):
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Serialized JSON output at 2024-07-16 06:49:06.790 (+0.002s):
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -       file_path: results/None/parse_whisperx_output.json
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -       file_name: parse_whisperx_output.json
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -       file_id: 6587502592
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished output serialization at 2024-07-16 06:49:06.790 (+0.002s):
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - 
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - Span: parse_whisperx_output
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Trace ID: 143161295578045621992558530772470580619
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Span ID: 9986459868434085436
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Parent ID: 11899267802070129704
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Start time: 2024-07-16 06:49:06.788
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   End time: 2024-07-16 06:49:06.791
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Duration: 0.003s
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Attributes:
+2024-07-16 06:49:06,791 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     function_name: parse_whisperx_output
+2024-07-16 06:49:06,792 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Events:
+2024-07-16 06:49:06,792 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting to parse WhisperX output at 2024-07-16 06:49:06.788 (+0.000s):
+2024-07-16 06:49:06,792 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Key not found: 'speaker' at 2024-07-16 06:49:06.788 (+0.000s):
+2024-07-16 06:49:06,792 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished parsing WhisperX output at 2024-07-16 06:49:06.789 (+0.000s):
+2024-07-16 06:49:06,792 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - 
+2024-07-16 06:49:06,793 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - Span: serialize_output
+2024-07-16 06:49:06,793 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Trace ID: 143161295578045621992558530772470580619
+2024-07-16 06:49:06,793 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Span ID: 11646947125247231537
+2024-07-16 06:49:06,793 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Parent ID: 16404807495072456270
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Start time: 2024-07-16 06:49:06.792
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   End time: 2024-07-16 06:49:06.793
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Duration: 0.001s
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Attributes:
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Events:
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting output serialization at 2024-07-16 06:49:06.792 (+0.000s):
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Serialized string output at 2024-07-16 06:49:06.793 (+0.001s):
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -       file_path: results/None/format_for_output.txt
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -       file_name: format_for_output.txt
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -       file_id: 6587503040
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished output serialization at 2024-07-16 06:49:06.793 (+0.001s):
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - 
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - Span: format_for_output
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Trace ID: 143161295578045621992558530772470580619
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Span ID: 16404807495072456270
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Parent ID: 1943747549863396004
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Start time: 2024-07-16 06:49:06.792
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   End time: 2024-07-16 06:49:06.794
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Duration: 0.002s
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Attributes:
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     function_name: format_for_output
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Events:
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting to format output at 2024-07-16 06:49:06.792 (+0.000s):
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished formatting output at 2024-07-16 06:49:06.792 (+0.000s):
+2024-07-16 06:49:06,794 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - 
+2024-07-16 06:49:09,534 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - Span: serialize_output
+2024-07-16 06:49:09,535 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Trace ID: 143161295578045621992558530772470580619
+2024-07-16 06:49:09,535 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Span ID: 3843031176666069955
+2024-07-16 06:49:09,535 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Parent ID: 6354728802748351470
+2024-07-16 06:49:09,535 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Start time: 2024-07-16 06:49:09.532
+2024-07-16 06:49:09,535 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   End time: 2024-07-16 06:49:09.534
+2024-07-16 06:49:09,536 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Duration: 0.002s
+2024-07-16 06:49:09,536 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Attributes:
+2024-07-16 06:49:09,536 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Events:
+2024-07-16 06:49:09,536 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting output serialization at 2024-07-16 06:49:09.532 (+0.000s):
+2024-07-16 06:49:09,536 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Serialized string output at 2024-07-16 06:49:09.534 (+0.002s):
+2024-07-16 06:49:09,536 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -       file_path: results/None/spell_correct.txt
+2024-07-16 06:49:09,536 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -       file_name: spell_correct.txt
+2024-07-16 06:49:09,536 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -       file_id: 6508757280
+2024-07-16 06:49:09,536 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished output serialization at 2024-07-16 06:49:09.534 (+0.002s):
+2024-07-16 06:49:09,536 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - 
+2024-07-16 06:49:09,536 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - Span: spell_correct
+2024-07-16 06:49:09,536 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Trace ID: 143161295578045621992558530772470580619
+2024-07-16 06:49:09,536 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Span ID: 6354728802748351470
+2024-07-16 06:49:09,536 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Parent ID: 11145972881124787309
+2024-07-16 06:49:09,536 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Start time: 2024-07-16 06:49:06.795
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   End time: 2024-07-16 06:49:09.536
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Duration: 2.741s
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Attributes:
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     function_name: spell_correct
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Events:
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.529 (+2.734s):
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.529 (+2.734s):
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.529 (+2.734s):
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.529 (+2.734s):
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.529 (+2.734s):
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.529 (+2.734s):
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.529 (+2.734s):
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.529 (+2.735s):
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.529 (+2.735s):
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.529 (+2.735s):
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.529 (+2.735s):
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.529 (+2.735s):
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.529 (+2.735s):
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.529 (+2.735s):
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.529 (+2.735s):
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.529 (+2.735s):
+2024-07-16 06:49:09,537 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.529 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.529 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.529 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.529 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.529 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.529 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.529 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.529 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.529 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,538 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,539 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,540 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,541 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,542 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,542 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,542 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,542 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,542 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,542 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,542 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,542 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,542 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,542 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,542 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,542 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,542 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,542 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,542 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished correcting named entity at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,543 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,543 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Finished cleaning person's name at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,543 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Printing corrections if verbose at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,543 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Applying corrections to transcription list at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,543 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Spell correction completed at 2024-07-16 06:49:09.530 (+2.735s):
+2024-07-16 06:49:09,543 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - 
+2024-07-16 06:49:09,545 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - Span: Step :c_transcription_list
+2024-07-16 06:49:09,545 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Trace ID: 143161295578045621992558530772470580619
+2024-07-16 06:49:09,545 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Span ID: 11145972881124787309
+2024-07-16 06:49:09,545 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Parent ID: 1943747549863396004
+2024-07-16 06:49:09,545 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Start time: 2024-07-16 06:49:06.795
+2024-07-16 06:49:09,545 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   End time: 2024-07-16 06:49:09.545
+2024-07-16 06:49:09,545 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Duration: 2.750s
+2024-07-16 06:49:09,545 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Attributes:
+2024-07-16 06:49:09,545 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     parent: formatted_verbatim
+2024-07-16 06:49:09,545 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     run_id: f7b89f96-1d9e-4f97-99de-5e50206b8ab5
+2024-07-16 06:49:09,545 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     input_name: first_args
+2024-07-16 06:49:09,545 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     function: spell_correct
+2024-07-16 06:49:09,545 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Events:
+2024-07-16 06:49:09,546 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - 
+2024-07-16 06:49:09,547 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - Span: Step :formatted_verbatim
+2024-07-16 06:49:09,547 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Trace ID: 143161295578045621992558530772470580619
+2024-07-16 06:49:09,547 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Span ID: 1943747549863396004
+2024-07-16 06:49:09,548 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Parent ID: 11899267802070129704
+2024-07-16 06:49:09,548 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Start time: 2024-07-16 06:49:06.792
+2024-07-16 06:49:09,548 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   End time: 2024-07-16 06:49:09.547
+2024-07-16 06:49:09,548 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Duration: 2.755s
+2024-07-16 06:49:09,548 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Attributes:
+2024-07-16 06:49:09,548 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     parent: parse_transcription
+2024-07-16 06:49:09,548 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     run_id: f7b89f96-1d9e-4f97-99de-5e50206b8ab5
+2024-07-16 06:49:09,548 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     input_name: first_args
+2024-07-16 06:49:09,548 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     function: format_for_output
+2024-07-16 06:49:09,548 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Events:
+2024-07-16 06:49:09,548 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - 
+2024-07-16 06:49:09,549 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - Span: Step :parse_transcription
+2024-07-16 06:49:09,549 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Trace ID: 143161295578045621992558530772470580619
+2024-07-16 06:49:09,549 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Span ID: 11899267802070129704
+2024-07-16 06:49:09,549 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Parent ID: 15310260792158593639
+2024-07-16 06:49:09,549 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Start time: 2024-07-16 06:49:06.788
+2024-07-16 06:49:09,549 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   End time: 2024-07-16 06:49:09.549
+2024-07-16 06:49:09,549 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Duration: 2.761s
+2024-07-16 06:49:09,549 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Attributes:
+2024-07-16 06:49:09,549 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     parent: transcribe
+2024-07-16 06:49:09,550 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     run_id: f7b89f96-1d9e-4f97-99de-5e50206b8ab5
+2024-07-16 06:49:09,550 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     input_name: first_args
+2024-07-16 06:49:09,550 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     function: parse_whisperx_output
+2024-07-16 06:49:09,550 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Events:
+2024-07-16 06:49:09,550 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - 
+2024-07-16 06:51:02,653 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - Span: step_llm_inference
+2024-07-16 06:51:02,654 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Trace ID: 143161295578045621992558530772470580619
+2024-07-16 06:51:02,654 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Span ID: 3916539584745791943
+2024-07-16 06:51:02,654 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Parent ID: 2888555810966596604
+2024-07-16 06:51:02,654 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Start time: 2024-07-16 06:49:09.550
+2024-07-16 06:51:02,654 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   End time: 2024-07-16 06:51:02.652
+2024-07-16 06:51:02,655 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Duration: 1m 53.101s
+2024-07-16 06:51:02,655 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Attributes:
+2024-07-16 06:51:02,655 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     function_name: step_llm_inference
+2024-07-16 06:51:02,656 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Events:
+2024-07-16 06:51:02,656 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Text fits in one chunk => direct return 1279 tokens at 2024-07-16 06:49:10.671 (+1.121s):
+2024-07-16 06:51:02,656 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting speech chunking at 2024-07-16 06:49:10.671 (+1.121s):
+2024-07-16 06:51:02,656 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Text fits in one chunk => direct return 1097 tokens at 2024-07-16 06:49:10.673 (+1.122s):
+2024-07-16 06:51:02,657 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting speech chunking at 2024-07-16 06:49:10.673 (+1.122s):
+2024-07-16 06:51:02,657 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Speech chunking completed. Number of chunks: 2 at 2024-07-16 06:49:10.676 (+1.125s):
+2024-07-16 06:51:02,657 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting speech chunking at 2024-07-16 06:49:10.686 (+1.136s):
+2024-07-16 06:51:02,657 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Text fits in one chunk => direct return 29 tokens at 2024-07-16 06:49:10.686 (+1.136s):
+2024-07-16 06:51:02,657 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting speech chunking at 2024-07-16 06:49:10.686 (+1.136s):
+2024-07-16 06:51:02,658 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Text fits in one chunk => direct return 516 tokens at 2024-07-16 06:49:10.688 (+1.137s):
+2024-07-16 06:51:02,658 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting speech chunking at 2024-07-16 06:49:10.688 (+1.137s):
+2024-07-16 06:51:02,658 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Text fits in one chunk => direct return 304 tokens at 2024-07-16 06:49:10.689 (+1.138s):
+2024-07-16 06:51:02,658 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting speech chunking at 2024-07-16 06:49:10.689 (+1.139s):
+2024-07-16 06:51:02,658 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Text fits in one chunk => direct return 7 tokens at 2024-07-16 06:49:10.689 (+1.139s):
+2024-07-16 06:51:02,658 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting speech chunking at 2024-07-16 06:49:10.689 (+1.139s):
+2024-07-16 06:51:02,658 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Text fits in one chunk => direct return 646 tokens at 2024-07-16 06:49:10.691 (+1.140s):
+2024-07-16 06:51:02,658 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting speech chunking at 2024-07-16 06:49:10.691 (+1.140s):
+2024-07-16 06:51:02,658 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Speech chunking completed. Number of chunks: 4 at 2024-07-16 06:49:10.704 (+1.154s):
+2024-07-16 06:51:02,658 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting speech chunking at 2024-07-16 06:49:10.731 (+1.181s):
+2024-07-16 06:51:02,658 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Text fits in one chunk => direct return 111 tokens at 2024-07-16 06:49:10.732 (+1.181s):
+2024-07-16 06:51:02,658 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting speech chunking at 2024-07-16 06:49:10.732 (+1.181s):
+2024-07-16 06:51:02,658 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Text fits in one chunk => direct return 64 tokens at 2024-07-16 06:49:10.732 (+1.181s):
+2024-07-16 06:51:02,659 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Queueing API calls at 2024-07-16 06:49:10.771 (+1.220s):
+2024-07-16 06:51:02,659 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Queueing API calls at 2024-07-16 06:49:10.771 (+1.220s):
+2024-07-16 06:51:02,659 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Queueing API calls at 2024-07-16 06:49:10.771 (+1.220s):
+2024-07-16 06:51:02,659 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Queueing API calls at 2024-07-16 06:49:10.771 (+1.220s):
+2024-07-16 06:51:02,659 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Queueing API calls at 2024-07-16 06:49:10.771 (+1.220s):
+2024-07-16 06:51:02,659 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Queueing API calls at 2024-07-16 06:49:10.771 (+1.220s):
+2024-07-16 06:51:02,659 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Queueing API calls at 2024-07-16 06:49:10.771 (+1.221s):
+2024-07-16 06:51:02,659 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Queueing API calls at 2024-07-16 06:49:10.771 (+1.221s):
+2024-07-16 06:51:02,660 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Queueing API calls at 2024-07-16 06:49:10.771 (+1.221s):
+2024-07-16 06:51:02,660 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Queueing API calls at 2024-07-16 06:49:10.771 (+1.221s):
+2024-07-16 06:51:02,660 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Queueing API calls at 2024-07-16 06:49:10.771 (+1.221s):
+2024-07-16 06:51:02,660 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Queueing API calls at 2024-07-16 06:49:10.771 (+1.221s):
+2024-07-16 06:51:02,660 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Queueing API calls at 2024-07-16 06:49:10.771 (+1.221s):
+2024-07-16 06:51:02,660 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Queueing API calls at 2024-07-16 06:49:10.771 (+1.221s):
+2024-07-16 06:51:02,660 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Queueing API calls at 2024-07-16 06:49:10.771 (+1.221s):
+2024-07-16 06:51:02,660 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Queueing API calls at 2024-07-16 06:49:10.771 (+1.221s):
+2024-07-16 06:51:02,660 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.771 (+1.221s):
+2024-07-16 06:51:02,660 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 06:49:10.772 (+1.221s):
+2024-07-16 06:51:02,660 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.221s):
+2024-07-16 06:51:02,665 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 06:49:10.772 (+1.221s):
+2024-07-16 06:51:02,665 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,665 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,665 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,665 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,665 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,665 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,665 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,665 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Starting LLM inference at 2024-07-16 06:49:10.772 (+1.222s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:49:10.774 (+1.224s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/prompt_normalisation_v0.txt at 2024-07-16 06:49:10.774 (+1.224s):
+2024-07-16 06:51:02,666 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:49:10.774 (+1.224s):
+2024-07-16 06:51:02,667 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/prompt_normalisation_v0.txt at 2024-07-16 06:49:10.774 (+1.224s):
+2024-07-16 06:51:02,667 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:49:10.774 (+1.224s):
+2024-07-16 06:51:02,667 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/prompt_normalisation_v0.txt at 2024-07-16 06:49:10.774 (+1.224s):
+2024-07-16 06:51:02,667 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:49:10.775 (+1.225s):
+2024-07-16 06:51:02,667 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Attempt 1 to call LLM API at 2024-07-16 06:49:10.779 (+1.228s):
+2024-07-16 06:51:02,667 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:49:10.807 (+1.256s):
+2024-07-16 06:51:02,667 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Attempt 1 to call LLM API at 2024-07-16 06:49:10.807 (+1.256s):
+2024-07-16 06:51:02,667 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:49:10.811 (+1.260s):
+2024-07-16 06:51:02,667 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Attempt 1 to call LLM API at 2024-07-16 06:49:10.811 (+1.260s):
+2024-07-16 06:51:02,667 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     LLM API call successful at 2024-07-16 06:49:33.317 (+23.766s):
+2024-07-16 06:51:02,667 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 06:49:33.317 (+23.767s):
+2024-07-16 06:51:02,667 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:49:33.322 (+23.772s):
+2024-07-16 06:51:02,667 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/prompt_normalisation_v0.txt at 2024-07-16 06:49:33.322 (+23.772s):
+2024-07-16 06:51:02,667 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:49:33.324 (+23.773s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Attempt 1 to call LLM API at 2024-07-16 06:49:33.326 (+23.775s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     LLM API call successful at 2024-07-16 06:49:56.194 (+46.643s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 06:49:56.194 (+46.644s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:49:56.201 (+46.651s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/prompt_normalisation_v0.txt at 2024-07-16 06:49:56.201 (+46.651s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:49:56.203 (+46.653s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Attempt 1 to call LLM API at 2024-07-16 06:49:56.205 (+46.655s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     LLM API call successful at 2024-07-16 06:50:02.272 (+52.722s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 06:50:02.280 (+52.730s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:50:02.286 (+52.735s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/prompt_normalisation_v0.txt at 2024-07-16 06:50:02.286 (+52.735s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:50:02.287 (+52.737s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Attempt 1 to call LLM API at 2024-07-16 06:50:02.289 (+52.738s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     LLM API call successful at 2024-07-16 06:50:10.314 (+1m 0.764s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 06:50:10.315 (+1m 0.765s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:50:10.322 (+1m 0.771s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/prompt_normalisation_v0.txt at 2024-07-16 06:50:10.322 (+1m 0.771s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:50:10.324 (+1m 0.773s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Attempt 1 to call LLM API at 2024-07-16 06:50:10.328 (+1m 0.777s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     LLM API call successful at 2024-07-16 06:50:34.509 (+1m 24.958s):
+2024-07-16 06:51:02,668 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 06:50:34.522 (+1m 24.971s):
+2024-07-16 06:51:02,669 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     API calls completed. Number of responses: 5 at 2024-07-16 06:50:34.535 (+1m 24.985s):
+2024-07-16 06:51:02,669 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:50:34.542 (+1m 24.991s):
+2024-07-16 06:51:02,669 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/prompt_normalisation_v0.txt at 2024-07-16 06:50:34.542 (+1m 24.992s):
+2024-07-16 06:51:02,669 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:50:34.545 (+1m 24.994s):
+2024-07-16 06:51:02,669 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Attempt 1 to call LLM API at 2024-07-16 06:50:34.547 (+1m 24.997s):
+2024-07-16 06:51:02,669 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     LLM API call successful at 2024-07-16 06:50:44.392 (+1m 34.842s):
+2024-07-16 06:51:02,669 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 06:50:44.393 (+1m 34.843s):
+2024-07-16 06:51:02,669 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 06:50:44.395 (+1m 34.844s):
+2024-07-16 06:51:02,669 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:50:44.399 (+1m 34.848s):
+2024-07-16 06:51:02,669 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/prompt_normalisation_v0.txt at 2024-07-16 06:50:44.399 (+1m 34.848s):
+2024-07-16 06:51:02,669 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:50:44.404 (+1m 34.853s):
+2024-07-16 06:51:02,669 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Attempt 1 to call LLM API at 2024-07-16 06:50:44.408 (+1m 34.858s):
+2024-07-16 06:51:02,669 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     LLM API call successful at 2024-07-16 06:50:57.546 (+1m 47.996s):
+2024-07-16 06:51:02,669 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 06:50:57.547 (+1m 47.997s):
+2024-07-16 06:51:02,669 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     API calls completed. Number of responses: 1 at 2024-07-16 06:50:57.551 (+1m 48.000s):
+2024-07-16 06:51:02,669 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:50:57.555 (+1m 48.004s):
+2024-07-16 06:51:02,669 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/prompt_normalisation_v0.txt at 2024-07-16 06:50:57.555 (+1m 48.004s):
+2024-07-16 06:51:02,669 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:50:57.557 (+1m 48.007s):
+2024-07-16 06:51:02,670 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Attempt 1 to call LLM API at 2024-07-16 06:50:57.559 (+1m 48.008s):
+2024-07-16 06:51:02,670 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     LLM API call successful at 2024-07-16 06:51:01.819 (+1m 52.268s):
+2024-07-16 06:51:02,670 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/system_prompt.txt at 2024-07-16 06:51:01.819 (+1m 52.268s):
+2024-07-16 06:51:02,670 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:51:01.820 (+1m 52.270s):
+2024-07-16 06:51:02,670 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Reading prompt from file: services/prompt_normalisation_v0.txt at 2024-07-16 06:51:01.820 (+1m 52.270s):
+2024-07-16 06:51:02,670 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Prompt file read successfully at 2024-07-16 06:51:01.821 (+1m 52.271s):
+2024-07-16 06:51:02,670 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Attempt 1 to call LLM API at 2024-07-16 06:51:01.823 (+1m 52.272s):
+2024-07-16 06:51:02,670 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - 
+2024-07-16 06:51:02,671 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - Span: Step :c_verbatim_output
+2024-07-16 06:51:02,671 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Trace ID: 143161295578045621992558530772470580619
+2024-07-16 06:51:02,671 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Span ID: 2888555810966596604
+2024-07-16 06:51:02,671 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Parent ID: 15310260792158593639
+2024-07-16 06:51:02,671 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Start time: 2024-07-16 06:49:09.550
+2024-07-16 06:51:02,671 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   End time: 2024-07-16 06:51:02.670
+2024-07-16 06:51:02,671 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Duration: 1m 53.120s
+2024-07-16 06:51:02,671 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Attributes:
+2024-07-16 06:51:02,671 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     parent: transcribe
+2024-07-16 06:51:02,671 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     run_id: f7b89f96-1d9e-4f97-99de-5e50206b8ab5
+2024-07-16 06:51:02,671 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     input_name: first_args
+2024-07-16 06:51:02,671 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     function: step_llm_inference
+2024-07-16 06:51:02,671 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Events:
+2024-07-16 06:51:02,671 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - 
+2024-07-16 06:51:02,672 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - Span: Step :transcribe
+2024-07-16 06:51:02,672 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Trace ID: 143161295578045621992558530772470580619
+2024-07-16 06:51:02,672 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Span ID: 15310260792158593639
+2024-07-16 06:51:02,672 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Parent ID: 424060443406276867
+2024-07-16 06:51:02,672 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Start time: 2024-07-16 06:49:06.561
+2024-07-16 06:51:02,672 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   End time: 2024-07-16 06:51:02.672
+2024-07-16 06:51:02,672 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Duration: 1m 56.111s
+2024-07-16 06:51:02,672 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Attributes:
+2024-07-16 06:51:02,672 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     run_id: f7b89f96-1d9e-4f97-99de-5e50206b8ab5
+2024-07-16 06:51:02,672 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     input_name: first_args
+2024-07-16 06:51:02,675 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     function: transcribe_empty
+2024-07-16 06:51:02,676 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Events:
+2024-07-16 06:51:02,676 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - 
+2024-07-16 06:51:02,676 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - Span: Pipeline :pipe
+2024-07-16 06:51:02,677 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Trace ID: 143161295578045621992558530772470580619
+2024-07-16 06:51:02,677 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Span ID: 424060443406276867
+2024-07-16 06:51:02,677 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Parent ID: None
+2024-07-16 06:51:02,677 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Start time: 2024-07-16 06:49:06.561
+2024-07-16 06:51:02,677 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   End time: 2024-07-16 06:51:02.676
+2024-07-16 06:51:02,677 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Duration: 1m 56.116s
+2024-07-16 06:51:02,677 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Attributes:
+2024-07-16 06:51:02,677 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     run_id: f7b89f96-1d9e-4f97-99de-5e50206b8ab5
+2024-07-16 06:51:02,677 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -   Events:
+2024-07-16 06:51:02,677 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     Pipeline : pipe execution completed at 2024-07-16 06:51:02.676 (+1m 56.115s):
+2024-07-16 06:51:02,677 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO -     No output due to exception at 2024-07-16 06:51:02.676 (+1m 56.115s):
+2024-07-16 06:51:02,677 - run_f7b89f96-1d9e-4f97-99de-5e50206b8ab5 - INFO - 

@@ -4,6 +4,7 @@ import uuid
 import functools
 from datetime import datetime
 from varname import varname
+import os 
 
 from typing import MutableSequence, TypeVar, Sequence
 from dataclasses import dataclass, field
@@ -49,7 +50,36 @@ def format_duration(seconds):
     else:
         return f"{seconds:.3f}s"
 
+class FlushFileHandler(logging.FileHandler):
+    def emit(self, record):
+        super().emit(record)
+        self.flush()
+
+def configure_logger(run_id):
+    results_dir = os.path.join("results", str(run_id))
+    os.makedirs(results_dir, exist_ok=True)
+    log_file = os.path.join(results_dir, "log.txt")
+
+    logger = logging.getLogger(f"run_{run_id}")
+    logger.setLevel(logging.INFO)
+
+    file_handler = FlushFileHandler(log_file)
+    file_handler.setLevel(logging.INFO)
+
+
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    file_handler.setFormatter(formatter)
+
+    logger.addHandler(file_handler)
+
+    return logger
+
+
+
 class DetailedConsoleSpanExporter(SpanExporter):
+    def __init__(self, logger):
+        self.logger = logger
+
     def export(self, spans: Sequence[ReadableSpan]) -> SpanExportResult:
         for span in spans:
             self._export_span(span)
@@ -60,24 +90,24 @@ class DetailedConsoleSpanExporter(SpanExporter):
         end_time = datetime.fromtimestamp(span.end_time / 1e9)
         duration_seconds = (span.end_time - span.start_time) / 1e9
         
-        logger.info(f"Span: {span.name}")
-        logger.info(f"  Trace ID: {span.context.trace_id}")
-        logger.info(f"  Span ID: {span.context.span_id}")
-        logger.info(f"  Parent ID: {span.parent.span_id if span.parent else None}")
-        logger.info(f"  Start time: {start_time.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]}")
-        logger.info(f"  End time: {end_time.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]}")
-        logger.info(f"  Duration: {format_duration(duration_seconds)}")
-        logger.info("  Attributes:")
+        self.logger.info(f"Span: {span.name}")
+        self.logger.info(f"  Trace ID: {span.context.trace_id}")
+        self.logger.info(f"  Span ID: {span.context.span_id}")
+        self.logger.info(f"  Parent ID: {span.parent.span_id if span.parent else None}")
+        self.logger.info(f"  Start time: {start_time.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]}")
+        self.logger.info(f"  End time: {end_time.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]}")
+        self.logger.info(f"  Duration: {format_duration(duration_seconds)}")
+        self.logger.info("  Attributes:")
         for key, value in span.attributes.items():
-            logger.info(f"    {key}: {value}")
-        logger.info("  Events:")
+            self.logger.info(f"    {key}: {value}")
+        self.logger.info("  Events:")
         for event in span.events:
             event_time = datetime.fromtimestamp(event.timestamp / 1e9)
             event_offset = (event.timestamp - span.start_time) / 1e9
-            logger.info(f"    {event.name} at {event_time.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]} (+{format_duration(event_offset)}):")
+            self.logger.info(f"    {event.name} at {event_time.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]} (+{format_duration(event_offset)}):")
             for key, value in event.attributes.items():
-                logger.info(f"      {key}: {value}")
-        logger.info("")
+                self.logger.info(f"      {key}: {value}")
+        self.logger.info("")
 
     def shutdown(self):
         pass
@@ -148,7 +178,7 @@ class stepList(MutableSequence):
 
     def __add__(self,other):
         if isinstance(other, Step):
-            print('add Test  to StepList')
+
             self._l.append(other)
             return self
 
@@ -160,7 +190,7 @@ class Pipeline:
         if not inherite:
             self.name = varname()
             self.tracer_name = f"{__name__}.{self.name}"
-            self.__init_tracer__()
+
         #self.input = input
         self.inherite = inherite
         self.parents =[]
@@ -170,15 +200,13 @@ class Pipeline:
         self.outputs = dict()
         self.curent_id = None
 
-    def __init_tracer__(self):
+    def __init_tracer__(self, logger):
         resource = Resource(attributes={
             SERVICE_NAME: f"Pipeline-{self.name}"
         })
         provider = TracerProvider(resource=resource)
-
-        processor = SimpleSpanProcessor(DetailedConsoleSpanExporter())
+        processor = SimpleSpanProcessor(DetailedConsoleSpanExporter(logger))
         provider.add_span_processor(processor)
-
         trace.set_tracer_provider(provider)
         self.tracer = trace.get_tracer(f"{self.tracer_name}")
 
@@ -200,12 +228,14 @@ class Pipeline:
     async def start(self,input, run_id=None):
         self.outputs = dict()
         run_id = uuid.uuid4()
-
+        logger = configure_logger(run_id) 
+        self.__init_tracer__(logger) 
         with self.tracer.start_as_current_span(f"Pipeline :{self.name}") as span:
             span.set_attribute("run_id", str(run_id))
             #log_span(span)
 
             self.tracer_context = context.get_current()
+            result = None
             try:
                 result = await self.run(input, run_id)
                 return result 
@@ -214,7 +244,10 @@ class Pipeline:
                 raise
             finally:
                 span.add_event(f"Pipeline : {self.name} execution completed")
-                span.add_event(f"output : {result}")
+                if result is not None:
+                    span.add_event(f"output : {type(result)}")
+                else:
+                    span.add_event("No output due to exception")
             
     
     async def run(self,input, run_id=None):
@@ -282,16 +315,57 @@ class Pipeline:
             return other
         else:
             return stepList([self,other])
+        
+import json
+
+def serialize_output(output, run_id, step_name):
+    tracer = trace.get_tracer(__name__)
+    with tracer.start_as_current_span("serialize_output") as span:
+        span.add_event("Starting output serialization")
+
+
+        results_dir = os.path.join("results", str(run_id))
+        os.makedirs(results_dir, exist_ok=True)
+        
+        if isinstance(output, str):
+            file_path = os.path.join(results_dir, f"{step_name}.txt")
+            with open(file_path, "w") as f:
+                f.write(output)
+                span.add_event("Serialized string output", {
+                    "file_path": file_path,
+                    "file_name": f"{step_name}.txt",
+                    "file_id": id(f)
+                })
+        elif isinstance(output, (list, dict)):
+            file_path = os.path.join(results_dir, f"{step_name}.json")
+            with open(file_path, "w") as f:
+                json.dump(output, f, indent=4)
+                span.add_event("Serialized JSON output", {
+                    "file_path": file_path,
+                    "file_name": f"{step_name}.json",
+                    "file_id": id(f)
+                })
+        else:
+            span.add_event("Serialization error", {"error": "Unsupported output type"})
+            raise ValueError("Unsupported output type for serialization")
+        
+        span.add_event("Finished output serialization")
 
 def sync_step_trace(tracer_name_func):
     def decorator(func):
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
+            span = trace.get_current_span()
+            run_id = span.attributes["run_id"]  
             tracer = trace.get_tracer(tracer_name_func())
             with tracer.start_as_current_span(func.__name__) as span:
                 span.set_attribute("function_name", func.__name__)
-                span.add_event(f"func called with value: { {"args": str(args), "kwargs": str(kwargs)}} ")
-                return func(*args, **kwargs)
+                #span.add_event(f"func called with value: { {"args": str(args), "kwargs": str(kwargs)}} ")
+                result = func(*args, **kwargs)
+
+                step_name = func.__name__
+                serialize_output(result, run_id, step_name)
+                return result
         return wrapper
     return decorator
 
@@ -299,12 +373,17 @@ def async_step_trace(tracer_name_func):
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(*args, **kwargs):
-            trace_name = tracer_name_func()
+            span = trace.get_current_span()
+            run_id = span.attributes["run_id"] 
             tracer = trace.get_tracer(tracer_name_func())
             with tracer.start_as_current_span(func.__name__) as span:
                 span.set_attribute("function_name", func.__name__)
-                span.add_event(f"func called with value: { {"args": str(args), "kwargs": str(kwargs)}} ")
-                return await func(*args, **kwargs)
+                #span.add_event(f"func called with value: { {"args": str(args), "kwargs": str(kwargs)}} ")
+                result = await func(*args, **kwargs)
+ 
+                step_name = func.__name__
+                serialize_output(result, run_id, step_name)
+                return result
         return  wrapper
     return decorator
 
