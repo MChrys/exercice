@@ -207,7 +207,7 @@ class AsyncTaskIterator:
             raise StopAsyncIteration
 
 class Pipeline:
-    def __init__(self,inherite =False):
+    def __init__(self,conf=None,inherite =False):
         #self.name = self.set_varname()
         if not inherite:
             self.name = varname()
@@ -215,6 +215,7 @@ class Pipeline:
             self.origin = self
             self.depth = 0
             self.place = 0
+            self.conf = conf
         else : 
             self.depth = None
             self.place = None
@@ -264,6 +265,7 @@ class Pipeline:
         self.__init_tracer__(logger) 
         with self.tracer.start_as_current_span(f"Pipeline :{self.name}") as span:
             span.set_attribute("run_id", str(run_id))
+            span.set_attribute("conf", str(self.conf))
             #log_span(span)
 
             self.tracer_context = context.get_current()

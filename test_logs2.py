@@ -41,7 +41,7 @@ async def main():
     jarowinkler = JaroWinkler()
     epi = epitran.Epitran(cfg["epi"])
     nlp = spacy.load(cfg["nlp"])
-    pipe = Pipeline()
+    pipe = Pipeline(cfg)
     
     step1 = Step(func)
     step2 = Step(async_func)

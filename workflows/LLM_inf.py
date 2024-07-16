@@ -121,7 +121,7 @@ class ParallelLLMInference:
                         model=self.exaion_model_name,
                         messages=[
                             {"role": "system", "content": system_prompt},
-                            {"role": "user", "content": user_prompt}
+                            {"role": "user", "content": normalisation}
                         ],
                         stream=False,
                         max_tokens=self.max_tokens
