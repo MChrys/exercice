@@ -10,7 +10,7 @@ Thumbs.db
 
 *.pyc
 __pycache__/
-
+results/
 venv/
 env/
 .venv/
