@@ -38,9 +38,9 @@ async def main():
         pipeline_future = asyncio.create_task(pipe.start("data/transcribe_encoded.json"))
         
 
-        #logger.info(f"step1 output: ======> {await step1.output}")
-        #logger.info(f"step2 output: ======> {await step2.output}")
-        #logger.info(f"step3 output: ======> {await step3.output}")
+        logger.info(f"step1 output: ======> {await step1.output}")
+        logger.info(f"step2 output: ======> {await step2.output}")
+        logger.info(f"step3 output: ======> {await step3.output}")
         
 
         result = await pipeline_future

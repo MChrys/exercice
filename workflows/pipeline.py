@@ -273,11 +273,11 @@ class Pipeline:
         self.outputs = dict()
         run_id = uuid.uuid4()
         self.run_id_dir_name(run_id)
-        logger = configure_logger(run_id, self.run_id_dir) 
+        logger = configure_logger(run_id, self._run_id_dir) 
         self.__init_tracer__(logger) 
         with self.tracer.start_as_current_span(f"Pipeline :{self.name}") as span:
-            span.set_attribute("result_dir", self.run_id_dir)
-            span.set_attribute("result_dir_len", self.results_dir_len)
+            span.set_attribute("result_dir", self._run_id_dir)
+            #span.set_attribute("result_dir_len", self._results_dir_len)
             span.set_attribute("run_id", str(run_id))
             span.set_attribute("conf", str(self.conf))
             #log_span(span)
@@ -302,12 +302,12 @@ class Pipeline:
         self.results_dir = pipeline_base_dir
 
     def lenght_results_dir(self):
-        self.results_dir_len = len(os.listdir(self.results_dir))
+        self._results_dir_len = len(os.listdir(self.results_dir))
 
     def run_id_dir_name(self, run_id):
-        dir = os.path.join(self.results_dir, f"{self.results_dir_len:03d}_{run_id}")
+        dir = os.path.join(self.results_dir, f"{self._results_dir_len:03d}_{run_id}")
         os.makedirs(dir, exist_ok=True)
-        self.run_id_dir = dir
+        self._run_id_dir = dir
             
     
     async def run(self,input, run_id=None):
@@ -444,14 +444,14 @@ def sync_step_trace(tracer_name_func):
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
             span = trace.get_current_span()
-            run_id = span.attributes["run_id"]  
+            #run_id = span.attributes["run_id"]  
             step_name = span.attributes["step_name"] 
-            tracer = trace.get_tracer(tracer_name_func())
+            #tracer = trace.get_tracer(tracer_name_func())
             depth = span.attributes["depth"]
             place = span.attributes["place"]
             #with tracer.start_as_current_span(func.__name__) as span:
             span.set_attribute("function_name", func.__name__)
-            funcname = func.__name__
+            #funcname = func.__name__
             #span.add_event(f"func called with value: { {"args": str(args), "kwargs": str(kwargs)}} ")
             result = func(*args, **kwargs)
 
@@ -466,14 +466,14 @@ def async_step_trace(tracer_name_func):
         @functools.wraps(func)
         async def wrapper(*args, **kwargs):
             span = trace.get_current_span()
-            run_id = span.attributes["run_id"] 
+            #run_id = span.attributes["run_id"] 
             step_name = span.attributes["step_name"] 
-            tracer = trace.get_tracer(tracer_name_func())
+            #tracer = trace.get_tracer(tracer_name_func())
             depth = span.attributes["depth"]
             place = span.attributes["place"]
             #with tracer.start_as_current_span(func.__name__) as span:
             span.set_attribute("function_name", func.__name__)
-            funcname = func.__name__
+            #funcname = func.__name__
             #span.add_event(f"func called with value: { {"args": str(args), "kwargs": str(kwargs)}} ")
 
             result = await func(*args, **kwargs)
@@ -481,7 +481,7 @@ def async_step_trace(tracer_name_func):
             file_name =f"{depth}_{place}_{step_name}__{func.__name__}"
             serialize_output(result, file_name)
             return result
-        return  wrapper
+        return wrapper
     return decorator
 
 
@@ -550,7 +550,7 @@ class Step(Pipeline):
             span.set_attribute("place", self.place)
             if isinstance (self.parents[0],Step):
                 span.set_attribute("parent", self.parents[0].name)
-            span.set_attribute("result_dir", self.origin.run_id_dir)
+            span.set_attribute("result_dir", self.origin._run_id_dir)
 
             
             span.set_attribute("pipeline_name", self.origin.name)
