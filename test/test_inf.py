@@ -1,4 +1,7 @@
 # Example usage
+from workflows.LLM_inf import ParallelLLMInference
+from config import initialize, compose
+
 if __name__ == "__main__":
     initialize(config_path="config")
     cfg = compose(config_name="local")

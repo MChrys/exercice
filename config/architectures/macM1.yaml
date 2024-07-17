@@ -2,3 +2,4 @@ device : cpu
 batch_size : 5
 compute_type : float16
 model_name : medium
+tokenizer_parallelism : "false"

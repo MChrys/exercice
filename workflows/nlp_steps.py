@@ -267,35 +267,40 @@ def apply_parse_and_reformat(transcription_list):
     span.add_event("Finished apply_parse_and_reformat function")
     return transcription_list
 
-def transcribe_docker(audio_file_path, model_name, device, language, compute_type, batch_size):
+def transcribe_docker(audio_file_name):
     span = trace.get_current_span()
-    span.add_event("Starting Docker transcription")
-    
+    span.add_event("Starting transcribe_docker function")
+    span.add_event("Starting transcription process")
     client = docker.from_env()
     
-    current_dir = os.path.abspath(os.path.dirname(__file__))
+    current_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    span.add_event(f"Current directory: {current_dir}")
 
-    span.add_event("Running Docker container for transcription")
+    span.add_event(f"Running Docker container for file: {audio_file_name}")
+    transcribe_path = os.path.join('containerised_steps', 'transcribe', 'transcribe.py')
+    span.add_event(f"Transcribe path: {transcribe_path}")
     container = client.containers.run(
         'whisperx-transcriber',
-        command=f"/data/{os.path.basename(audio_file_path)}",
-        volumes={current_dir: {'bind': '/data', 'mode': 'ro'}},
+        command=["python",transcribe_path,  audio_file_name],# Liste récursivement le contenu de /app
+        volumes={
+            current_dir: {'bind': '/app', 'mode': 'ro'},
+            os.path.join(current_dir, 'data'): {'bind': '/data', 'mode': 'ro'}
+        },
         remove=True,
         stdout=True,
         stderr=True
     )
 
+    span.add_event("Container execution completed")
     output = container.decode('utf-8')
     try:
-        span.add_event("Parsing transcription output")
-        result = json.loads(output)
-        span.add_event("Transcription completed successfully")
-        return result
+        span.add_event("Attempting to parse JSON output")
+        span.add_event(output)
+        span.add_event("JSON parsing successful")
+        return output
     except json.JSONDecodeError:
-        span.add_event("Error in WhisperX output")
-        print("Error in WhisperX output:", output)
-        raise Exception("Transcription failed")
-    
+        span.add_event("Failed to decode JSON output")
+        return {"Error": "JSON not decoded"}
 
 
 async def step_llm_inference(

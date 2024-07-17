@@ -162,15 +162,9 @@ class ParallelLLMInference:
         for segment in segments:
             text = segment["text"]
             speaker = segment["speaker"]
-            
-            if not isinstance(text, str):
-                raise TypeError(f"Expected 'text' to be a string, but got {type(text).__name__}")
-            
-            if not isinstance(speaker, str):
-                raise TypeError(f"Expected 'speaker' to be a string, but got {type(speaker).__name__}")
-            
             chunks = self.chunk_speech(text)
             chunks_process.append((len(chunks), chunks, speaker))
+        
         total_chunks = sum(length for length, _, _ in chunks_process)
 
         with tqdm_asyncio(total=total_chunks, desc="Processing") as pbar:

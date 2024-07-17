@@ -38,17 +38,17 @@ async def main():
         pipeline_future = asyncio.create_task(pipe.start("data/transcribe_encoded.json"))
         
 
-        logger.info(f"step1 output: ======> {await step1.output}")
-        logger.info(f"step2 output: ======> {await step2.output}")
-        logger.info(f"step3 output: ======> {await step3.output}")
+        #logger.info(f"step1 output: ======> {await step1.output}")
+        #logger.info(f"step2 output: ======> {await step2.output}")
+        #logger.info(f"step3 output: ======> {await step3.output}")
         
 
         result = await pipeline_future
 
         for step_name, value in result.items():
             logger.info(f"{step_name} final output: ======> {value}")
-    except asyncio.CancelledError:
-        logger.info("Pipeline execution was cancelled")
+    except asyncio.CancelledError as e:
+        logger.info(f"Pipeline execution was cancelled: {e}")
     except Exception as e:
         logger.error(f"An error occurred: {e}")
     finally:

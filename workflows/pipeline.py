@@ -55,10 +55,10 @@ class FlushFileHandler(logging.FileHandler):
         super().emit(record)
         self.flush()
 
-def configure_logger(run_id):
-    results_dir = os.path.join("results", str(run_id))
-    os.makedirs(results_dir, exist_ok=True)
-    log_file = os.path.join(results_dir, "log.txt")
+def configure_logger(run_id, run_id_dir_name):
+    
+
+    log_file = os.path.join(run_id_dir_name, "log.txt")
 
     logger = logging.getLogger(f"run_{run_id}")
     logger.setLevel(logging.INFO)
@@ -224,6 +224,9 @@ class Pipeline:
             self.depth = 0
             self.place = 0
             self.conf = conf
+            self.create_results_dir()
+            self.lenght_results_dir()
+        
         else : 
             self.depth = None
             self.place = None
@@ -269,9 +272,12 @@ class Pipeline:
     async def start(self,input, run_id=None):
         self.outputs = dict()
         run_id = uuid.uuid4()
-        logger = configure_logger(run_id) 
+        self.run_id_dir_name(run_id)
+        logger = configure_logger(run_id, self.run_id_dir) 
         self.__init_tracer__(logger) 
         with self.tracer.start_as_current_span(f"Pipeline :{self.name}") as span:
+            span.set_attribute("result_dir", self.run_id_dir)
+            span.set_attribute("result_dir_len", self.results_dir_len)
             span.set_attribute("run_id", str(run_id))
             span.set_attribute("conf", str(self.conf))
             #log_span(span)
@@ -289,8 +295,19 @@ class Pipeline:
             except Exception as e:
                 span.record_exception(e)
                 raise
-    
+    def create_results_dir(self):
+        pipeline_base_dir = os.path.join("results", self.name)
+        os.makedirs(pipeline_base_dir, exist_ok=True)
 
+        self.results_dir = pipeline_base_dir
+
+    def lenght_results_dir(self):
+        self.results_dir_len = len(os.listdir(self.results_dir))
+
+    def run_id_dir_name(self, run_id):
+        dir = os.path.join(self.results_dir, f"{self.results_dir_len:03d}_{run_id}")
+        os.makedirs(dir, exist_ok=True)
+        self.run_id_dir = dir
             
     
     async def run(self,input, run_id=None):
@@ -390,38 +407,37 @@ class Pipeline:
         
 import json
 
-def serialize_output(output, run_id, step_name):
+def serialize_output(output, step_name):
     tracer = trace.get_tracer(__name__)
-    with tracer.start_as_current_span("serialize_output") as span:
-        span.add_event("Starting output serialization")
+    span = trace.get_current_span()
+    span.add_event("Starting output serialization")
 
-
-        results_dir = os.path.join("results", str(run_id))
-        os.makedirs(results_dir, exist_ok=True)
-        
-        if isinstance(output, str):
-            file_path = os.path.join(results_dir, f"{step_name}.txt")
-            with open(file_path, "w") as f:
-                f.write(output)
-                span.add_event("Serialized string output", {
-                    "file_path": file_path,
-                    "file_name": f"{step_name}.txt",
-                    "file_id": id(f)
-                })
-        elif isinstance(output, (list, dict)):
-            file_path = os.path.join(results_dir, f"{step_name}.json")
-            with open(file_path, "w") as f:
-                json.dump(output, f, indent=4)
-                span.add_event("Serialized JSON output", {
-                    "file_path": file_path,
-                    "file_name": f"{step_name}.json",
-                    "file_id": id(f)
-                })
-        else:
-            span.add_event("Serialization error", {"error": "Unsupported output type"})
-            raise ValueError("Unsupported output type for serialization")
-        
-        span.add_event("Finished output serialization")
+    results_dir = span.attributes["result_dir"]
+    
+    
+    if isinstance(output, str):
+        file_path = os.path.join(results_dir, f"{step_name}.txt")
+        with open(file_path, "w") as f:
+            f.write(output)
+            span.add_event("Serialized string output", {
+                "file_path": file_path,
+                "file_name": f"{step_name}.txt",
+                "file_id": id(f)
+            })
+    elif isinstance(output, (list, dict)):
+        file_path = os.path.join(results_dir, f"{step_name}.json")
+        with open(file_path, "w") as f:
+            json.dump(output, f, indent=4)
+            span.add_event("Serialized JSON output", {
+                "file_path": file_path,
+                "file_name": f"{step_name}.json",
+                "file_id": id(f)
+            })
+    else:
+        span.add_event("Serialization error", {"error": "Unsupported output type"})
+        raise ValueError("Unsupported output type for serialization")
+    
+    span.add_event("Finished output serialization")
 
 def sync_step_trace(tracer_name_func):
     def decorator(func):
@@ -433,15 +449,15 @@ def sync_step_trace(tracer_name_func):
             tracer = trace.get_tracer(tracer_name_func())
             depth = span.attributes["depth"]
             place = span.attributes["place"]
-            with tracer.start_as_current_span(func.__name__) as span:
-                span.set_attribute("function_name", func.__name__)
-                funcname = func.__name__
-                #span.add_event(f"func called with value: { {"args": str(args), "kwargs": str(kwargs)}} ")
-                result = func(*args, **kwargs)
+            #with tracer.start_as_current_span(func.__name__) as span:
+            span.set_attribute("function_name", func.__name__)
+            funcname = func.__name__
+            #span.add_event(f"func called with value: { {"args": str(args), "kwargs": str(kwargs)}} ")
+            result = func(*args, **kwargs)
 
-                file_name =f"{depth}_{place}_{step_name}__{func.__name__}"
-                serialize_output(result, run_id, file_name)
-                return result
+            file_name =f"{depth}_{place}_{step_name}__{func.__name__}"
+            serialize_output(result, file_name)
+            return result
         return wrapper
     return decorator
 
@@ -455,16 +471,16 @@ def async_step_trace(tracer_name_func):
             tracer = trace.get_tracer(tracer_name_func())
             depth = span.attributes["depth"]
             place = span.attributes["place"]
-            with tracer.start_as_current_span(func.__name__) as span:
-                span.set_attribute("function_name", func.__name__)
-                funcname = func.__name__
-                #span.add_event(f"func called with value: { {"args": str(args), "kwargs": str(kwargs)}} ")
+            #with tracer.start_as_current_span(func.__name__) as span:
+            span.set_attribute("function_name", func.__name__)
+            funcname = func.__name__
+            #span.add_event(f"func called with value: { {"args": str(args), "kwargs": str(kwargs)}} ")
 
-                result = await func(*args, **kwargs)
+            result = await func(*args, **kwargs)
  
-                file_name =f"{depth}_{place}_{step_name}__{func.__name__}"
-                serialize_output(result, run_id, file_name)
-                return result
+            file_name =f"{depth}_{place}_{step_name}__{func.__name__}"
+            serialize_output(result, file_name)
+            return result
         return  wrapper
     return decorator
 
@@ -529,11 +545,15 @@ class Step(Pipeline):
             self.tracer = self.parents[0].tracer
         with self.tracer.start_as_current_span(f"Step {self.depth}-{self.place} :{self.name}") as span:
             #span.set_attribute("function_name", self.f.__name__)
-            if isinstance (self.parents[0],Step):
-                span.set_attribute("parent", self.parents[0].name)
+            span.set_attribute("step_name", self.name)
             span.set_attribute("depth", self.depth)
             span.set_attribute("place", self.place)
-            span.set_attribute("step_name", self.name)
+            if isinstance (self.parents[0],Step):
+                span.set_attribute("parent", self.parents[0].name)
+            span.set_attribute("result_dir", self.origin.run_id_dir)
+
+            
+            span.set_attribute("pipeline_name", self.origin.name)
             span.set_attribute("run_id", str(run_id))
             span.set_attribute("input_name", input_name)
             span.set_attribute("function", self.f.__name__)
