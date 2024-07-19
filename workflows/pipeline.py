@@ -326,7 +326,7 @@ class Pipeline:
                 if asyncio.iscoroutine(child_input):
                     child_input = await child_input
                 span.add_event(f"Creating task for child: {child.name}")
-                task = asyncio.create_task(child.run(child_input, child.input_name, run_id))
+                task = asyncio.create_task(child.run(child_input, run_id))
                 tasks.append(task)
 
 
@@ -408,7 +408,6 @@ class Pipeline:
 import json
 
 def serialize_output(output, step_name):
-    tracer = trace.get_tracer(__name__)
     span = trace.get_current_span()
     span.add_event("Starting output serialization")
 
@@ -424,6 +423,7 @@ def serialize_output(output, step_name):
                 "file_name": f"{step_name}.txt",
                 "file_id": id(f)
             })
+        return ".txt"
     elif isinstance(output, (list, dict)):
         file_path = os.path.join(results_dir, f"{step_name}.json")
         with open(file_path, "w") as f:
@@ -433,11 +433,21 @@ def serialize_output(output, step_name):
                 "file_name": f"{step_name}.json",
                 "file_id": id(f)
             })
+        return ".json"
     else:
         span.add_event("Serialization error", {"error": "Unsupported output type"})
         raise ValueError("Unsupported output type for serialization")
     
-    span.add_event("Finished output serialization")
+
+def unserialize_output(path):
+    if  ".json" in path:
+        with open(path, "r") as f:
+            return json.load(f)
+    elif ".txt" in path:
+        with open(path, "r") as f:
+            return f.read()
+    else:
+        raise ValueError("Unsupported output type for unserialization")
 
 def sync_step_trace(tracer_name_func):
     def decorator(func):
@@ -539,7 +549,7 @@ class Step(Pipeline):
         await self.__future_output
         return self.__future_output.result()
 
-    async def run(self,input_value,input_name:str, run_id):
+    async def run(self,input_value,run_id):
 
         if not hasattr(self,'tracer'):
             self.tracer = self.parents[0].tracer
@@ -555,7 +565,7 @@ class Step(Pipeline):
             
             span.set_attribute("pipeline_name", self.origin.name)
             span.set_attribute("run_id", str(run_id))
-            span.set_attribute("input_name", input_name)
+            span.set_attribute("input_name", self.input_name)
             span.set_attribute("function", self.f.__name__)
             #log_span(span)
             if self.input_name == "first_args":
@@ -563,7 +573,7 @@ class Step(Pipeline):
                 kwargs = self.parameters.kwargs
             else:
                 args = []
-                kwargs = self.parameters.kwargs | {input_name: input_value}
+                kwargs = self.parameters.kwargs | {self.input_name: input_value}
             try:    
                 if self.is_async:
                     self._output = await self.f(*args, **kwargs)
@@ -586,3 +596,116 @@ class Step(Pipeline):
 
     def __repr__(self):
         return f"Step({self.name},{self.f.__name__})"
+
+from utils import logx
+import tempfile
+import docker
+import json
+import os
+from config import cfg
+from utils import print_directory_tree
+class DockerStep(Step):
+    def __init__(self,
+                  function:callable, 
+                  parameters:Parameters=None,
+                  input_name:str="first_args",
+                  serialize_input:callable=None,
+                  serialize_output:callable=None,
+                  unsarialize_input:callable=None,
+                  unsarialize_output:callable=None,
+                  origin : Pipeline = None):
+        super().__init__(function, parameters, input_name, origin)
+        self.is_async = False
+        self.serialize_input_f = serialize_input
+        self.serialize_output_f = serialize_output
+        self.unserialize_input_f = unsarialize_input
+        self.unserialize_output_f = unsarialize_output
+
+    def serialize_input(self,output,path):
+        if self.serialize_input:
+            with open(path, "w") as f:
+                json.dump(self.serialize_input_f(output), f, indent=4)
+        else:
+            with open(path, "w") as f:
+                json.dump(serialize_output(output) , f, indent=4)
+
+
+
+    def serialize_output(self,output,path):
+        if self.serialize_output:       
+            with open(path, "w") as f:
+                json.dump(self.serialize_output_f(output), f, indent=4)
+        else:
+            with open(path, "w") as f:
+                json.dump(serialize_output(output) , f, indent=4)
+
+    def get_serialize_input(self,path):
+        if self.serialize_input:
+            with open(path, "w") as f:
+                return self.unserialize_input_f(f)
+        else:
+            with open(path, "w") as f:
+                return unserialize_output(f)
+            
+    def get_serialize_output(self,path):
+        if self.serialize_output:
+            with open(path, "w") as f:
+                return self.unsarialize_output_f(f)
+        else:
+            with open(path, "w") as f:
+                return unserialize_output(f)
+            
+
+
+    def run(self,input, run_id):
+        logger = logx()
+        logger(f"Starting DockerStep {self.name}:{self.f.__name__}")
+
+        client = docker.from_env()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            current_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+            logger(f"Current directory: {current_dir}")
+            logger(f"Running Docker input: {input}")
+            transcribe_path = os.path.join('containerised_steps', 'transcribe', 'transcribe.py')
+            logger(f"Transcribe path: {transcribe_path}")
+
+
+            format_file = self.serialize_input(input, temp_dir)
+            input_path = os.path.join(temp_dir, f'input{format_file}')
+
+            logger(f"Input serialized to: {input_path}")
+
+           
+            main_function_path = f"{self.f.__module__}.{self.f.__name__}"
+            deserialize_function_path = f"{self.unserialize_input_f.__module__}.{self.unserialize_input_f.__name__}" if self.unserialize_input_f else "json.loads"
+            temp_path = os.path.join(f"{run_id}_output", f"input{format_file}")
+
+            container = client.containers.run(
+                f'{self.f.__name__.lower()}',
+                command=["python", "/app/workflows/run_docker_func.py", 
+                         temp_path,
+                            main_function_path, 
+                            deserialize_function_path],
+                volumes={
+                    current_dir: {'bind': '/app', 'mode': 'rw'},
+                    os.path.join(current_dir, 'data'): {'bind': '/data', 'mode': 'ro'},
+                    temp_dir: {'bind': f'{temp_path}', 'mode': 'rw'}  
+                    },
+                remove=True,
+                stdout=True,
+                stderr=True
+            )
+            logs = container.decode('utf-8')
+            logger(f"Logs: {logs}")
+            logger("Container execution completed")
+            result_path = os.path.join(temp_dir, 'result.json')
+            print_directory_tree(temp_dir)
+            logger(f"Result path: {result_path}")
+            if os.path.exists(result_path):
+                output = self.get_serialize_output(result_path)
+                logger(f"Output: {len(output)}")
+                super().run(output,run_id)
+            else : 
+                logger(f"File {result_path} does not exist")
+                return {"Error": "File does not exist"}
+        

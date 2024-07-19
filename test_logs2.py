@@ -27,7 +27,8 @@ from workflows.nlp_steps import (transcribe_empty,
                        parse_whisperx_output, 
                        format_for_output, 
                        spell_correct, 
-                       step_llm_inference)
+                       step_llm_inference,
+                       parse_speaker_text)
 from conf import (cfg, 
                 senators_file_path)
 
@@ -71,9 +72,12 @@ async def main():
                                             cfg.placeholders.redaction,
                                             cfg.prompts.cred,
                                             cfg]))
+    parse_inf_text = Step(parse_speaker_text)
+    parse_inf_text2 = Step(parse_speaker_text)
 
-    llm_pipe >>  transcribe >> parse_transcription >> formatted_verbatim# >> c_transcription_list 
-    llm_pipe | parse_transcription >> parsed_cri + parsed_cra + parsed_cred
+    llm_pipe >>  transcribe >> parse_transcription >> formatted_verbatim >> c_transcription_list 
+    llm_pipe | c_transcription_list >> parse_inf_text >> c_verbatim_output
+    llm_pipe | c_verbatim_output >> parse_inf_text2 >> parsed_cri + parsed_cra + parsed_cred
     pipe = llm_pipe
     try:
 

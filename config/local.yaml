@@ -1,5 +1,6 @@
 
 defaults : 
+  - _self_
   - llm_api : llm_studio
   - credentials : user1
   - architectures : macM1
@@ -7,8 +8,8 @@ defaults :
 senators_file_path : services/senateurs_name_last.txt
 
 language : fr
-max_tokens : 1500
-max_concurrent_requests : 5
+max_tokens : 2000
+max_concurrent_requests : 3
 
 epi : fra-Latn-p
 nlp : fr_core_news_lg
@@ -24,3 +25,6 @@ prompts :
 placeholders : 
   redaction : rédaction de compte rendu
   correction : "la correction orthographique" 
+
+container :
+  - transcribe_empty

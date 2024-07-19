@@ -1,6 +1,11 @@
 # Example usage
 from workflows.LLM_inf import ParallelLLMInference
+from workflows.nlp_steps import transcribe_empty, step_llm_inference
 from config import initialize, compose
+async def main():
+    input = transcribe_empty("data/transcribe_encoded.json")
+    result = await step_llm_inference(input, inference)
+    return result
 
 if __name__ == "__main__":
     initialize(config_path="config")
@@ -40,6 +45,7 @@ if __name__ == "__main__":
         {"speaker": "Speaker 1", "text": "Hello, this is a test."},
         {"speaker": "Speaker 2", "text": "Hi, this is another test."}
     ]
+
     
     results = inference.LLM_inference(segments)
     print("results : ")

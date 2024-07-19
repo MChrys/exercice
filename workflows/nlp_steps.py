@@ -14,7 +14,11 @@ from pathlib import Path
 from omegaconf import DictConfig
 import os
 import docker
+import tempfile
+import logging
 
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 def get_ref_dicts(ref_file_path, epitran):
     """Function that creates 2 lookups for senators first names
     with values list of full names in clear text or its phonetic transcription 
@@ -266,41 +270,46 @@ def apply_parse_and_reformat(transcription_list):
 
     span.add_event("Finished apply_parse_and_reformat function")
     return transcription_list
-
+from workflows.utils import logger, print_directory_tree, logx
 def transcribe_docker(audio_file_name):
-    span = trace.get_current_span()
-    span.add_event("Starting transcribe_docker function")
-    span.add_event("Starting transcription process")
+    logger = logx()
+    logger("Starting transcribe_docker function")
+
     client = docker.from_env()
     
     current_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    span.add_event(f"Current directory: {current_dir}")
-
-    span.add_event(f"Running Docker container for file: {audio_file_name}")
+    logger(f"Current directory: {current_dir}")
+    logger(f"Running Docker container for file: {audio_file_name}")
     transcribe_path = os.path.join('containerised_steps', 'transcribe', 'transcribe.py')
-    span.add_event(f"Transcribe path: {transcribe_path}")
-    container = client.containers.run(
-        'whisperx-transcriber',
-        command=["python",transcribe_path,  audio_file_name],# Liste récursivement le contenu de /app
-        volumes={
-            current_dir: {'bind': '/app', 'mode': 'ro'},
-            os.path.join(current_dir, 'data'): {'bind': '/data', 'mode': 'ro'}
-        },
-        remove=True,
-        stdout=True,
-        stderr=True
-    )
+    logger(f"Transcribe path: {transcribe_path}")
+    with tempfile.TemporaryDirectory() as temp_dir:
+        container = client.containers.run(
+            'whisperx-transcriber',
+            command= ["python",transcribe_path,  audio_file_name],
+            volumes={
+                current_dir: {'bind': '/app', 'mode': 'rw'},
+                os.path.join(current_dir, 'data'): {'bind': '/data', 'mode': 'ro'},
+                temp_dir: {'bind': '/output', 'mode': 'rw'}  
+                },
+            remove=True,
+            stdout=True,
+            stderr=True
+        )
+        logs = container.decode('utf-8')
+        logger(f"Logs: {logs}")
+        logger("Container execution completed")
+        result_path = os.path.join(temp_dir, 'result.json')
+        print_directory_tree(temp_dir)
+        logger(f"Result path: {result_path}")
+        if os.path.exists(result_path):
+            with open(result_path, 'r') as f:
+                output = json.load(f)
+            logger(f"Output: {len(output)}")
+            return output
+        else : 
+            logger(f"File {result_path} does not exist")
+            return {"Error": "File does not exist"}
 
-    span.add_event("Container execution completed")
-    output = container.decode('utf-8')
-    try:
-        span.add_event("Attempting to parse JSON output")
-        span.add_event(output)
-        span.add_event("JSON parsing successful")
-        return output
-    except json.JSONDecodeError:
-        span.add_event("Failed to decode JSON output")
-        return {"Error": "JSON not decoded"}
 
 
 async def step_llm_inference(
@@ -363,3 +372,18 @@ def transcribe_empty(file_path, percent_value=100,sub_path=None ):
     
     span.add_event("Empty transcription completed")
     return transcription_list
+
+def parse_speaker_text(texte):
+
+
+    pattern = r'([^:]+)\s*:\s*<br />(.*?)<br /><br />'
+    matches = re.findall(pattern, texte, re.DOTALL)
+
+    parsed_data = []
+    for speaker, text in matches:
+        parsed_data.append({
+            'speaker': speaker.strip(),
+            'text': text.strip()
+        })
+
+    return parsed_data

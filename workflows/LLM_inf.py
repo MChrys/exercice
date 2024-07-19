@@ -8,8 +8,11 @@ from transformers import LlamaTokenizerFast
 from langchain.prompts import PromptTemplate
 from openai import AsyncOpenAI
 from opentelemetry import trace
+import json
+import logging
 
-
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 class AsyncResultDict(dict):
     def __getitem__(self, key):
         value = super().__getitem__(key)
@@ -103,6 +106,9 @@ class ParallelLLMInference:
     async def infer_llm(self, text, system_prompt_path, system_placeholder, user_prompt_path):
         span = trace.get_current_span()
         span.add_event("Starting LLM inference")
+        logger.info(f"Starting LLM inference")
+        logger.info(f"Text: {text}")
+        
         async with self.semaphore:
             system_prompt_template = await self.get_prompt_from_file(system_prompt_path)
             user_prompt = await self.get_prompt_from_file(user_prompt_path)
@@ -112,7 +118,8 @@ class ParallelLLMInference:
 
             retries = 5
             backoff_factor = 0.5
-
+            
+            logger.info(f"User prompt: {normalisation}")
             for attempt in range(retries):
                 wait_time = backoff_factor * (2 ** attempt) + random.uniform(0, 1)
                 try:
@@ -128,59 +135,82 @@ class ParallelLLMInference:
                     )
 
                     span.add_event("LLM API call successful")
-                    return response.choices[0].message.content.strip()
+                    result = response.choices[0].message.content.strip()
+                    logger.info(f"Tour de parole traité Result: {result}")
+                    return result
                 except (httpx.HTTPStatusError, asyncio.TimeoutError, httpx.RemoteProtocolError) as e:
                     span.add_event(f"Error: {e}, retrying in {wait_time:.2f} seconds...")
+                    logger.info(f"Error: {e}, retrying in {wait_time:.2f} seconds...")
                     await asyncio.sleep(wait_time)
                 except Exception as e:
                     span.add_event(f"Unexpected error: {e}, retrying in {wait_time:.2f} seconds...")
-
+                    logger.info(f"Unexpected error: {e}, retrying in {wait_time:.2f} seconds...")
                     await asyncio.sleep(wait_time)
             span.add_event("Max retries exceeded for API call")
+            logger.info(f"Max retries exceeded for API call")
             raise Exception("Max retries exceeded for API call")
     
-    async def queue_api_calls(self, chunks, pbar):
+    async def queue_api_calls(self, chunks, pbar=None):
         span = trace.get_current_span()
         span.add_event("Queueing API calls")
+        logger.info(f"Queueing API calls")
+        logger.info(f"Chunks: {chunks}")
+
         tasks = [
             self.infer_llm(chunk, self.system_prompt_path, self.system_placeholder, self.user_prompt_path)
             for chunk in chunks
         ]
         responses = await asyncio.gather(*tasks)
-        pbar.update(len(responses))
+        if pbar:
+            (pbar.update(1) for _ in range(len(responses)))
         span.add_event(f"API calls completed. Number of responses: {len(responses)}")
-        return " ".join(responses).strip()
+        logger.info(f"API calls completed. Number of responses: {responses}")
+        result = " ".join(responses).strip()
+        logger.info(f"Result: {result}")
+        return result
     
 
     async def parallel_inference(self, segments):
         span = trace.get_current_span()
         span.add_event("Starting parallel inference")
+        logger.info(f"Segments: Parallel Inf")
         tasks = []
         processed_segments = []
         #chunks_process = [(len(chunks := self.chunk_speech(segment["text"])), chunks,segment["speaker"]) for segment in segments]
         chunks_process = []
-        for segment in segments:
-            text = segment["text"]
-            speaker = segment["speaker"]
-            chunks = self.chunk_speech(text)
-            chunks_process.append((len(chunks), chunks, speaker))
+        speakers = []
+        async with self.semaphore:
+            for segment in segments:
+                text = segment["text"]
+                speaker = segment["speaker"]
+                logger.info(f"Text: {text}")
+                chunks = self.chunk_speech(text)
+                logger.info(f"Chunks: {chunks}")
+                #chunks_process.append((len(chunks), chunks, speaker))
+                tasks.append(self.queue_api_calls(chunks))
+                speakers.append(speaker)
+
         
-        total_chunks = sum(length for length, _, _ in chunks_process)
+                #total_chunks = sum(length for length, _, _ in chunks_process)
 
-        with tqdm_asyncio(total=total_chunks, desc="Processing") as pbar:
-            for _ ,chunks,speaker in chunks_process:
-                
-                future = asyncio.ensure_future(self.queue_api_calls(chunks, pbar))
-                processed_segment = AsyncResultDict({
-                    "speaker": speaker,
-                    "text": future
-                })
-                processed_segments.append(processed_segment)
-                tasks.append(future)
+                # with tqdm_asyncio(total=total_chunks, desc="Processing") as pbar:
+                #     for _ ,chunks,speaker in chunks_process:
+                        
+                #         future = asyncio.ensure_future(self.queue_api_calls(chunks, pbar))
+                #         processed_segment = AsyncResultDict({
+                #             "speaker": speaker,
+                #             "text": future
+                #         })
+                #         processed_segments.append(processed_segment)
+                #         tasks.append(future)
 
-        await asyncio.gather(*tasks)
-        span.add_event("Parallel inference completed")
-        return processed_segments
+            results = await asyncio.gather(*tasks)
+            processed_segments = [{"speaker": speaker, "text": result} for speaker, result in zip(speakers, results)]
+            logger.info(f"Processed segments: {processed_segments}")
+            with open("test_inf.json", "w") as f:
+                json.dump(processed_segments, f, indent=4)
+            span.add_event("Parallel inference completed")
+            return processed_segments
 
 
     async def LLM_inference(self, segments):
