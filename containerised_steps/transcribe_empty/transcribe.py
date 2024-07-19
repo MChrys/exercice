@@ -8,9 +8,9 @@ def print_directory_tree(startpath):
     """Affiche l'arborescence d'un répertoire en utilisant la commande tree"""
     try:
         result = subprocess.run(['tree', startpath], capture_output=True, text=True)
-        logger.info(f"Arborescence  {startpath}:\n{result.stdout}")
+        print(f"Arborescence  {startpath}:\n{result.stdout}")
     except subprocess.CalledProcessError as e:
-        logger.error(f"Error tree: {e}")
+        print(f"Error tree: {e}")
 
 import logging
 
@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 def transcribe(audio_name):
     logger.info(f"Starting transcription of file: {audio_name}")
     audio_path = os.path.abspath(f"/data/{audio_name}")
-    print_directory_tree('/app')
+    #print_directory_tree('/app')
     with open(audio_path, 'r') as audio_file:
         result = json.load(audio_file)
     # if not os.path.exists(audio_path):

@@ -280,7 +280,7 @@ def transcribe_docker(audio_file_name):
     current_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
     logger(f"Current directory: {current_dir}")
     logger(f"Running Docker container for file: {audio_file_name}")
-    transcribe_path = os.path.join('containerised_steps', 'transcribe', 'transcribe.py')
+    transcribe_path = os.path.join('containerised_steps', 'transcribe_empty', 'transcribe.py')
     logger(f"Transcribe path: {transcribe_path}")
     with tempfile.TemporaryDirectory() as temp_dir:
         container = client.containers.run(

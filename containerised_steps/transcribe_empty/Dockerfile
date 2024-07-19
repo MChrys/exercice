@@ -14,4 +14,4 @@ RUN pip install git+https://github.com/m-bain/whisperx.git
 WORKDIR /app
 
 
-CMD ["ls", "-R", "/app"] 
+CMD ["tree", "/app"] 

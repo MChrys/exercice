@@ -4,11 +4,10 @@ from pathlib import Path
 from conf import cfg
 import os
 import hashlib
-from workflows.utils import logx
-print("cfg : ", cfg)
-logx = logx()
-cfg = cfg
-logx.info(str(cfg))
+from workflows.utils import logx as Logx
+
+
+
 os.environ['DOCKER_CONTENT_TRUST'] = '0'
 def calculate_md5(file_path):
     with open(file_path, "rb") as f:
@@ -39,6 +38,7 @@ def update_md5(dockerfile_path):
         f.write(current_md5)
 def build_docker_images():
     client = docker.from_env()
+    logx = Logx()
 
     if not hasattr(cfg, 'container') or not cfg.container:
         logx.info("No function to containerize was found in the configuration.")
