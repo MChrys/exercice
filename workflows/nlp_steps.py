@@ -283,6 +283,12 @@ def transcribe_docker(audio_file_name):
     transcribe_path = os.path.join('containerised_steps', 'transcribe_empty', 'transcribe.py')
     logger(f"Transcribe path: {transcribe_path}")
     with tempfile.TemporaryDirectory() as temp_dir:
+        logger("Checking existence of temporary directory")
+        if os.path.exists(temp_dir):
+            logger(f"Temporary directory exists: {temp_dir}")
+        else:
+            logger(f"Error: Temporary directory does not exist: {temp_dir}")
+            return {"Error": "Temporary directory does not exist"}
         container = client.containers.run(
             'whisperx-transcriber',
             command= ["python",transcribe_path,  audio_file_name],

@@ -14,8 +14,9 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(level
 logger = logging.getLogger(__name__)
 
 class logx():
-    def __init__(self):
-        if (span:=trace.get_current_span()).is_recording(): 
+    def __init__(self,force_record=False):
+        self.force_record = force_record
+        if (span:=trace.get_current_span()).is_recording() or force_record: 
             self.span = span
             self.record = True
         else:
@@ -29,6 +30,9 @@ class logx():
 
     def __getattr__(self, name):
         if self.record:
-            return self.span.add_event
+            if self.force_record:
+                return getattr(logger, name)
+            else:
+                return self.span.add_event
         else:
             return getattr(logger, name)

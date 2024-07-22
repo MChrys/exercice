@@ -5,7 +5,7 @@ from conf import cfg
 import os
 import hashlib
 from workflows.utils import logx as Logx
-
+import shutil
 
 
 os.environ['DOCKER_CONTENT_TRUST'] = '0'
@@ -46,13 +46,26 @@ def build_docker_images():
     else : 
         logx.info(f"Building images for the following functions: {cfg.container}")
     to_rebuild = []
+    current_dir = Path(__file__).resolve().parent
+    project_root = current_dir.parent
+    #docker_context = project_root / 'containerised_steps' / function_name
     for function_name in cfg.container:
         dockerfile_path = Path(f"containerised_steps/{function_name}/Dockerfile")
+        docker_context = dockerfile_path.parent
         if should_rebuild(dockerfile_path):
             logx.info(f"Dockerfile {function_name} : rebuild")
             to_rebuild.append((function_name, dockerfile_path))
+            shutil.copy2(project_root / 'pyproject.toml', docker_context)
+            if (project_root / 'poetry.lock').exists():
+                shutil.copy2(project_root / 'poetry.lock', docker_context)
+            if (project_root / 'poetry.toml').exists():
+                shutil.copy2(project_root / 'poetry.toml', docker_context)
+
         else:
             logx.info(f"Dockerfile {function_name} : up to date")
+
+
+
 
     for function_name, dockerfile_path in to_rebuild:
         logx.info(f"Building Docker image for {function_name}...")
@@ -73,19 +86,32 @@ def build_docker_images():
                 nocache=True
             )
 
-
+            error_encountered = False
             for chunk in build_generator:
                 if 'stream' in chunk:
                     logx.info(chunk['stream'].strip())
                 elif 'error' in chunk:
                     logx.error(f"Error: {chunk['error'].strip()}")
+                    error_encountered = True
+
+            if not error_encountered:
+                update_md5(dockerfile_path)
+                continue
 
             logx.info(f"Docker image for {function_name} built successfully.")
-            update_md5(dockerfile_path)
+            
         except docker.errors.BuildError as e:
             logx.error(f"Error while building image for {function_name}: {str(e)}")
         except Exception as e:
             logx.error(f"An unexpected error occurred while building image for {function_name}: {str(e)}")
+        finally:
+            for _, dockerfile_path in to_rebuild:
+                docker_context = dockerfile_path.parent
+                os.remove(os.path.join(docker_context, 'pyproject.toml'))
+                if (project_root / 'poetry.lock').exists():
+                    os.remove(os.path.join(docker_context, 'poetry.lock'))
+                if (project_root / 'poetry.toml').exists():
+                    os.remove(os.path.join(docker_context, 'poetry.toml'))
 
 if __name__ == "__main__":
     build_docker_images()

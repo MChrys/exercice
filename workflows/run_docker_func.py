@@ -1,6 +1,11 @@
 import sys
 import json
 import importlib
+import os
+import logging
+from workflows.pipeline import serialize, unserialize
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 def import_function(import_path):
     module_name, function_name = import_path.rsplit('.', 1)
@@ -11,27 +16,27 @@ def run_function(func, input_data):
     return func(input_data)
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
+    if len(sys.argv) != 5:
+        print(sys.argv)
         print("Usage: python generic_runner.py <input_file> <function_import_path> <deserialize_function_import_path>")
         sys.exit(1)
 
-    input_file = sys.argv[1]
-    function_import_path = sys.argv[2]
-    deserialize_function_import_path = sys.argv[3]
+    input_name = sys.argv[1]
+    value_path = sys.argv[2]
+    function_import_path = sys.argv[3]
+    deserialize_function_import_path = sys.argv[4]
 
-    # Importer la fonction de désérialisation
+    logger.info(f"input_file_path: {value_path}")
+    logger.info(f"function_import_path: {function_import_path}")
+    logger.info(f"deserialize_function_import_path: {deserialize_function_import_path}")
+
     deserialize_func = import_function(deserialize_function_import_path)
-
-    # Lire et désérialiser l'entrée
-    with open(input_file, 'r') as f:
-        serialized_input = f.read()
+    logger.info(f"deserialize_func: {deserialize_func}")
+    logger.info(f"deserialize_func: {os.path.join(value_path, input_name)}")
+    serialized_input = unserialize(os.path.join(value_path, input_name))
     input_data = deserialize_func(serialized_input)
 
-    # Importer et exécuter la fonction principale
     main_func = import_function(function_import_path)
     result = run_function(main_func, input_data)
 
-    # Écrire le résultat
-    output_path = '/output/result.json'
-    with open(output_path, 'w') as f:
-        json.dump(result, f, indent=4)
+    serialized_result = serialize(result)

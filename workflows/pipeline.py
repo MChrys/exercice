@@ -664,6 +664,12 @@ class DockerStep(Step):
 
         client = docker.from_env()
         with tempfile.TemporaryDirectory() as temp_dir:
+            logger("Checking existence of temporary directory")
+            if os.path.exists(temp_dir):
+                logger(f"Temporary directory exists: {temp_dir}")
+            else:
+                logger(f"Error: Temporary directory does not exist: {temp_dir}")
+                return {"Error": "Temporary directory does not exist"}
             current_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
             logger(f"Current directory: {current_dir}")
             logger(f"Running Docker input: {input}")
@@ -672,6 +678,9 @@ class DockerStep(Step):
 
 
             format_file = self.serialize_input(input, temp_dir)
+            filer_name = f'input{format_file}'
+            value_path = "/value"   
+            input_docker_path = os.path.join(value_path, f'input{format_file}')
             input_path = os.path.join(temp_dir, f'input{format_file}')
 
             logger(f"Input serialized to: {input_path}")
@@ -679,18 +688,16 @@ class DockerStep(Step):
            
             main_function_path = f"{self.f.__module__}.{self.f.__name__}"
             deserialize_function_path = f"{self._unserialize_input_f.__module__}.{self._unserialize_input_f.__name__}" if self._unserialize_input_f else "json.loads"
-            temp_path = os.path.join(f"{run_id}_output", f"input{format_file}")
+            #temp_path = os.path.join(f"{run_id}_output", f"input{format_file}")
+            temp_path = temp_dir
 
             container = client.containers.run(
                 f'{self.f.__name__.lower()}',
-                command=["python", "workflows/run_docker_func.py", 
-                         temp_path,
-                            main_function_path, 
-                            deserialize_function_path],
+                command=[f"python" ,"-m", "workflows.run_docker_func", filer_name, value_path, main_function_path, deserialize_function_path],
                 volumes={
                     current_dir: {'bind': '/app', 'mode': 'rw'},
                     os.path.join(current_dir, 'data'): {'bind': '/data', 'mode': 'ro'},
-                    temp_dir: {'bind': '/output', 'mode': 'rw'}  
+                    temp_dir: {'bind': value_path, 'mode': 'rw'}  
                     },
                 remove=True,
                 stdout=True,
