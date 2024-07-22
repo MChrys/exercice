@@ -1,0 +1,4 @@
+api_key : sk-rTWvMe7RJXofttd4p4tkkQ
+api_url : https://chat.ai.linagora.exaion.com/v1/
+llm_model_name : 2-meta-llama-3-8b-instruct
+hf_model_name : openlm-research/open_llama_3b

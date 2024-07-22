@@ -1,7 +1,7 @@
 
 defaults : 
   - _self_
-  - llm_api : llm_studio
+  - llm_api : linagora
   - credentials : user1
   - architectures : macM1
 

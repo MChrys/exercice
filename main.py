@@ -5,14 +5,8 @@ import asyncio
 from pydub import AudioSegment
 
 from workflows.pipeline import Pipeline, Step,Parameters
-from workflows.nlp_steps import (transcribe_empty,
-                       parse_whisperx_output, 
-                       format_for_output, 
-                       spell_correct, 
-                       step_llm_inference)
+
 from opentelemetry import trace
-import spacy
-import epitran
 from similarity.jarowinkler import JaroWinkler
 # from workflows.workflowsLLM import (llm_pipe,
 #                                     transcribe,
@@ -31,7 +25,8 @@ from workflows.nlp_steps import (transcribe_empty,
                        parse_whisperx_output, 
                        format_for_output, 
                        spell_correct, 
-                       step_llm_inference)
+                       step_llm_inference,
+                       parse_speaker_text)
 import logging
 from conf import (cfg, 
                 senators_file_path)
@@ -118,6 +113,45 @@ async def main():
                 audio_path_wav = audio_path.with_suffix('.wav')
                 sound.export(audio_path_wav, format="wav", parameters=["-ar", "16000", "-ac", "1", "-ab", "32k"])
                 audio_path = audio_path_wav
+        jarowinkler = JaroWinkler()
+        epi = epitran.Epitran(cfg["epi"])
+        nlp = spacy.load(cfg["nlp"])
+        llm_pipe = Pipeline(cfg)
+
+
+        transcribe = Step(transcribe_empty)
+        parse_transcription = Step(parse_whisperx_output)
+        formatted_verbatim = Step(format_for_output)
+        c_transcription_list = Step(spell_correct)
+        c_transcription_list.set_params(Parameters(args = [senators_file_path, epi, nlp, jarowinkler]
+                                                    ,kwargs={"verbose":True}))
+
+        c_verbatim_output = Step(step_llm_inference)
+        c_verbatim_output.set_params(Parameters(args = [
+                                                        cfg.placeholders.correction,             
+                                                        cfg.prompts.normalisation,
+                                                        cfg]))
+        parsed_cri = Step(step_llm_inference)
+        parsed_cri.set_params(Parameters(args = [
+                                                cfg.placeholders.redaction,
+                                                cfg.prompts.cri,
+                                                cfg]))
+        parsed_cra = Step(step_llm_inference)
+        parsed_cra.set_params(Parameters(args = [
+                                                cfg.placeholders.redaction,
+                                                cfg.prompts.cra,
+                                                cfg]))
+        parsed_cred = Step(step_llm_inference)
+        parsed_cred.set_params(Parameters(args = [
+                                                cfg.placeholders.redaction,
+                                                cfg.prompts.cred,
+                                                cfg]))
+        parse_inf_text = Step(parse_speaker_text)
+        parse_inf_text2 = Step(parse_speaker_text)
+
+        llm_pipe >>  transcribe >> parse_transcription >> formatted_verbatim >> c_transcription_list 
+        llm_pipe | c_transcription_list >> parse_inf_text >> c_verbatim_output
+        llm_pipe | c_verbatim_output >> parse_inf_text2 >> parsed_cri# + parsed_cra + parsed_cred
 
         try:
 
@@ -140,6 +174,7 @@ async def main():
             st.session_state["c_cred"] = await parsed_cred.output    
             logger.info(f"async value streamlit: ======> {str(parsed_cred)}")
 
+
             result = await pipeline_future
 
         except asyncio.CancelledError as e:
@@ -147,16 +182,10 @@ async def main():
         except Exception as e:
             logger.error(f"An error occurred: {e}")
         finally:
-    
             pipe.cancel_steps()
             pipeline_future.cancel()
-            result = asyncio.create_task(llm_workflow.start(audio_path))
-            st.session_state["verbatim"] =  await formatted_verbatim.output
-            st.session_state["c_verbatim"] = await c_verbatim_output.output
-            st.session_state["c_cri"] = await parsed_cri.output
-            st.session_state["c_cra"] = await parsed_cra.output
-            st.session_state["c_cred"] = await parsed_cred.output
-            await result
+    
+
 
  
     

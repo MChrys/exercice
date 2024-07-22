@@ -1,14 +1,7 @@
 import asyncio
 import logging
 from workflows.pipeline import Pipeline, Step,Parameters
-from workflows.nlp_steps import (transcribe_empty,
-                       parse_whisperx_output, 
-                       format_for_output, 
-                       spell_correct, 
-                       step_llm_inference)
-from opentelemetry import trace
-import spacy
-import epitran
+
 from similarity.jarowinkler import JaroWinkler
 # from workflows.workflowsLLM import (llm_pipe,
 #                                     transcribe,
@@ -77,11 +70,11 @@ async def main():
 
     llm_pipe >>  transcribe >> parse_transcription >> formatted_verbatim >> c_transcription_list 
     llm_pipe | c_transcription_list >> parse_inf_text >> c_verbatim_output
-    llm_pipe | c_verbatim_output >> parse_inf_text2 >> parsed_cri + parsed_cra + parsed_cred
-    pipe = llm_pipe
+    llm_pipe | c_verbatim_output >> parse_inf_text2 >> parsed_cri# + parsed_cra + parsed_cred
+
     try:
 
-        pipeline_future = asyncio.create_task(pipe.start("data/transcribe_encoded.json"))
+        pipeline_future = llm_pipe.start("data/transcribe_encoded.json")
         
         transcribe_output = await transcribe.output
         logger.info(f"step1 output: ======> {len(transcribe_output)}")
@@ -99,8 +92,8 @@ async def main():
         logger.error(f"An error occurred: {e}")
     finally:
  
-        pipe.cancel_steps()
+        llm_pipe.cancel_steps()
         pipeline_future.cancel()
-    print()
+
 if __name__ == "__main__":
     asyncio.run(main())
