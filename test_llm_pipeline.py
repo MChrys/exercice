@@ -70,7 +70,7 @@ async def main():
 
     llm_pipe >>  transcribe >> parse_transcription >> formatted_verbatim >> c_transcription_list 
     llm_pipe | c_transcription_list >> parse_inf_text >> c_verbatim_output
-    llm_pipe | c_verbatim_output >> parse_inf_text2 >> parsed_cri# + parsed_cra + parsed_cred
+    llm_pipe | c_verbatim_output >> parse_inf_text2 >> parsed_cri + parsed_cra + parsed_cred
 
     try:
 

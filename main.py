@@ -155,7 +155,7 @@ async def main():
 
         try:
 
-            pipeline_future = asyncio.create_task(pipe.start("data/transcribe_encoded.json"))
+            pipeline_future = pipe.start("data/transcribe_encoded.json")
             
             transcribe_output = await transcribe.output
             logger.info(f"step1 output: ======> {len(transcribe_output)}")
