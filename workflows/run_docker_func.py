@@ -32,11 +32,15 @@ if __name__ == "__main__":
 
     deserialize_func = import_function(deserialize_function_import_path)
     logger.info(f"deserialize_func: {deserialize_func}")
-    logger.info(f"deserialize_func: {os.path.join(value_path, input_name)}")
-    serialized_input = unserialize(os.path.join(value_path, input_name))
-    input_data = deserialize_func(serialized_input)
+    logger.info(f"input_path: {os.path.join(value_path, input_name)}")
+    input_data = deserialize_func(os.path.join(value_path, input_name))
+    logger.info(f"input_data: {input_data}")
+    #input_data = deserialize_func(serialized_input)
 
     main_func = import_function(function_import_path)
+    logger.info(f"main_func: {main_func}")
     result = run_function(main_func, input_data)
+    logger.info(f"result: {len(result)}")
 
-    serialized_result = serialize(result)
+    serialized_result = serialize(result,"output",path=value_path)
+    logger.info(f"{serialized_result}")

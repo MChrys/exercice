@@ -344,8 +344,11 @@ async def step_llm_inference(
 
 
 def transcribe_empty(file_path, percent_value=100,sub_path=None ):
+    logger = logx(force_record=True)
+    
     span = trace.get_current_span()
-    span.add_event("Starting empty transcription")
+    logger.info("Starting empty transcription")
+    logger.info(f"file path :  {file_path}")
 
     
     
@@ -357,26 +360,29 @@ def transcribe_empty(file_path, percent_value=100,sub_path=None ):
     relative_path= file_path
     
     try:
-        span.add_event("Reading transcription file")
+        logger.info("Reading transcription file")
+        logger.info(relative_path)
         with open(relative_path, 'r') as file:
             transcription_list = json.load(file)
     except FileNotFoundError as e:
-        span.add_event(f"File not found: {relative_path}")
+        logger.info(f"File not found: {relative_path}")
+        logger.info(e)
         span.record_exception(e)
         transcription_list = []
         raise
     except json.JSONDecodeError as e:
-        span.add_event(f"JSON decoding error: {relative_path}")
+        logger.info(f"JSON decoding error: {relative_path}")
+        logger.info(e)
         span.record_exception(e)
         transcription_list = []
         raise
     #segments = transcription_list['segments']
     #nb_elements = math.ceil(len(segments) * percent_value / 100)
     
-    span.add_event("Sampling transcription list")
+    logger.info("Sampling transcription list")
     #transcription_list['segments']=segments[:nb_elements]
     
-    span.add_event("Empty transcription completed")
+    logger.info("Empty transcription completed")
     return transcription_list
 
 def parse_speaker_text(texte):

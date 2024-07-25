@@ -656,25 +656,28 @@ class DockerStep(Step):
     def get_serialize_output(self,path):
         return self._unserialize_output_f(path)
             
+    def run2(self,input, run_id):
+        from functools import partial
+        self.f=partial(self.run,self)
 
-
-    def run(self,input, run_id):
-        logger = logx()
+    def run(self,input, run_id,*args,**kwargs):
+        
+        logger = logx(force_record=True)
         logger(f"Starting DockerStep {self.name}:{self.f.__name__}")
 
         client = docker.from_env()
         with tempfile.TemporaryDirectory() as temp_dir:
-            logger("Checking existence of temporary directory")
+            logger.info("Checking existence of temporary directory")
             if os.path.exists(temp_dir):
-                logger(f"Temporary directory exists: {temp_dir}")
+                logger.info(f"Temporary directory exists: {temp_dir}")
             else:
-                logger(f"Error: Temporary directory does not exist: {temp_dir}")
+                logger.info(f"Error: Temporary directory does not exist: {temp_dir}")
                 return {"Error": "Temporary directory does not exist"}
             current_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-            logger(f"Current directory: {current_dir}")
-            logger(f"Running Docker input: {input}")
+            logger.info(f"Current directory: {current_dir}")
+            logger.info(f"Running Docker input: {input}")
             transcribe_path = os.path.join('containerised_steps', 'transcribe', 'transcribe.py')
-            logger(f"Transcribe path: {transcribe_path}")
+            logger.info(f"Transcribe path: {transcribe_path}")
 
 
             format_file = self.serialize_input(input, temp_dir)
@@ -683,7 +686,7 @@ class DockerStep(Step):
             input_docker_path = os.path.join(value_path, f'input{format_file}')
             input_path = os.path.join(temp_dir, f'input{format_file}')
 
-            logger(f"Input serialized to: {input_path}")
+            logger.info(f"Input serialized to: {input_path}")
 
            
             main_function_path = f"{self.f.__module__}.{self.f.__name__}"
@@ -691,6 +694,7 @@ class DockerStep(Step):
             #temp_path = os.path.join(f"{run_id}_output", f"input{format_file}")
             temp_path = temp_dir
 
+            client = docker.from_env()
             container = client.containers.run(
                 f'{self.f.__name__.lower()}',
                 command=[f"python" ,"-m", "workflows.run_docker_func", filer_name, value_path, main_function_path, deserialize_function_path],
@@ -700,20 +704,46 @@ class DockerStep(Step):
                     temp_dir: {'bind': value_path, 'mode': 'rw'}  
                     },
                 remove=True,
-                stdout=True,
-                stderr=True
+                detach=True,
+                stream=True
             )
-            logs = container.decode('utf-8')
-            logger(f"Logs: {logs}")
-            logger("Container execution completed")
-            result_path = os.path.join(temp_dir, 'result.json')
+            
+            container_id = container.id
+            logger.info(f"Container started with ID: {container_id}")
+
+            for line in container.logs(stream=True):
+                logger.info(line.strip().decode('utf-8'))
+            
+            try:
+                client.containers.get(container_id)
+                logger.warning(f"Container {container_id} still exists after execution")
+            except docker.errors.NotFound:
+                logger.info(f"Container {container_id} has been successfully removed")
+
+
+            #logs = container.decode('utf-8')
+            #logger(f"Logs: {logs}")
+            logger.info("Container execution completed")
+
+            output_file = None
+            for filename in os.listdir(temp_dir):
+                if 'output' in filename:
+                    output_file = filename
+                    break
+            
+            if output_file:
+                logger.info(f"Output file found: {output_file}")
+                result_path = os.path.join(temp_dir, output_file)
+            else:
+                logger.warning("No output file found in the temporary directory")
+                raise ValueError("No output file found in the temporary directory")
             print_directory_tree(temp_dir)
-            logger(f"Result path: {result_path}")
+            logger.info(f"Result path: {result_path}")
             if os.path.exists(result_path):
                 output = self.get_serialize_output(result_path)
-                logger(f"Output: {len(output)}")
+                logger.info(f"Output: {len(output)}")
                 super().run(output,run_id)
             else : 
-                logger(f"File {result_path} does not exist")
+                logger.info(f"File {result_path} does not exist")
                 return {"Error": "File does not exist"}
         
